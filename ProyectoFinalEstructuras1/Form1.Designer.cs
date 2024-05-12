@@ -34,38 +34,38 @@
             label1 = new Label();
             btnHam = new PictureBox();
             sidebar = new FlowLayoutPanel();
-            panel3 = new Panel();
+            pnPresupuesto = new Panel();
             button2 = new Button();
             menuContainer = new FlowLayoutPanel();
             panel5 = new Panel();
             menu = new Button();
             panel2 = new Panel();
             button5 = new Button();
-            button1 = new Button();
+            btnHistorial = new Button();
             panel6 = new Panel();
-            button6 = new Button();
-            panel4 = new Panel();
+            btnReportes = new Button();
+            pnGastosIngresos = new Panel();
             button3 = new Button();
-            panel8 = new Panel();
+            pnProgramarPagos = new Panel();
             button4 = new Button();
-            panel9 = new Panel();
+            pnPlanificacion = new Panel();
             button8 = new Button();
-            panel7 = new Panel();
+            pnSalir = new Panel();
             button7 = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHam).BeginInit();
             sidebar.SuspendLayout();
-            panel3.SuspendLayout();
+            pnPresupuesto.SuspendLayout();
             menuContainer.SuspendLayout();
             panel5.SuspendLayout();
             panel2.SuspendLayout();
             panel6.SuspendLayout();
-            panel4.SuspendLayout();
-            panel8.SuspendLayout();
-            panel9.SuspendLayout();
-            panel7.SuspendLayout();
+            pnGastosIngresos.SuspendLayout();
+            pnProgramarPagos.SuspendLayout();
+            pnPlanificacion.SuspendLayout();
+            pnSalir.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -82,10 +82,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(45, 9);
             label1.Name = "label1";
-            label1.Size = new Size(138, 17);
+            label1.Size = new Size(143, 17);
             label1.TabIndex = 1;
             label1.Text = "GESTOR DE FINANZAS";
             // 
@@ -103,12 +103,12 @@
             // sidebar
             // 
             sidebar.BackColor = Color.DarkSlateGray;
-            sidebar.Controls.Add(panel3);
+            sidebar.Controls.Add(pnPresupuesto);
             sidebar.Controls.Add(menuContainer);
-            sidebar.Controls.Add(panel4);
-            sidebar.Controls.Add(panel8);
-            sidebar.Controls.Add(panel9);
-            sidebar.Controls.Add(panel7);
+            sidebar.Controls.Add(pnGastosIngresos);
+            sidebar.Controls.Add(pnProgramarPagos);
+            sidebar.Controls.Add(pnPlanificacion);
+            sidebar.Controls.Add(pnSalir);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 33);
             sidebar.Name = "sidebar";
@@ -116,13 +116,13 @@
             sidebar.Size = new Size(241, 667);
             sidebar.TabIndex = 1;
             // 
-            // panel3
+            // pnPresupuesto
             // 
-            panel3.Controls.Add(button2);
-            panel3.Location = new Point(3, 33);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(321, 66);
-            panel3.TabIndex = 4;
+            pnPresupuesto.Controls.Add(button2);
+            pnPresupuesto.Location = new Point(3, 33);
+            pnPresupuesto.Name = "pnPresupuesto";
+            pnPresupuesto.Size = new Size(321, 66);
+            pnPresupuesto.TabIndex = 4;
             // 
             // button2
             // 
@@ -130,7 +130,7 @@
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-10, -9);
+            button2.Location = new Point(-10, -11);
             button2.Name = "button2";
             button2.Padding = new Padding(25, 0, 0, 0);
             button2.Size = new Size(356, 86);
@@ -138,6 +138,7 @@
             button2.Text = "                 Editar Presupuesto";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // menuContainer
             // 
@@ -179,7 +180,7 @@
             // panel2
             // 
             panel2.Controls.Add(button5);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnHistorial);
             panel2.Location = new Point(3, 75);
             panel2.Name = "panel2";
             panel2.Size = new Size(321, 66);
@@ -201,53 +202,55 @@
             button5.TextAlign = ContentAlignment.MiddleLeft;
             button5.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnHistorial
             // 
-            button1.BackColor = Color.DarkSlateGray;
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(-10, -9);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Padding = new Padding(25, 0, 0, 0);
-            button1.Size = new Size(356, 86);
-            button1.TabIndex = 2;
-            button1.Text = "                 Historial";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
+            btnHistorial.BackColor = Color.DarkSlateGray;
+            btnHistorial.ForeColor = Color.White;
+            btnHistorial.Image = (Image)resources.GetObject("btnHistorial.Image");
+            btnHistorial.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHistorial.Location = new Point(-10, -9);
+            btnHistorial.Margin = new Padding(0);
+            btnHistorial.Name = "btnHistorial";
+            btnHistorial.Padding = new Padding(25, 0, 0, 0);
+            btnHistorial.Size = new Size(356, 86);
+            btnHistorial.TabIndex = 2;
+            btnHistorial.Text = "                 Historial";
+            btnHistorial.TextAlign = ContentAlignment.MiddleLeft;
+            btnHistorial.UseVisualStyleBackColor = false;
+            btnHistorial.Click += btnHistorial_Click;
             // 
             // panel6
             // 
-            panel6.Controls.Add(button6);
+            panel6.Controls.Add(btnReportes);
             panel6.Location = new Point(3, 147);
             panel6.Name = "panel6";
             panel6.Size = new Size(321, 66);
             panel6.TabIndex = 9;
             // 
-            // button6
+            // btnReportes
             // 
-            button6.BackColor = Color.DarkSlateGray;
-            button6.ForeColor = Color.White;
-            button6.Image = (Image)resources.GetObject("button6.Image");
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-10, -9);
-            button6.Margin = new Padding(0);
-            button6.Name = "button6";
-            button6.Padding = new Padding(25, 0, 0, 0);
-            button6.Size = new Size(356, 86);
-            button6.TabIndex = 2;
-            button6.Text = "                 Reportes";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = false;
+            btnReportes.BackColor = Color.DarkSlateGray;
+            btnReportes.ForeColor = Color.White;
+            btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
+            btnReportes.ImageAlign = ContentAlignment.MiddleLeft;
+            btnReportes.Location = new Point(-10, -9);
+            btnReportes.Margin = new Padding(0);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Padding = new Padding(25, 0, 0, 0);
+            btnReportes.Size = new Size(356, 86);
+            btnReportes.TabIndex = 2;
+            btnReportes.Text = "                 Reportes";
+            btnReportes.TextAlign = ContentAlignment.MiddleLeft;
+            btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += btnReportes_Click;
             // 
-            // panel4
+            // pnGastosIngresos
             // 
-            panel4.Controls.Add(button3);
-            panel4.Location = new Point(3, 171);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(321, 66);
-            panel4.TabIndex = 8;
+            pnGastosIngresos.Controls.Add(button3);
+            pnGastosIngresos.Location = new Point(3, 171);
+            pnGastosIngresos.Name = "pnGastosIngresos";
+            pnGastosIngresos.Size = new Size(321, 66);
+            pnGastosIngresos.TabIndex = 8;
             // 
             // button3
             // 
@@ -263,14 +266,15 @@
             button3.Text = "                 Gastos e Ingresos";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
-            // panel8
+            // pnProgramarPagos
             // 
-            panel8.Controls.Add(button4);
-            panel8.Location = new Point(3, 243);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(321, 66);
-            panel8.TabIndex = 10;
+            pnProgramarPagos.Controls.Add(button4);
+            pnProgramarPagos.Location = new Point(3, 243);
+            pnProgramarPagos.Name = "pnProgramarPagos";
+            pnProgramarPagos.Size = new Size(321, 66);
+            pnProgramarPagos.TabIndex = 10;
             // 
             // button4
             // 
@@ -286,14 +290,15 @@
             button4.Text = "                 Programar Pagos";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
-            // panel9
+            // pnPlanificacion
             // 
-            panel9.Controls.Add(button8);
-            panel9.Location = new Point(3, 315);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(321, 66);
-            panel9.TabIndex = 11;
+            pnPlanificacion.Controls.Add(button8);
+            pnPlanificacion.Location = new Point(3, 315);
+            pnPlanificacion.Name = "pnPlanificacion";
+            pnPlanificacion.Size = new Size(321, 66);
+            pnPlanificacion.TabIndex = 11;
             // 
             // button8
             // 
@@ -309,14 +314,15 @@
             button8.Text = "                 Planificacion";
             button8.TextAlign = ContentAlignment.MiddleLeft;
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
-            // panel7
+            // pnSalir
             // 
-            panel7.Controls.Add(button7);
-            panel7.Location = new Point(3, 387);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(321, 66);
-            panel7.TabIndex = 9;
+            pnSalir.Controls.Add(button7);
+            pnSalir.Location = new Point(3, 387);
+            pnSalir.Name = "pnSalir";
+            pnSalir.Size = new Size(321, 66);
+            pnSalir.TabIndex = 9;
             // 
             // button7
             // 
@@ -332,6 +338,7 @@
             button7.Text = "                 Salir";
             button7.TextAlign = ContentAlignment.MiddleLeft;
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // menuTransition
             // 
@@ -345,12 +352,12 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(927, 700);
             Controls.Add(sidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            IsMdiContainer = true;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -358,15 +365,15 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnHam).EndInit();
             sidebar.ResumeLayout(false);
-            panel3.ResumeLayout(false);
+            pnPresupuesto.ResumeLayout(false);
             menuContainer.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel6.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel9.ResumeLayout(false);
-            panel7.ResumeLayout(false);
+            pnGastosIngresos.ResumeLayout(false);
+            pnProgramarPagos.ResumeLayout(false);
+            pnPlanificacion.ResumeLayout(false);
+            pnSalir.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -376,24 +383,24 @@
         private PictureBox btnHam;
         private Label label1;
         private FlowLayoutPanel sidebar;
-        private Panel panel3;
+        private Panel pnPresupuesto;
         private Button button2;
         private FlowLayoutPanel menuContainer;
         private Panel panel2;
-        private Button button1;
+        private Button btnHistorial;
         private Panel panel5;
         private Button menu;
         private Button button5;
         private Panel panel6;
-        private Button button6;
-        private Panel panel4;
+        private Button btnReportes;
+        private Panel pnGastosIngresos;
         private Button button3;
-        private Panel panel7;
+        private Panel pnSalir;
         private Button button7;
         private System.Windows.Forms.Timer menuTransition;
-        private Panel panel9;
+        private Panel pnPlanificacion;
         private Button button8;
-        private Panel panel8;
+        private Panel pnProgramarPagos;
         private Button button4;
         private System.Windows.Forms.Timer sidebarTransition;
     }
