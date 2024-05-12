@@ -35,7 +35,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(277, 248);
+            label1.Location = new Point(428, 299);
             label1.Name = "label1";
             label1.Size = new Size(99, 30);
             label1.TabIndex = 0;
@@ -44,7 +44,7 @@
             // presupuesto
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(661, 616);
+            ClientSize = new Size(965, 672);
             Controls.Add(label1);
             Name = "presupuesto";
             Text = "presupuesto";

@@ -33,7 +33,7 @@
             // gastosIngresos
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(911, 661);
+            ClientSize = new Size(965, 672);
             Name = "gastosIngresos";
             Text = "gastosIngresos";
             ResumeLayout(false);

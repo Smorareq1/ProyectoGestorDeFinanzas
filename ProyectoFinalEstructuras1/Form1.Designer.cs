@@ -76,7 +76,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(927, 33);
+            panel1.Size = new Size(1240, 33);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -113,7 +113,7 @@
             sidebar.Location = new Point(0, 33);
             sidebar.Name = "sidebar";
             sidebar.Padding = new Padding(0, 30, 0, 0);
-            sidebar.Size = new Size(241, 667);
+            sidebar.Size = new Size(241, 731);
             sidebar.TabIndex = 1;
             // 
             // pnPresupuesto
@@ -353,7 +353,7 @@
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(927, 700);
+            ClientSize = new Size(1240, 764);
             Controls.Add(sidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
