@@ -24,7 +24,7 @@ namespace ProyectoFinalEstructuras1
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) //Cargar valores iniciales
         {
             presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
         }
@@ -251,7 +251,7 @@ namespace ProyectoFinalEstructuras1
         {
             //Guardar todos los datos que se hayan trabajado en la aplicacion
             //... Pendiente
-
+            GestorDeArchivos.SetPresupuestoInicial(presupuestoActual);
             //Salir
             Application.Exit();
         }

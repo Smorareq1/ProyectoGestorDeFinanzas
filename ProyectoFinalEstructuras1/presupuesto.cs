@@ -25,7 +25,6 @@ namespace ProyectoFinalEstructuras1
             try
             {
                 Form1.presupuestoActual = Convert.ToDouble(textBox1.Text);
-                GestorDeArchivos.SetPresupuestoInicial(Form1.presupuestoActual);
                 presupuestoLabel.Text = Convert.ToString(Form1.presupuestoActual);
                 textBox1.Text = "";
                 MessageBox.Show("Presupuesto actualizado exitosamente.");
