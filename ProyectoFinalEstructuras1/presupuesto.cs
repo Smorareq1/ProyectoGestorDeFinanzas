@@ -12,6 +12,8 @@ namespace ProyectoFinalEstructuras1
 {
     public partial class presupuesto : Form
     {
+        public static double nuevoPresupuesto;
+
         public presupuesto()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace ProyectoFinalEstructuras1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            nuevoPresupuesto = Convert.ToDouble(textBox1.Text);
         }
     }
 }
