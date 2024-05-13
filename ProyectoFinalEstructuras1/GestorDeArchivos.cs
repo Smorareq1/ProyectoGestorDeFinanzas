@@ -12,10 +12,20 @@ namespace ProyectoFinalEstructuras1
 
         private static string GetJsonFilePath(string fileName)
         {
-            string filePath = Path.Combine(Environment.CurrentDirectory, "ArchivosJson", fileName);
-            return filePath;
+            // Obtiene la ruta completa de la carpeta ArchivosJson
+            string jsonDirectory = Path.Combine(Environment.CurrentDirectory, "ArchivosJson");
 
+            // Verifica si la carpeta no existe, y si es así, la crea
+            if (!Directory.Exists(jsonDirectory))
+            {
+                Directory.CreateDirectory(jsonDirectory);
+            }
+
+            // Combina la ruta de la carpeta con el nombre del archivo
+            string filePath = Path.Combine(jsonDirectory, fileName);
+            return filePath;
         }
+
 
 
         public static double GetPresupuestoInicial()
