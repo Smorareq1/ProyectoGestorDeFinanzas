@@ -11,7 +11,7 @@ namespace ProyectoFinalEstructuras1
         planificacion formplanificacion;
 
         //Variables
-        
+        public static double presupuestoActual;
 
 
         public Form1()
@@ -26,7 +26,7 @@ namespace ProyectoFinalEstructuras1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
         }
 
         //=========================================== MENU ==================================================

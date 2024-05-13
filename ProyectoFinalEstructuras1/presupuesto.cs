@@ -12,7 +12,7 @@ namespace ProyectoFinalEstructuras1
 {
     public partial class presupuesto : Form
     {
-        public static double nuevoPresupuesto;
+       
 
         public presupuesto()
         {
@@ -24,9 +24,9 @@ namespace ProyectoFinalEstructuras1
         {
             try
             {
-                nuevoPresupuesto = Convert.ToDouble(textBox1.Text);
-                GestorDeArchivos.SetPresupuestoInicial(nuevoPresupuesto);
-                presupuestoLabel.Text = Convert.ToString(nuevoPresupuesto);
+                Form1.presupuestoActual = Convert.ToDouble(textBox1.Text);
+                GestorDeArchivos.SetPresupuestoInicial(Form1.presupuestoActual);
+                presupuestoLabel.Text = Convert.ToString(Form1.presupuestoActual);
                 textBox1.Text = "";
                 MessageBox.Show("Presupuesto actualizado exitosamente.");
             }
@@ -39,7 +39,7 @@ namespace ProyectoFinalEstructuras1
 
         private void presupuesto_Load(object sender, EventArgs e)
         {
-            presupuestoLabel.Text = Convert.ToString(GestorDeArchivos.GetPresupuestoInicial());
+            presupuestoLabel.Text = Form1.presupuestoActual.ToString();
         }
     }
 }

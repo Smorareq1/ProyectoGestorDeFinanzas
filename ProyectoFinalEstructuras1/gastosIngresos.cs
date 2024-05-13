@@ -16,5 +16,11 @@ namespace ProyectoFinalEstructuras1
         {
             InitializeComponent();
         }
+
+        private void gastosIngresos_Load(object sender, EventArgs e)
+        {
+            label1.Text = "Presupuesto actual: " + Form1.presupuestoActual.ToString();
+            
+        }
     }
 }
