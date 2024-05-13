@@ -17,11 +17,17 @@ namespace ProyectoFinalEstructuras1
         public presupuesto()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             nuevoPresupuesto = Convert.ToDouble(textBox1.Text);
+        }
+
+        private void presupuesto_Load(object sender, EventArgs e)
+        {
+            presupuestoLabel.Text = Convert.ToString(GestorDeArchivos.GetPresupuestoInicial());
         }
     }
 }

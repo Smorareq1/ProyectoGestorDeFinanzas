@@ -25,6 +25,11 @@
 
   <ItemGroup>
     <Folder Include="Json\" />
+    <Folder Include="ArchivosJson\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

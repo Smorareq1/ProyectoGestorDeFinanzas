@@ -10,7 +10,8 @@ namespace ProyectoFinalEstructuras1
         programarPagos formprogramarPagos;
         planificacion formplanificacion;
 
-
+        //Variables
+        public static double presupuestoInicial;
 
 
         public Form1()
