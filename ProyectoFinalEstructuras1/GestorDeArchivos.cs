@@ -4,29 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Security.Cryptography;
 
 namespace ProyectoFinalEstructuras1
 {
     internal class GestorDeArchivos
     {
 
+        private static string clave = "a1b2c3d4e5f6g7h8"; // Clave de encriptación
+
         private static string GetJsonFilePath(string fileName)
         {
-            // Obtiene la ruta completa de la carpeta ArchivosJson
             string jsonDirectory = Path.Combine(Environment.CurrentDirectory, "ArchivosJson");
-
-            // Verifica si la carpeta no existe, y si es así, la crea
             if (!Directory.Exists(jsonDirectory))
             {
                 Directory.CreateDirectory(jsonDirectory);
             }
-
-            // Combina la ruta de la carpeta con el nombre del archivo
-            string filePath = Path.Combine(jsonDirectory, fileName);
-            return filePath;
+            return Path.Combine(jsonDirectory, fileName);
         }
-
-
 
         public static double GetPresupuestoInicial()
         {
@@ -35,20 +30,15 @@ namespace ProyectoFinalEstructuras1
 
             if (!File.Exists(filePath))
             {
-                // Si el archivo no existe, crea un nuevo archivo JSON con un valor de presupuesto inicial 0
-                var presupuestoInicial = new { Presupuesto = 0.00 };
-                string jsonData = JsonConvert.SerializeObject(presupuestoInicial, Formatting.Indented);
-                File.WriteAllText(filePath, jsonData);
+                // Crea el archivo con un valor de presupuesto inicial
+                SetPresupuestoInicial(0.00);
+            }
 
-                return presupuestoInicial.Presupuesto;
-            }
-            else
-            {
-                // Si el archivo existe, lee el valor del presupuesto inicial desde el archivo JSON
-                string jsonData = File.ReadAllText(filePath);
-                var presupuestoInicial = JsonConvert.DeserializeObject<dynamic>(jsonData);
-                return (double)presupuestoInicial.Presupuesto;
-            }
+            // Lee el JSON cifrado desde el archivo
+            string jsonData = File.ReadAllText(filePath);
+            string decryptedData = Decrypt(jsonData);
+            var presupuestoInicial = JsonConvert.DeserializeObject<dynamic>(decryptedData);
+            return (double)presupuestoInicial.Presupuesto;
         }
 
         public static void SetPresupuestoInicial(double presupuesto)
@@ -59,11 +49,55 @@ namespace ProyectoFinalEstructuras1
             // Crea un objeto anónimo con el valor del presupuesto inicial
             var presupuestoInicial = new { Presupuesto = presupuesto };
 
-            // Serializa el objeto anónimo a formato JSON
+            // Serializa el objeto anónimo a formato JSON y lo encripta
             string jsonData = JsonConvert.SerializeObject(presupuestoInicial, Formatting.Indented);
+            string encryptedData = Encrypt(jsonData);
 
-            // Escribe el JSON en el archivo
-            File.WriteAllText(filePath, jsonData);
+            // Escribe el JSON cifrado en el archivo
+            File.WriteAllText(filePath, encryptedData);
+        }
+
+        private static string Encrypt(string input)
+        {
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(clave);
+                aes.IV = Encoding.UTF8.GetBytes(clave);
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(input);
+                        }
+                        return Convert.ToBase64String(msEncrypt.ToArray());
+                    }
+                }
+            }
+        }
+
+        private static string Decrypt(string encryptedInput)
+        {
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(clave);
+                aes.IV = Encoding.UTF8.GetBytes(clave);
+
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+                using (MemoryStream msDecrypt = new MemoryStream(Convert.FromBase64String(encryptedInput)))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            return srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
         }
 
 
