@@ -137,12 +137,12 @@ namespace ProyectoFinalEstructuras1
             }
         }
 
-        private void historial_FormClosed(object sender, FormClosedEventArgs e)
+        private void historial_FormClosed(object sender, FormClosedEventArgs e) 
         {
             formhistorial = null;
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
+        private void btnReportes_Click(object sender, EventArgs e) //Reportes
         {
             if (formreportes == null)
             {
@@ -168,7 +168,7 @@ namespace ProyectoFinalEstructuras1
             formreportes = null;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Gastos e Ingresos
         {
             if (formgastosIngresos == null)
             {
@@ -194,7 +194,7 @@ namespace ProyectoFinalEstructuras1
             formgastosIngresos = null;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //Programar Pagos
         {
             if (formprogramarPagos == null)
             {
@@ -220,7 +220,7 @@ namespace ProyectoFinalEstructuras1
             formprogramarPagos = null;
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e) //Planificacion
         {
             if (formplanificacion == null)
             {
@@ -248,6 +248,9 @@ namespace ProyectoFinalEstructuras1
 
         private void button7_Click(object sender, EventArgs e)
         {
+            //Guardar todos los datos que se hayan trabajado en la aplicacion
+            //... Pendiente
+
             //Salir
             Application.Exit();
         }
