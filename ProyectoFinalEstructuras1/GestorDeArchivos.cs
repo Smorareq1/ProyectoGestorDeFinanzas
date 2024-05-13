@@ -51,6 +51,21 @@ namespace ProyectoFinalEstructuras1
             }
         }
 
+        public static void SetPresupuestoInicial(double presupuesto)
+        {
+            string fileName = "presupuesto.json";
+            string filePath = GetJsonFilePath(fileName);
+
+            // Crea un objeto anónimo con el valor del presupuesto inicial
+            var presupuestoInicial = new { Presupuesto = presupuesto };
+
+            // Serializa el objeto anónimo a formato JSON
+            string jsonData = JsonConvert.SerializeObject(presupuestoInicial, Formatting.Indented);
+
+            // Escribe el JSON en el archivo
+            File.WriteAllText(filePath, jsonData);
+        }
+
 
     }
 }

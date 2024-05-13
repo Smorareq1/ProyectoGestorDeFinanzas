@@ -20,9 +20,21 @@ namespace ProyectoFinalEstructuras1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Cambiar presupuesto
         {
-            nuevoPresupuesto = Convert.ToDouble(textBox1.Text);
+            try
+            {
+                nuevoPresupuesto = Convert.ToDouble(textBox1.Text);
+                GestorDeArchivos.SetPresupuestoInicial(nuevoPresupuesto);
+                presupuestoLabel.Text = Convert.ToString(nuevoPresupuesto);
+                textBox1.Text = "";
+                MessageBox.Show("Presupuesto actualizado exitosamente.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Por favor, ingrese un valor numérico válido.");
+            }
+            
         }
 
         private void presupuesto_Load(object sender, EventArgs e)

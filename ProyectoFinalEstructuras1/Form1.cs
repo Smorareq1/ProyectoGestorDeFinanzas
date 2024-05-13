@@ -11,7 +11,7 @@ namespace ProyectoFinalEstructuras1
         planificacion formplanificacion;
 
         //Variables
-        public static double presupuestoInicial;
+        
 
 
         public Form1()
