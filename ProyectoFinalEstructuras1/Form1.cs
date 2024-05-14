@@ -186,7 +186,10 @@ namespace ProyectoFinalEstructuras1
                 formgastosIngresos.AllowDrop = false;
                 formgastosIngresos.Text = "";
 
+
+                
                 formgastosIngresos.Show();
+
             }
             else
             {

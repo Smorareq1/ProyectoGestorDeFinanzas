@@ -13,6 +13,9 @@ namespace ProyectoFinalEstructuras1
     public partial class gastosIngresos : Form
     {
 
+        
+
+
         public gastosIngresos()
         {
             InitializeComponent();
@@ -20,7 +23,7 @@ namespace ProyectoFinalEstructuras1
 
         private void gastosIngresos_Load(object sender, EventArgs e)
         {
-            presupuestoLabel.Text = "$ " + Transacciones.presupuestoActual.ToString();
+            presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
 
         }
 

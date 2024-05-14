@@ -40,6 +40,8 @@
             montotxt = new TextBox();
             fechatxt = new TextBox();
             button1 = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -143,18 +145,28 @@
             // 
             // button1
             // 
-            button1.Location = new Point(424, 331);
+            button1.Location = new Point(410, 328);
             button1.Name = "button1";
-            button1.Size = new Size(122, 23);
+            button1.Size = new Size(144, 50);
             button1.TabIndex = 11;
             button1.Text = "Registrar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(55, 431);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(791, 229);
+            dataGridView1.TabIndex = 12;
+            // 
             // gastosIngresos
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(965, 672);
+            Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(fechatxt);
             Controls.Add(montotxt);
@@ -170,6 +182,7 @@
             Name = "gastosIngresos";
             Text = "gastosIngresos";
             Load += gastosIngresos_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,7 +191,6 @@
 
         private Label label1;
         private Label label2;
-        private Label presupuestoLabel;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -188,5 +200,7 @@
         private TextBox montotxt;
         private TextBox fechatxt;
         private Button button1;
+        private DataGridView dataGridView1;
+        public Label presupuestoLabel;
     }
 }
