@@ -9,9 +9,9 @@ namespace ProyectoFinalEstructuras1
         gastosIngresos formgastosIngresos;
         programarPagos formprogramarPagos;
         planificacion formplanificacion;
+        editarEliminar formeditarElimnar;
 
-        //Variables
-        public static double presupuestoActual;
+
 
 
         public Form1()
@@ -26,7 +26,11 @@ namespace ProyectoFinalEstructuras1
 
         private void Form1_Load(object sender, EventArgs e) //Cargar valores iniciales
         {
-            presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
+            Transacciones.presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
+
+
+            
+           
         }
 
         //=========================================== MENU ==================================================
@@ -138,7 +142,7 @@ namespace ProyectoFinalEstructuras1
             }
         }
 
-        private void historial_FormClosed(object sender, FormClosedEventArgs e) 
+        private void historial_FormClosed(object sender, FormClosedEventArgs e)
         {
             formhistorial = null;
         }
@@ -247,14 +251,42 @@ namespace ProyectoFinalEstructuras1
             formplanificacion = null;
         }
 
+        private void button1_Click_1(object sender, EventArgs e) //Editar y eliminar
+        {
+            if(formeditarElimnar == null)
+            {
+                formeditarElimnar = new editarEliminar();
+                formeditarElimnar.FormClosed += editarEliminar_FormClosed;
+                formeditarElimnar.MdiParent = this;
+                formeditarElimnar.Dock = DockStyle.Fill;
+
+                formeditarElimnar.ControlBox = false;
+                formeditarElimnar.AllowDrop = false;
+                formeditarElimnar.Text = "";
+
+                formeditarElimnar.Show();
+            }
+            else
+            {
+                formeditarElimnar.Activate();
+            }
+        }
+
+        private void editarEliminar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formeditarElimnar = null;
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             //Guardar todos los datos que se hayan trabajado en la aplicacion
             //... Pendiente
-            GestorDeArchivos.SetPresupuestoInicial(presupuestoActual);
+            GestorDeArchivos.SetPresupuestoInicial(Transacciones.presupuestoActual);
             //Salir
             Application.Exit();
         }
+
+        
 
         //=======================================================================================================
     }

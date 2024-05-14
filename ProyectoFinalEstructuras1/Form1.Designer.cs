@@ -50,6 +50,8 @@
             button4 = new Button();
             pnPlanificacion = new Panel();
             button8 = new Button();
+            panel3 = new Panel();
+            button1 = new Button();
             pnSalir = new Panel();
             button7 = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
@@ -65,6 +67,7 @@
             pnGastosIngresos.SuspendLayout();
             pnProgramarPagos.SuspendLayout();
             pnPlanificacion.SuspendLayout();
+            panel3.SuspendLayout();
             pnSalir.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,7 +79,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1238, 33);
+            panel1.Size = new Size(1240, 33);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -108,12 +111,13 @@
             sidebar.Controls.Add(pnGastosIngresos);
             sidebar.Controls.Add(pnProgramarPagos);
             sidebar.Controls.Add(pnPlanificacion);
+            sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(pnSalir);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 33);
             sidebar.Name = "sidebar";
             sidebar.Padding = new Padding(0, 30, 0, 0);
-            sidebar.Size = new Size(241, 731);
+            sidebar.Size = new Size(74, 731);
             sidebar.TabIndex = 1;
             // 
             // pnPresupuesto
@@ -316,10 +320,34 @@
             button8.UseVisualStyleBackColor = false;
             button8.Click += button8_Click;
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(button1);
+            panel3.Location = new Point(3, 387);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(321, 66);
+            panel3.TabIndex = 12;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DarkSlateGray;
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(-10, -9);
+            button1.Name = "button1";
+            button1.Padding = new Padding(25, 0, 0, 0);
+            button1.Size = new Size(356, 86);
+            button1.TabIndex = 2;
+            button1.Text = "                 Editar o Eliminar";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
+            // 
             // pnSalir
             // 
             pnSalir.Controls.Add(button7);
-            pnSalir.Location = new Point(3, 387);
+            pnSalir.Location = new Point(3, 459);
             pnSalir.Name = "pnSalir";
             pnSalir.Size = new Size(321, 66);
             pnSalir.TabIndex = 9;
@@ -373,6 +401,7 @@
             pnGastosIngresos.ResumeLayout(false);
             pnProgramarPagos.ResumeLayout(false);
             pnPlanificacion.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             pnSalir.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -403,5 +432,7 @@
         private Panel pnProgramarPagos;
         private Button button4;
         private System.Windows.Forms.Timer sidebarTransition;
+        private Panel panel3;
+        private Button button1;
     }
 }

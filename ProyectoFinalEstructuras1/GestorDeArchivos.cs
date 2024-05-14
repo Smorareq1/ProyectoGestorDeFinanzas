@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Security.Cryptography;
+using System.Text.Json.Serialization;
+using System.Text.Json;
+using System.Globalization;
 
 namespace ProyectoFinalEstructuras1
 {
@@ -12,6 +15,50 @@ namespace ProyectoFinalEstructuras1
     {
 
         private static string clave = "a1b2c3d4e5f6g7h8"; // Clave de encriptación
+
+
+        private static string Encrypt(string input)
+        {
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(clave);
+                aes.IV = Encoding.UTF8.GetBytes(clave);
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(input);
+                        }
+                        return Convert.ToBase64String(msEncrypt.ToArray());
+                    }
+                }
+            }
+        }
+
+        private static string Decrypt(string encryptedInput)
+        {
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = Encoding.UTF8.GetBytes(clave);
+                aes.IV = Encoding.UTF8.GetBytes(clave);
+
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+                using (MemoryStream msDecrypt = new MemoryStream(Convert.FromBase64String(encryptedInput)))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            return srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+        }
 
         private static string GetJsonFilePath(string fileName)
         {
@@ -57,48 +104,46 @@ namespace ProyectoFinalEstructuras1
             File.WriteAllText(filePath, encryptedData);
         }
 
-        private static string Encrypt(string input)
+        public static void GuardarTransaccionesSinEncriptar(List<Transaccion> transacciones)
         {
-            using (Aes aes = Aes.Create())
-            {
-                aes.Key = Encoding.UTF8.GetBytes(clave);
-                aes.IV = Encoding.UTF8.GetBytes(clave);
+            string fileName = "transaccionesNoEncriptadas.json";
+            string filePath = GetJsonFilePath(fileName);
 
-                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
-                using (MemoryStream msEncrypt = new MemoryStream())
-                {
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                    {
-                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
-                        {
-                            swEncrypt.Write(input);
-                        }
-                        return Convert.ToBase64String(msEncrypt.ToArray());
-                    }
-                }
+            // Serializa las transacciones a formato JSON usando Newtonsoft.Json
+            string jsonData = JsonConvert.SerializeObject(transacciones, Formatting.Indented);
+
+            // Escribe el JSON en el archivo
+            File.WriteAllText(filePath, jsonData);
+        }
+
+        public static List<Transaccion> LeerTransaccionesNoEncriptadas()
+        {
+            string fileName = "transaccionesNoEncriptadas.json";
+            string filePath = GetJsonFilePath(fileName);
+
+            if (!File.Exists(filePath))
+            {
+                return new List<Transaccion>(); // Devuelve una lista vacía si el archivo no existe
+            }
+
+            try
+            {
+                // Lee el JSON desde el archivo
+                string jsonData = File.ReadAllText(filePath);
+
+                // Deserializa el JSON a una lista de transacciones
+                List<Transaccion> transacciones = JsonConvert.DeserializeObject<List<Transaccion>>(jsonData);
+                return transacciones;
+            }
+            catch (Exception ex)
+            {
+                // Manejo básico de excepciones al deserializar el JSON
+                Console.WriteLine("Error al leer transacciones no encriptadas: " + ex.Message);
+                return new List<Transaccion>(); // Devuelve una lista vacía en caso de error
             }
         }
 
-        private static string Decrypt(string encryptedInput)
-        {
-            using (Aes aes = Aes.Create())
-            {
-                aes.Key = Encoding.UTF8.GetBytes(clave);
-                aes.IV = Encoding.UTF8.GetBytes(clave);
 
-                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
-                using (MemoryStream msDecrypt = new MemoryStream(Convert.FromBase64String(encryptedInput)))
-                {
-                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
-                    {
-                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
-                        {
-                            return srDecrypt.ReadToEnd();
-                        }
-                    }
-                }
-            }
-        }
 
 
     }

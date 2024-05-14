@@ -24,10 +24,11 @@ namespace ProyectoFinalEstructuras1
         {
             try
             {
-                Form1.presupuestoActual = Convert.ToDouble(textBox1.Text);
-                presupuestoLabel.Text = Convert.ToString(Form1.presupuestoActual);
+                Transacciones.presupuestoActual = Convert.ToDouble(textBox1.Text);
+                presupuestoLabel.Text = Convert.ToString(Transacciones.presupuestoActual);
                 textBox1.Text = "";
                 MessageBox.Show("Presupuesto actualizado exitosamente.");
+
             }
             catch (Exception)
             {
@@ -38,7 +39,7 @@ namespace ProyectoFinalEstructuras1
 
         private void presupuesto_Load(object sender, EventArgs e)
         {
-            presupuestoLabel.Text = Form1.presupuestoActual.ToString();
+            presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
         }
     }
 }
