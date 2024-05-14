@@ -201,6 +201,6 @@
         private TextBox fechatxt;
         private Button button1;
         private DataGridView dataGridView1;
-        public Label presupuestoLabel;
+        public static Label presupuestoLabel;
     }
 }
