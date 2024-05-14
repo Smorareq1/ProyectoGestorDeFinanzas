@@ -26,6 +26,11 @@ namespace ProyectoFinalEstructuras1
             {
                 Transacciones.presupuestoActual = Convert.ToDouble(textBox1.Text);
                 presupuestoLabel.Text = Convert.ToString(Transacciones.presupuestoActual);
+
+                gastosIngresos gastosIngresosform = new gastosIngresos();
+                gastosIngresosform.presupuestoLabel.Text = Convert.ToString(textBox1.Text);
+
+
                 textBox1.Text = "";
                 MessageBox.Show("Presupuesto actualizado exitosamente.");
 

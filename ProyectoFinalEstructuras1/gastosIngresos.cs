@@ -20,7 +20,7 @@ namespace ProyectoFinalEstructuras1
 
         private void gastosIngresos_Load(object sender, EventArgs e)
         {
-            label3.Text = "$ " + Transacciones.presupuestoActual.ToString();
+            presupuestoLabel.Text = "$ " + Transacciones.presupuestoActual.ToString();
 
         }
 
