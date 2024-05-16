@@ -40,8 +40,8 @@
             montotxt = new TextBox();
             fechatxt = new TextBox();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            gastosIngresosGrid = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)gastosIngresosGrid).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -153,20 +153,20 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // dataGridView1
+            // gastosIngresosGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(55, 431);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(791, 229);
-            dataGridView1.TabIndex = 12;
+            gastosIngresosGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gastosIngresosGrid.Location = new Point(55, 431);
+            gastosIngresosGrid.Name = "gastosIngresosGrid";
+            gastosIngresosGrid.RowHeadersWidth = 51;
+            gastosIngresosGrid.Size = new Size(791, 229);
+            gastosIngresosGrid.TabIndex = 12;
             // 
             // gastosIngresos
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(965, 672);
-            Controls.Add(dataGridView1);
+            Controls.Add(gastosIngresosGrid);
             Controls.Add(button1);
             Controls.Add(fechatxt);
             Controls.Add(montotxt);
@@ -182,7 +182,7 @@
             Name = "gastosIngresos";
             Text = "gastosIngresos";
             Load += gastosIngresos_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gastosIngresosGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,7 +200,7 @@
         private TextBox montotxt;
         private TextBox fechatxt;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView gastosIngresosGrid;
         public static Label presupuestoLabel;
     }
 }

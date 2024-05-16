@@ -11,7 +11,7 @@ namespace ProyectoFinalEstructuras1
 
         //Variables
         public static double presupuestoActual;
-        public static List<Transaccion> transacciones = GestorDeArchivos.LeerTransaccionesNoEncriptadas();
+        public static List<Transaccion> transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
 
 
         public static void mostrarTransacciones() //Prueba

@@ -13,9 +13,6 @@ namespace ProyectoFinalEstructuras1
     public partial class gastosIngresos : Form
     {
 
-        
-
-
         public gastosIngresos()
         {
             InitializeComponent();
@@ -46,7 +43,7 @@ namespace ProyectoFinalEstructuras1
                 MessageBox.Show("Transaccion registrada exitosamente.");
 
 
-                GestorDeArchivos.GuardarTransaccionesSinEncriptar(Transacciones.transacciones);
+                GestorDeArchivos.GuardarTransaccionesEncriptadas(Transacciones.transacciones);
             }
             catch
             {
@@ -61,6 +58,32 @@ namespace ProyectoFinalEstructuras1
             montotxt.Text = "";
             fechatxt.Text = "";
             categoriatxt.Text = "";
+        }
+
+        private void llenarDataGridView()
+        {
+            // Limpiar cualquier dato existente en el DataGridView
+            gastosIngresosGrid.Rows.Clear();
+            gastosIngresosGrid.Columns.Clear();
+
+            // Agregar las columnas al DataGridView
+            gastosIngresosGrid.Columns.Add("NombreColumn", "Nombre");
+            gastosIngresosGrid.Columns.Add("CategoriaColumn", "Categoria");
+            gastosIngresosGrid.Columns.Add("MontoColumn", "Monto");
+            gastosIngresosGrid.Columns.Add("FechaColumn", "Fecha");
+            
+
+
+            foreach (var transaccion in Transacciones.transacciones)
+            {
+                if (transaccion != null)
+                {
+                    // Agregar una fila al DataGridView con los datos del producto
+                    gastosIngresosGrid.Rows.Add(transaccion.Nombre, transaccion.Categoria, transaccion.Monto, transaccion.Fecha.ToString("dd/MM/yyyy"));
+                }
+            }
+
+            gastosIngresosGrid.AutoResizeColumns();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace ProyectoFinalEstructuras1
         {
             Transacciones.presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
 
-
+            Transacciones.mostrarTransacciones();
             
            
         }
