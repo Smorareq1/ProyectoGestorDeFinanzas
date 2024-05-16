@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalEstructuras1
 {
-    //Hola
     public partial class planificacion : Form
     {
 
