@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinalEstructuras1
-{
+{  
     public partial class planificacion : Form
     {
 
