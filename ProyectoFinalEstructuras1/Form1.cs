@@ -28,6 +28,7 @@ namespace ProyectoFinalEstructuras1
         {
             Transacciones.presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
             Transacciones.transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
+            Transacciones.ordenarTransaccionesPorFecha();
             
             
            
@@ -285,7 +286,9 @@ namespace ProyectoFinalEstructuras1
             //Guardar todos los datos que se hayan trabajado en la aplicacion
             //... Pendiente
             GestorDeArchivos.SetPresupuestoInicial(Transacciones.presupuestoActual);
+            Transacciones.ordenarTransaccionesPorFecha();
             GestorDeArchivos.GuardarTransaccionesEncriptadas(Transacciones.transacciones);
+
             //Salir
             Application.Exit();
         }

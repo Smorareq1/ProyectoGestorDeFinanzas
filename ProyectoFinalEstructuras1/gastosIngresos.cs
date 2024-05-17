@@ -21,6 +21,7 @@ namespace ProyectoFinalEstructuras1
         private void gastosIngresos_Load(object sender, EventArgs e)
         {
             presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
+            llenarDataGridView();
 
         }
 
@@ -36,14 +37,15 @@ namespace ProyectoFinalEstructuras1
                 //Convertir fecha a DateTime
                 DateTime fechaDT = DateTime.ParseExact(fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 Transaccion transaccion = new Transaccion(nombre, monto, fechaDT, categoria);
-                
-                
-                Transacciones.transacciones.Add(transaccion);
+
+
+                Transacciones.agregarElemento(transaccion);
                 vaciarCampos();
                 MessageBox.Show("Transaccion registrada exitosamente.");
 
 
-                GestorDeArchivos.GuardarTransaccionesEncriptadas(Transacciones.transacciones);
+                llenarDataGridView();
+                presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
             }
             catch
             {
@@ -62,6 +64,10 @@ namespace ProyectoFinalEstructuras1
 
         private void llenarDataGridView()
         {
+            //Ordenar transacciones por fecha
+            Transacciones.ordenarTransaccionesPorFecha();
+
+
             // Limpiar cualquier dato existente en el DataGridView
             gastosIngresosGrid.Rows.Clear();
             gastosIngresosGrid.Columns.Clear();
@@ -71,7 +77,21 @@ namespace ProyectoFinalEstructuras1
             gastosIngresosGrid.Columns.Add("CategoriaColumn", "Categoria");
             gastosIngresosGrid.Columns.Add("MontoColumn", "Monto");
             gastosIngresosGrid.Columns.Add("FechaColumn", "Fecha");
-            
+
+            // Establecer el modo de ajuste de columna
+            gastosIngresosGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            //centrar texto
+            gastosIngresosGrid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //sombras
+            gastosIngresosGrid.EnableHeadersVisualStyles = false;
+            gastosIngresosGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
+            gastosIngresosGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            gastosIngresosGrid.ColumnHeadersDefaultCellStyle.Font = new Font(gastosIngresosGrid.Font, FontStyle.Bold);
+
+
+            // Recorrer la lista de productos
 
 
             foreach (var transaccion in Transacciones.transacciones)
@@ -83,7 +103,15 @@ namespace ProyectoFinalEstructuras1
                 }
             }
 
-            gastosIngresosGrid.AutoResizeColumns();
+            // Opcional: Autoajustar las filas
+            gastosIngresosGrid.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
+
+            // Opcional: Autoajustar las columnas en función del contenido
+            gastosIngresosGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            // Opcional: Autoajustar todas las columnas para que se ajusten al ancho del DataGridView
+            //gastosIngresosGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
         }
+
     }
 }
