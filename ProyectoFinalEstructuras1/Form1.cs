@@ -27,8 +27,8 @@ namespace ProyectoFinalEstructuras1
         private void Form1_Load(object sender, EventArgs e) //Cargar valores iniciales
         {
             Transacciones.presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
-
-            Transacciones.mostrarTransacciones();
+            Transacciones.transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
+            
             
            
         }
@@ -285,6 +285,7 @@ namespace ProyectoFinalEstructuras1
             //Guardar todos los datos que se hayan trabajado en la aplicacion
             //... Pendiente
             GestorDeArchivos.SetPresupuestoInicial(Transacciones.presupuestoActual);
+            GestorDeArchivos.GuardarTransaccionesEncriptadas(Transacciones.transacciones);
             //Salir
             Application.Exit();
         }
