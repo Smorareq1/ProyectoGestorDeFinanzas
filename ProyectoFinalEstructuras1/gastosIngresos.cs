@@ -23,9 +23,56 @@ namespace ProyectoFinalEstructuras1
             presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
             llenarDataGridView();
 
+            //centrar label de titulo
+            tituloLabel.Location = new Point((this.Width - tituloLabel.Width) / 2, tituloLabel.Location.Y);
+
         }
 
-        private void button1_Click(object sender, EventArgs e) //Registrar gasto
+        private void button1_Click(object sender, EventArgs e) 
+        {
+
+        }
+
+        private void vaciarCampos()
+        {
+            nombretxt.Text = "";
+            montotxt.Text = "";
+            fechatxt.Text = "";
+            categoriatxt.Text = "";
+        }
+
+        private void llenarDataGridView()
+        {
+            // Ordenar transacciones por fecha
+            Transacciones.ordenarTransaccionesPorFecha();
+
+            // Limpiar cualquier dato existente en el Guna2DataGridView
+            gunaGastosIngresosGrid.Rows.Clear();
+            gunaGastosIngresosGrid.Columns.Clear();
+
+            // Agregar las columnas al Guna2DataGridView
+            gunaGastosIngresosGrid.Columns.Add("NombreColumn", "Nombre");
+            gunaGastosIngresosGrid.Columns.Add("CategoriaColumn", "Categoria");
+            gunaGastosIngresosGrid.Columns.Add("MontoColumn", "Monto");
+            gunaGastosIngresosGrid.Columns.Add("FechaColumn", "Fecha");
+
+            // Establecer el modo de ajuste de columna
+            gunaGastosIngresosGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Recorrer la lista de transacciones
+            foreach (var transaccion in Transacciones.transacciones)
+            {
+                if (transaccion != null)
+                {
+                    // Agregar una fila al Guna2DataGridView con los datos de la transacción
+                    gunaGastosIngresosGrid.Rows.Add(transaccion.Nombre, transaccion.Categoria, transaccion.Monto, transaccion.Fecha.ToString("dd/MM/yyyy"));
+                }
+            }
+
+            
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e) //Registrar gasto
         {
             try
             {
@@ -51,67 +98,6 @@ namespace ProyectoFinalEstructuras1
             {
                 MessageBox.Show("Por favor, ingrese valores validos.");
             }
-
         }
-
-        private void vaciarCampos()
-        {
-            nombretxt.Text = "";
-            montotxt.Text = "";
-            fechatxt.Text = "";
-            categoriatxt.Text = "";
-        }
-
-        private void llenarDataGridView()
-        {
-            //Ordenar transacciones por fecha
-            Transacciones.ordenarTransaccionesPorFecha();
-
-
-            // Limpiar cualquier dato existente en el DataGridView
-            gastosIngresosGrid.Rows.Clear();
-            gastosIngresosGrid.Columns.Clear();
-
-            // Agregar las columnas al DataGridView
-            gastosIngresosGrid.Columns.Add("NombreColumn", "Nombre");
-            gastosIngresosGrid.Columns.Add("CategoriaColumn", "Categoria");
-            gastosIngresosGrid.Columns.Add("MontoColumn", "Monto");
-            gastosIngresosGrid.Columns.Add("FechaColumn", "Fecha");
-
-            // Establecer el modo de ajuste de columna
-            gastosIngresosGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            //centrar texto
-            gastosIngresosGrid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            //sombras
-            gastosIngresosGrid.EnableHeadersVisualStyles = false;
-            gastosIngresosGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.Gray;
-            gastosIngresosGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            gastosIngresosGrid.ColumnHeadersDefaultCellStyle.Font = new Font(gastosIngresosGrid.Font, FontStyle.Bold);
-
-
-            // Recorrer la lista de productos
-
-
-            foreach (var transaccion in Transacciones.transacciones)
-            {
-                if (transaccion != null)
-                {
-                    // Agregar una fila al DataGridView con los datos del producto
-                    gastosIngresosGrid.Rows.Add(transaccion.Nombre, transaccion.Categoria, transaccion.Monto, transaccion.Fecha.ToString("dd/MM/yyyy"));
-                }
-            }
-
-            // Opcional: Autoajustar las filas
-            gastosIngresosGrid.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells);
-
-            // Opcional: Autoajustar las columnas en función del contenido
-            gastosIngresosGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-
-            // Opcional: Autoajustar todas las columnas para que se ajusten al ancho del DataGridView
-            //gastosIngresosGrid.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
-        }
-
     }
 }

@@ -12,7 +12,7 @@ namespace ProyectoFinalEstructuras1
 {
     public partial class presupuesto : Form
     {
-       
+
 
         public presupuesto()
         {
@@ -20,36 +20,38 @@ namespace ProyectoFinalEstructuras1
 
         }
 
-        private void button1_Click(object sender, EventArgs e) //Cambiar presupuesto
+        private void button1_Click(object sender, EventArgs e) 
         {
-            try
-            {
-                Transacciones.presupuestoActual = Convert.ToDouble(textBox1.Text);
-                presupuestoLabel.Text = Convert.ToString(Transacciones.presupuestoActual);
-
-                if(gastosIngresos.presupuestoLabel != null) { //Arregle modificando el designer
-
-                    gastosIngresos.presupuestoLabel.Text = Convert.ToString(Transacciones.presupuestoActual);
-                
-                }
-                
-
-                textBox1.Text = "";
-                MessageBox.Show("Presupuesto actualizado exitosamente.");
-
-
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Por favor, ingrese un valor numérico válido.");
-            }
             
+
         }
 
         private void presupuesto_Load(object sender, EventArgs e)
         {
             presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e) //Cambiar presupuesto
+        {
+            try
+            {
+                Transacciones.presupuestoActual = Convert.ToDouble(presupuestoTxt.Text);
+                presupuestoLabel.Text = Convert.ToString(Transacciones.presupuestoActual);
+
+                if (gastosIngresos.presupuestoLabel != null)
+                { //Arregle modificando el designer
+
+                    gastosIngresos.presupuestoLabel.Text = Convert.ToString(Transacciones.presupuestoActual);
+
+                }
+
+                presupuestoTxt.Text = "";
+                MessageBox.Show("Presupuesto actualizado exitosamente.");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Por favor, ingrese un valor numérico válido.");
+            }
         }
     }
 }

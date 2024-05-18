@@ -85,10 +85,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(45, 3);
+            label1.Font = new Font("Showcard Gothic", 10F);
+            label1.Location = new Point(45, 9);
             label1.Name = "label1";
-            label1.Size = new Size(179, 21);
+            label1.Size = new Size(154, 18);
             label1.TabIndex = 1;
             label1.Text = "GESTOR DE FINANZAS";
             // 
@@ -117,7 +117,7 @@
             sidebar.Location = new Point(0, 33);
             sidebar.Name = "sidebar";
             sidebar.Padding = new Padding(0, 30, 0, 0);
-            sidebar.Size = new Size(74, 731);
+            sidebar.Size = new Size(241, 731);
             sidebar.TabIndex = 1;
             // 
             // pnPresupuesto

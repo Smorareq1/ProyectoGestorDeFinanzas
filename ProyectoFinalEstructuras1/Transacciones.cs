@@ -11,6 +11,7 @@ namespace ProyectoFinalEstructuras1
 
         //Variables
         public static double presupuestoActual;
+        public static string correo;
         public static List<Transaccion> transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
 
         public static List<Transaccion> gastos = new List<Transaccion>();
