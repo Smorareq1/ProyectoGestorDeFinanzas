@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label4 = new Label();
             presupuestoLabel = new Label();
@@ -92,7 +92,7 @@
             guna2Button1.Animated = true;
             guna2Button1.AutoRoundedCorners = true;
             guna2Button1.BorderRadius = 28;
-            guna2Button1.CustomizableEdges = customizableEdges9;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -102,7 +102,7 @@
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(580, 447);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(180, 58);
             guna2Button1.TabIndex = 8;
             guna2Button1.Text = "Guardar Presupuesto";
@@ -110,7 +110,7 @@
             // 
             // presupuestoTxt
             // 
-            presupuestoTxt.CustomizableEdges = customizableEdges11;
+            presupuestoTxt.CustomizableEdges = customizableEdges3;
             presupuestoTxt.DefaultText = "";
             presupuestoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             presupuestoTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -124,13 +124,13 @@
             presupuestoTxt.PasswordChar = '\0';
             presupuestoTxt.PlaceholderText = "Nuevo Presupuesto Ej: 0.00";
             presupuestoTxt.SelectedText = "";
-            presupuestoTxt.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            presupuestoTxt.ShadowDecoration.CustomizableEdges = customizableEdges4;
             presupuestoTxt.Size = new Size(380, 36);
             presupuestoTxt.TabIndex = 9;
             // 
             // correoTxt
             // 
-            correoTxt.CustomizableEdges = customizableEdges13;
+            correoTxt.CustomizableEdges = customizableEdges5;
             correoTxt.DefaultText = "";
             correoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             correoTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -144,7 +144,7 @@
             correoTxt.PasswordChar = '\0';
             correoTxt.PlaceholderText = "Correo Ej: correo@ejemplo.com";
             correoTxt.SelectedText = "";
-            correoTxt.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            correoTxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
             correoTxt.Size = new Size(380, 36);
             correoTxt.TabIndex = 10;
             // 
@@ -153,7 +153,7 @@
             guna2Button2.Animated = true;
             guna2Button2.AutoRoundedCorners = true;
             guna2Button2.BorderRadius = 28;
-            guna2Button2.CustomizableEdges = customizableEdges15;
+            guna2Button2.CustomizableEdges = customizableEdges7;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -163,10 +163,11 @@
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Location = new Point(250, 447);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button2.Size = new Size(188, 58);
             guna2Button2.TabIndex = 11;
             guna2Button2.Text = "Gaurdar Correo";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // presupuesto
             // 

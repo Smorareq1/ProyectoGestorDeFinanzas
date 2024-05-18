@@ -104,6 +104,41 @@ namespace ProyectoFinalEstructuras1
             File.WriteAllText(filePath, encryptedData);
         }
 
+        public static string GetCorreoInicial()
+        {
+            string fileName = "correo.json";
+            string filePath = GetJsonFilePath(fileName);
+
+            if (!File.Exists(filePath))
+            {
+                // Crea el archivo con un correo inicial vacío
+                SetCorreoInicial(string.Empty);
+            }
+
+            // Lee el JSON cifrado desde el archivo
+            string jsonData = File.ReadAllText(filePath);
+            string decryptedData = Decrypt(jsonData);
+            var correoInicial = JsonConvert.DeserializeObject<dynamic>(decryptedData);
+            return (string)correoInicial.Correo;
+        }
+
+        public static void SetCorreoInicial(string correo)
+        {
+            string fileName = "correo.json";
+            string filePath = GetJsonFilePath(fileName);
+
+            // Crea un objeto anónimo con el correo inicial
+            var correoInicial = new { Correo = correo };
+
+            // Serializa el objeto anónimo a formato JSON y lo encripta
+            string jsonData = JsonConvert.SerializeObject(correoInicial, Formatting.Indented);
+            string encryptedData = Encrypt(jsonData);
+
+            // Escribe el JSON cifrado en el archivo
+            File.WriteAllText(filePath, encryptedData);
+        }
+
+
         public static void GuardarTransaccionesSinEncriptar(List<Transaccion> transacciones)
         {
             string fileName = "transaccionesNoEncriptadas.json";

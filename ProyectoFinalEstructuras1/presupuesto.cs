@@ -20,9 +20,9 @@ namespace ProyectoFinalEstructuras1
 
         }
 
-        private void button1_Click(object sender, EventArgs e) 
+        private void button1_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -53,5 +53,40 @@ namespace ProyectoFinalEstructuras1
                 MessageBox.Show("Por favor, ingrese un valor numérico válido.");
             }
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e) // Cambiar de correo
+        {
+            try
+            {
+                if (IsValidEmail(correoTxt.Text))
+                {
+                    Transacciones.correo = correoTxt.Text;
+                    MessageBox.Show("Correo cambiado exitosamente.");
+                    correoTxt.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un correo válido.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error: {ex.Message}");
+            }
+        }
+
+        private bool IsValidEmail(string email) //validar si el correo es valido
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
