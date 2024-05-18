@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoFinalEstructuras1
-{  
+{
     public partial class planificacion : Form
     {
 
@@ -127,9 +127,39 @@ namespace ProyectoFinalEstructuras1
             comboBox1.Items.Add("Ahorro");
             comboBox1.Items.Add("Gasto Planeado");
 
+            //centrar panel del titulo y boton
+            titlePanel.Location = new Point((this.Width - titlePanel.Width) / 2, titlePanel.Location.Y);
+            registrarBtn.Location = new Point((this.Width - registrarBtn.Width) / 2, registrarBtn.Location.Y);
+            dataGridView1.Location = new Point((this.Width - dataGridView1.Width) / 2, dataGridView1.Location.Y);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void montotxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fechatxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e) //Boton de registrar meta
         {
             if (string.IsNullOrWhiteSpace(nombretxt.Text) ||
                 string.IsNullOrWhiteSpace(montotxt.Text) ||
@@ -175,26 +205,6 @@ namespace ProyectoFinalEstructuras1
             }
 
             MessageBox.Show(message.ToString(), "Recomendaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void montotxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-         
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fechatxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

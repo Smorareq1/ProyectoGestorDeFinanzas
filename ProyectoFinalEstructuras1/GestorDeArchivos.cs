@@ -60,6 +60,7 @@ namespace ProyectoFinalEstructuras1
             }
         }
 
+       
         private static string GetJsonFilePath(string fileName)
         {
             string jsonDirectory = Path.Combine(Environment.CurrentDirectory, "ArchivosJson");
@@ -69,6 +70,8 @@ namespace ProyectoFinalEstructuras1
             }
             return Path.Combine(jsonDirectory, fileName);
         }
+
+        // ================================== PRESUPUESTO ==================================
 
         public static double GetPresupuestoInicial()
         {
@@ -104,6 +107,8 @@ namespace ProyectoFinalEstructuras1
             File.WriteAllText(filePath, encryptedData);
         }
 
+        // ================================== CORREO ==================================
+
         public static string GetCorreoInicial()
         {
             string fileName = "correo.json";
@@ -138,45 +143,7 @@ namespace ProyectoFinalEstructuras1
             File.WriteAllText(filePath, encryptedData);
         }
 
-
-        public static void GuardarTransaccionesSinEncriptar(List<Transaccion> transacciones)
-        {
-            string fileName = "transaccionesNoEncriptadas.json";
-            string filePath = GetJsonFilePath(fileName);
-
-            // Serializa las transacciones a formato JSON usando Newtonsoft.Json
-            string jsonData = JsonConvert.SerializeObject(transacciones, Formatting.Indented);
-
-            // Escribe el JSON en el archivo
-            File.WriteAllText(filePath, jsonData);
-        }
-
-        public static List<Transaccion> LeerTransaccionesNoEncriptadas()
-        {
-            string fileName = "transaccionesNoEncriptadas.json";
-            string filePath = GetJsonFilePath(fileName);
-
-            if (!File.Exists(filePath))
-            {
-                return new List<Transaccion>(); // Devuelve una lista vacía si el archivo no existe
-            }
-
-            try
-            {
-                // Lee el JSON desde el archivo
-                string jsonData = File.ReadAllText(filePath);
-
-                // Deserializa el JSON a una lista de transacciones
-                List<Transaccion> transacciones = JsonConvert.DeserializeObject<List<Transaccion>>(jsonData);
-                return transacciones;
-            }
-            catch (Exception ex)
-            {
-                // Manejo básico de excepciones al deserializar el JSON
-                Console.WriteLine("Error al leer transacciones no encriptadas: " + ex.Message);
-                return new List<Transaccion>(); // Devuelve una lista vacía en caso de error
-            }
-        }
+        // ================================== TRANSACCIONES ==================================
 
         public static void GuardarTransaccionesEncriptadas(List<Transaccion> transacciones)
         {
@@ -221,6 +188,8 @@ namespace ProyectoFinalEstructuras1
                 return new List<Transaccion>(); // Devuelve una lista vacía en caso de error
             }
         }
+
+        // ================================== METAS ==================================
 
 
 

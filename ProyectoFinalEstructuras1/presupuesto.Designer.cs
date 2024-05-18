@@ -36,6 +36,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label4 = new Label();
             presupuestoLabel = new Label();
@@ -44,13 +46,17 @@
             presupuestoTxt = new Guna.UI2.WinForms.Guna2TextBox();
             correoTxt = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            guna2CustomGradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.DarkSlateGray;
             label1.Font = new Font("Rockwell", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(271, 37);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(100, 9);
             label1.Name = "label1";
             label1.Size = new Size(442, 23);
             label1.TabIndex = 0;
@@ -60,18 +66,22 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Rockwell", 15.75F);
-            label4.Location = new Point(59, 150);
+            label4.BackColor = Color.DarkSlateGray;
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(26, 63);
             label4.Name = "label4";
-            label4.Size = new Size(288, 23);
+            label4.Size = new Size(248, 21);
             label4.TabIndex = 5;
             label4.Text = "Balance Actual de la Cuenta: ";
             // 
             // presupuestoLabel
             // 
             presupuestoLabel.AutoSize = true;
+            presupuestoLabel.BackColor = Color.DarkSlateGray;
             presupuestoLabel.Font = new Font("Rockwell", 15.75F);
-            presupuestoLabel.Location = new Point(701, 136);
+            presupuestoLabel.ForeColor = Color.White;
+            presupuestoLabel.Location = new Point(500, 62);
             presupuestoLabel.Name = "presupuestoLabel";
             presupuestoLabel.Size = new Size(80, 23);
             presupuestoLabel.TabIndex = 6;
@@ -80,8 +90,10 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.DarkSlateGray;
             label6.Font = new Font("Rockwell", 15.75F);
-            label6.Location = new Point(674, 136);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(464, 61);
             label6.Name = "label6";
             label6.Size = new Size(21, 23);
             label6.TabIndex = 7;
@@ -169,23 +181,39 @@
             guna2Button2.Text = "Gaurdar Correo";
             guna2Button2.Click += guna2Button2_Click;
             // 
+            // guna2CustomGradientPanel1
+            // 
+            guna2CustomGradientPanel1.BorderRadius = 20;
+            guna2CustomGradientPanel1.Controls.Add(label1);
+            guna2CustomGradientPanel1.Controls.Add(label4);
+            guna2CustomGradientPanel1.Controls.Add(presupuestoLabel);
+            guna2CustomGradientPanel1.Controls.Add(label6);
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges9;
+            guna2CustomGradientPanel1.FillColor = Color.DarkSlateGray;
+            guna2CustomGradientPanel1.FillColor2 = Color.DarkSlateGray;
+            guna2CustomGradientPanel1.FillColor3 = Color.DarkSlateGray;
+            guna2CustomGradientPanel1.FillColor4 = Color.DarkSlateGray;
+            guna2CustomGradientPanel1.Location = new Point(183, 42);
+            guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2CustomGradientPanel1.Size = new Size(620, 111);
+            guna2CustomGradientPanel1.TabIndex = 12;
+            // 
             // presupuesto
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(965, 672);
+            Controls.Add(guna2CustomGradientPanel1);
             Controls.Add(guna2Button2);
             Controls.Add(correoTxt);
             Controls.Add(presupuestoTxt);
             Controls.Add(guna2Button1);
-            Controls.Add(label6);
-            Controls.Add(presupuestoLabel);
-            Controls.Add(label4);
-            Controls.Add(label1);
             Name = "presupuesto";
             Text = "presupuesto";
             Load += presupuesto_Load;
+            guna2CustomGradientPanel1.ResumeLayout(false);
+            guna2CustomGradientPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -198,5 +226,6 @@
         private Guna.UI2.WinForms.Guna2TextBox presupuestoTxt;
         private Guna.UI2.WinForms.Guna2TextBox correoTxt;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
     }
 }

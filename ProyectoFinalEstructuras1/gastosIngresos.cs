@@ -23,8 +23,8 @@ namespace ProyectoFinalEstructuras1
             presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
             llenarDataGridView();
 
-            //centrar label de titulo
-            tituloLabel.Location = new Point((this.Width - tituloLabel.Width) / 2, tituloLabel.Location.Y);
+            //centrar
+            registrarBtn.Location = new Point((this.Width - registrarBtn.Width) / 2, registrarBtn.Location.Y);
 
         }
 
