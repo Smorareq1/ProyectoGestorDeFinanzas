@@ -56,12 +56,13 @@
             label1.BackColor = Color.DarkSlateGray;
             label1.Font = new Font("Rockwell", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(100, 9);
+            label1.Location = new Point(102, 20);
             label1.Name = "label1";
             label1.Size = new Size(442, 23);
             label1.TabIndex = 0;
             label1.Text = "Editar la cantidad de presupuesto disponible";
             label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Click += label1_Click;
             // 
             // label4
             // 
