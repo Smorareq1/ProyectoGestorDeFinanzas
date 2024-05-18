@@ -86,9 +86,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(45, 9);
+            label1.Location = new Point(45, 3);
             label1.Name = "label1";
-            label1.Size = new Size(143, 17);
+            label1.Size = new Size(179, 21);
             label1.TabIndex = 1;
             label1.Text = "GESTOR DE FINANZAS";
             // 

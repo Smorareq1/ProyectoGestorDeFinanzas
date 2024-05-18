@@ -44,7 +44,7 @@
             label1.Font = new Font("Rockwell", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(271, 37);
             label1.Name = "label1";
-            label1.Size = new Size(442, 23);
+            label1.Size = new Size(569, 31);
             label1.TabIndex = 0;
             label1.Text = "Editar la cantidad de presupuesto disponible";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -73,7 +73,7 @@
             label2.Font = new Font("Rockwell", 15.75F);
             label2.Location = new Point(59, 326);
             label2.Name = "label2";
-            label2.Size = new Size(263, 23);
+            label2.Size = new Size(338, 31);
             label2.TabIndex = 3;
             label2.Text = "Ingrese la cantidad nueva ";
             // 
@@ -81,9 +81,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Rockwell", 15.75F);
-            label3.Location = new Point(112, 349);
+            label3.Location = new Point(112, 357);
             label3.Name = "label3";
-            label3.Size = new Size(172, 23);
+            label3.Size = new Size(220, 31);
             label3.TabIndex = 4;
             label3.Text = "de presupuesto: ";
             // 
@@ -93,7 +93,7 @@
             label4.Font = new Font("Rockwell", 15.75F);
             label4.Location = new Point(59, 187);
             label4.Name = "label4";
-            label4.Size = new Size(288, 23);
+            label4.Size = new Size(373, 31);
             label4.TabIndex = 5;
             label4.Text = "Balance Actual de la Cuenta: ";
             // 
@@ -103,7 +103,7 @@
             presupuestoLabel.Font = new Font("Rockwell", 15.75F);
             presupuestoLabel.Location = new Point(700, 187);
             presupuestoLabel.Name = "presupuestoLabel";
-            presupuestoLabel.Size = new Size(80, 23);
+            presupuestoLabel.Size = new Size(104, 31);
             presupuestoLabel.TabIndex = 6;
             presupuestoLabel.Text = "#####";
             // 
@@ -113,7 +113,7 @@
             label6.Font = new Font("Rockwell", 15.75F);
             label6.Location = new Point(673, 187);
             label6.Name = "label6";
-            label6.Size = new Size(21, 23);
+            label6.Size = new Size(29, 31);
             label6.TabIndex = 7;
             label6.Text = "$";
             // 
