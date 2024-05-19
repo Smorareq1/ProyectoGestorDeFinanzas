@@ -27,7 +27,7 @@ namespace ProyectoFinalEstructuras1
             InitializeComponent();
         }
 
-        private Dictionary<string, List<string>> SpecificRecommendations = new Dictionary<string, List<string>>
+        private Dictionary<string, List<string>> RecoRandom = new Dictionary<string, List<string>>
         {
             {"Ahorro", new List<string>
         {
@@ -73,20 +73,20 @@ namespace ProyectoFinalEstructuras1
             }
         };
 
-        private string GetRandomRecommendation(List<string> sourceList)
+        private string RecRandomUse(List<string> sourceList)
         {
             Random random = new Random();
             int index = random.Next(sourceList.Count);
             return sourceList[index];
         }
 
-        private List<string> GenerateRecommendations(FinancialGoal goal)
+        private List<string> GenerarRec(FinancialGoal goal)
         {
             List<string> recommendations = new List<string>();
 
-            if (SpecificRecommendations.ContainsKey(goal.GoalType))
+            if (RecoRandom.ContainsKey(goal.GoalType))
             {
-                recommendations.Add(GetRandomRecommendation(SpecificRecommendations[goal.GoalType]));
+                recommendations.Add(RecRandomUse(RecoRandom[goal.GoalType]));
             }
 
             int months = ((goal.TargetDate.Year - DateTime.Now.Year) * 12) + goal.TargetDate.Month - DateTime.Now.Month;
@@ -127,7 +127,6 @@ namespace ProyectoFinalEstructuras1
             comboBox1.Items.Add("Ahorro");
             comboBox1.Items.Add("Gasto Planeado");
 
-            //centrar panel del titulo y boton
             titlePanel.Location = new Point((this.Width - titlePanel.Width) / 2, titlePanel.Location.Y);
             registrarBtn.Location = new Point((this.Width - registrarBtn.Width) / 2, registrarBtn.Location.Y);
             dataGridView1.Location = new Point((this.Width - dataGridView1.Width) / 2, dataGridView1.Location.Y);
@@ -159,7 +158,7 @@ namespace ProyectoFinalEstructuras1
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e) //Boton de registrar meta
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nombretxt.Text) ||
                 string.IsNullOrWhiteSpace(montotxt.Text) ||
@@ -196,7 +195,7 @@ namespace ProyectoFinalEstructuras1
             dataGridView1.Rows[index].Cells["Type"].Value = newGoal.GoalType;
             dataGridView1.Rows[index].Cells["Date"].Value = newGoal.TargetDate.ToShortDateString();
 
-            List<string> advice = GenerateRecommendations(newGoal);
+            List<string> advice = GenerarRec(newGoal);
             StringBuilder message = new StringBuilder();
             message.AppendLine("Recomendaciones para alcanzar tu meta:");
             foreach (string recommendation in advice)

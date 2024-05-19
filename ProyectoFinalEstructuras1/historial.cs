@@ -23,7 +23,7 @@ namespace ProyectoFinalEstructuras1
         {
             InitializeComponent();
 
-            
+
         }
 
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
@@ -129,7 +129,7 @@ namespace ProyectoFinalEstructuras1
 
             // Configura el tamaño y la posición del chart
             chart1.Size = new Size(width, height);
-            chart1.Location = new Point(x,y);
+            chart1.Location = new Point(x, y);
         }
 
 
@@ -149,6 +149,11 @@ namespace ProyectoFinalEstructuras1
 
 
         private void historial_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
