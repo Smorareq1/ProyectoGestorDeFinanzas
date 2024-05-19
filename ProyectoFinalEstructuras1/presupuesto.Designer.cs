@@ -111,7 +111,7 @@
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button1.FillColor = Color.DarkSlateGray;
-            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(580, 447);
             guna2Button1.Name = "guna2Button1";
@@ -123,15 +123,18 @@
             // 
             // presupuestoTxt
             // 
+            presupuestoTxt.Animated = true;
+            presupuestoTxt.AutoRoundedCorners = true;
+            presupuestoTxt.BorderRadius = 17;
             presupuestoTxt.CustomizableEdges = customizableEdges3;
             presupuestoTxt.DefaultText = "";
             presupuestoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             presupuestoTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             presupuestoTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             presupuestoTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            presupuestoTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            presupuestoTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             presupuestoTxt.Font = new Font("Segoe UI", 9F);
-            presupuestoTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            presupuestoTxt.HoverState.BorderColor = Color.DarkSlateGray;
             presupuestoTxt.Location = new Point(302, 237);
             presupuestoTxt.Name = "presupuestoTxt";
             presupuestoTxt.PasswordChar = '\0';
@@ -143,15 +146,18 @@
             // 
             // correoTxt
             // 
+            correoTxt.Animated = true;
+            correoTxt.AutoRoundedCorners = true;
+            correoTxt.BorderRadius = 17;
             correoTxt.CustomizableEdges = customizableEdges5;
             correoTxt.DefaultText = "";
             correoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             correoTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             correoTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             correoTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            correoTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            correoTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             correoTxt.Font = new Font("Segoe UI", 9F);
-            correoTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            correoTxt.HoverState.BorderColor = Color.DarkSlateGray;
             correoTxt.Location = new Point(302, 306);
             correoTxt.Name = "correoTxt";
             correoTxt.PasswordChar = '\0';
@@ -172,7 +178,7 @@
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             guna2Button2.FillColor = Color.DarkSlateGray;
-            guna2Button2.Font = new Font("Segoe UI", 9F);
+            guna2Button2.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             guna2Button2.ForeColor = Color.White;
             guna2Button2.Location = new Point(250, 447);
             guna2Button2.Name = "guna2Button2";

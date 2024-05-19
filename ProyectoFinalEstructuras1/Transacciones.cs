@@ -17,6 +17,28 @@ namespace ProyectoFinalEstructuras1
         public static List<Transaccion> gastos = new List<Transaccion>();
         public static List<Transaccion> ingresos = new List<Transaccion>();
 
+        private void leerGastos()
+        {
+            foreach (var t in transacciones)
+            {
+                if (t.Monto < 0)
+                {
+                    gastos.Add(t);
+                }
+            }
+        }
+
+        private void leerIngresos()
+        {
+            foreach (var t in transacciones)
+            {
+                if (t.Monto > 0)
+                {
+                    ingresos.Add(t);
+                }
+            }
+        }
+
 
         public static void mostrarTransacciones() //Prueba
         {

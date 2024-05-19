@@ -88,9 +88,9 @@
             label1.Font = new Font("Showcard Gothic", 10F);
             label1.Location = new Point(45, 9);
             label1.Name = "label1";
-            label1.Size = new Size(154, 18);
+            label1.Size = new Size(109, 18);
             label1.TabIndex = 1;
-            label1.Text = "GESTOR DE FINANZAS";
+            label1.Text = "Finanzas-Pro";
             // 
             // btnHam
             // 

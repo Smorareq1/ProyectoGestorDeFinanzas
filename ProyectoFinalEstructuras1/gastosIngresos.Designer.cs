@@ -187,15 +187,18 @@
             // 
             // nombretxt
             // 
+            nombretxt.Animated = true;
+            nombretxt.AutoRoundedCorners = true;
+            nombretxt.BorderRadius = 17;
             nombretxt.CustomizableEdges = customizableEdges3;
             nombretxt.DefaultText = "";
             nombretxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             nombretxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             nombretxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             nombretxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            nombretxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            nombretxt.FocusedState.BorderColor = Color.DarkSlateGray;
             nombretxt.Font = new Font("Segoe UI", 9F);
-            nombretxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            nombretxt.HoverState.BorderColor = Color.DarkSlateGray;
             nombretxt.Location = new Point(55, 161);
             nombretxt.Name = "nombretxt";
             nombretxt.PasswordChar = '\0';
@@ -207,15 +210,18 @@
             // 
             // categoriatxt
             // 
+            categoriatxt.Animated = true;
+            categoriatxt.AutoRoundedCorners = true;
+            categoriatxt.BorderRadius = 17;
             categoriatxt.CustomizableEdges = customizableEdges5;
             categoriatxt.DefaultText = "";
             categoriatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             categoriatxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             categoriatxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             categoriatxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            categoriatxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            categoriatxt.FocusedState.BorderColor = Color.DarkSlateGray;
             categoriatxt.Font = new Font("Segoe UI", 9F);
-            categoriatxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            categoriatxt.HoverState.BorderColor = Color.DarkSlateGray;
             categoriatxt.Location = new Point(55, 245);
             categoriatxt.Name = "categoriatxt";
             categoriatxt.PasswordChar = '\0';
@@ -227,15 +233,18 @@
             // 
             // fechatxt
             // 
+            fechatxt.Animated = true;
+            fechatxt.AutoRoundedCorners = true;
+            fechatxt.BorderRadius = 17;
             fechatxt.CustomizableEdges = customizableEdges7;
             fechatxt.DefaultText = "";
             fechatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fechatxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             fechatxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             fechatxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            fechatxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            fechatxt.FocusedState.BorderColor = Color.DarkSlateGray;
             fechatxt.Font = new Font("Segoe UI", 9F);
-            fechatxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            fechatxt.HoverState.BorderColor = Color.DarkSlateGray;
             fechatxt.Location = new Point(603, 245);
             fechatxt.Name = "fechatxt";
             fechatxt.PasswordChar = '\0';
@@ -247,15 +256,18 @@
             // 
             // montotxt
             // 
+            montotxt.Animated = true;
+            montotxt.AutoRoundedCorners = true;
+            montotxt.BorderRadius = 17;
             montotxt.CustomizableEdges = customizableEdges9;
             montotxt.DefaultText = "";
             montotxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             montotxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             montotxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             montotxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            montotxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            montotxt.FocusedState.BorderColor = Color.DarkSlateGray;
             montotxt.Font = new Font("Segoe UI", 9F);
-            montotxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            montotxt.HoverState.BorderColor = Color.DarkSlateGray;
             montotxt.Location = new Point(603, 161);
             montotxt.Name = "montotxt";
             montotxt.PasswordChar = '\0';

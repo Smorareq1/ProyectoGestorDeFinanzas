@@ -171,7 +171,7 @@
             registrarBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             registrarBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             registrarBtn.FillColor = Color.DarkSlateGray;
-            registrarBtn.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            registrarBtn.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             registrarBtn.ForeColor = Color.White;
             registrarBtn.Location = new Point(392, 342);
             registrarBtn.Name = "registrarBtn";
