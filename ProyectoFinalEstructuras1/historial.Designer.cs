@@ -36,6 +36,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label2 = new Label();
             label1 = new Label();
@@ -44,7 +47,9 @@
             hastaFechaTxt = new Guna.UI2.WinForms.Guna2TextBox();
             desdeFechaTxt = new Guna.UI2.WinForms.Guna2TextBox();
             label4 = new Label();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -167,11 +172,29 @@
             label4.TabIndex = 17;
             label4.Text = "-";
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart1.Legends.Add(legend1);
+            chart1.Location = new Point(44, 183);
+            chart1.Name = "chart1";
+            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart1.Series.Add(series1);
+            chart1.Size = new Size(892, 300);
+            chart1.TabIndex = 18;
+            chart1.Text = "chart1";
+            // 
             // historial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(965, 672);
+            Controls.Add(chart1);
             Controls.Add(label4);
             Controls.Add(desdeFechaTxt);
             Controls.Add(hastaFechaTxt);
@@ -183,6 +206,7 @@
             Load += historial_Load;
             guna2CustomGradientPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,5 +221,6 @@
         private Guna.UI2.WinForms.Guna2TextBox hastaFechaTxt;
         private Guna.UI2.WinForms.Guna2TextBox desdeFechaTxt;
         private Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
