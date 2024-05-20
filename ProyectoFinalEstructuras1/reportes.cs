@@ -22,13 +22,30 @@ namespace ProyectoFinalEstructuras1
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
         {
-            string fechaInicio = desdeFechaTxt.Text;
-            string fechaFinal = hastaFechaTxt.Text;
+            try
+            {
+                string fechaInicio = desdeFechaTxt.Text;
+                string fechaFinal = hastaFechaTxt.Text;
 
-            DateTime fechaInicialDateTime = DateTime.ParseExact(fechaInicio, "dd/MM/yyyy", null);
-            DateTime fechaFinalDateTime = DateTime.ParseExact(fechaFinal, "dd/MM/yyyy", null);
+                if (fechaInicio == "" || fechaFinal == "")
+                {
+                    MessageBox.Show("Por favor, seleccione un rango de fechas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    DateTime fechaInicialDateTime = DateTime.ParseExact(fechaInicio, "dd/MM/yyyy", null);
+                    DateTime fechaFinalDateTime = DateTime.ParseExact(fechaFinal, "dd/MM/yyyy", null);
 
-            GuardarPDF(GenerarReportePDF(fechaInicialDateTime, fechaFinalDateTime));
+                    GuardarPDF(GenerarReportePDF(fechaInicialDateTime, fechaFinalDateTime));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al generar el PDF: " + ex.Message);
+            }
+            
+            
         }
 
         private byte[] GenerarReportePDF(DateTime fechaInicial, DateTime fechaFinal)
