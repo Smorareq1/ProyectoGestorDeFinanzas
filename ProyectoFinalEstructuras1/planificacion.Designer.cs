@@ -209,8 +209,9 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            dataGridView1.Location = new Point(93, 446);
+            dataGridView1.Location = new Point(93, 448);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = Color.White;
@@ -237,7 +238,7 @@
             dataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridView1.ThemeStyle.HeaderStyle.Height = 25;
-            dataGridView1.ThemeStyle.ReadOnly = false;
+            dataGridView1.ThemeStyle.ReadOnly = true;
             dataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
             dataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
