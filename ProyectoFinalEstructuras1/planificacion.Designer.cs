@@ -83,54 +83,61 @@
             // 
             // nombretxt
             // 
+            nombretxt.AutoRoundedCorners = true;
+            nombretxt.BorderRadius = 16;
             nombretxt.CustomizableEdges = customizableEdges1;
             nombretxt.DefaultText = "";
             nombretxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             nombretxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             nombretxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             nombretxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            nombretxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            nombretxt.FocusedState.BorderColor = Color.DarkSlateGray;
             nombretxt.Font = new Font("Segoe UI", 9F);
-            nombretxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            nombretxt.HoverState.BorderColor = Color.DarkSlateGray;
             nombretxt.Location = new Point(93, 203);
             nombretxt.Name = "nombretxt";
             nombretxt.PasswordChar = '\0';
             nombretxt.PlaceholderText = "Nombre de la meta financiera";
             nombretxt.SelectedText = "";
             nombretxt.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            nombretxt.Size = new Size(295, 23);
+            nombretxt.Size = new Size(295, 35);
             nombretxt.TabIndex = 27;
             // 
             // montotxt
             // 
+            montotxt.AutoRoundedCorners = true;
+            montotxt.BorderRadius = 17;
             montotxt.CustomizableEdges = customizableEdges3;
             montotxt.DefaultText = "";
             montotxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             montotxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             montotxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             montotxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            montotxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            montotxt.FocusedState.BorderColor = Color.DarkSlateGray;
             montotxt.Font = new Font("Segoe UI", 9F);
-            montotxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            montotxt.HoverState.BorderColor = Color.DarkSlateGray;
             montotxt.Location = new Point(93, 262);
             montotxt.Name = "montotxt";
             montotxt.PasswordChar = '\0';
             montotxt.PlaceholderText = "Monto objetivo";
             montotxt.SelectedText = "";
             montotxt.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            montotxt.Size = new Size(295, 23);
+            montotxt.Size = new Size(295, 36);
             montotxt.TabIndex = 28;
             // 
             // comboBox1
             // 
+            comboBox1.AutoRoundedCorners = true;
             comboBox1.BackColor = Color.Transparent;
+            comboBox1.BorderRadius = 12;
             comboBox1.CustomizableEdges = customizableEdges5;
             comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
-            comboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            comboBox1.FocusedColor = Color.DarkSlateGray;
+            comboBox1.FocusedState.BorderColor = Color.DarkSlateGray;
             comboBox1.Font = new Font("Segoe UI", 10F);
             comboBox1.ForeColor = Color.FromArgb(68, 88, 112);
+            comboBox1.HoverState.BorderColor = Color.DarkSlateGray;
             comboBox1.ItemHeight = 20;
             comboBox1.Location = new Point(596, 200);
             comboBox1.Name = "comboBox1";
@@ -140,22 +147,24 @@
             // 
             // fechatxt
             // 
+            fechatxt.AutoRoundedCorners = true;
+            fechatxt.BorderRadius = 17;
             fechatxt.CustomizableEdges = customizableEdges7;
             fechatxt.DefaultText = "";
             fechatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fechatxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             fechatxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             fechatxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            fechatxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            fechatxt.FocusedState.BorderColor = Color.DarkSlateGray;
             fechatxt.Font = new Font("Segoe UI", 9F);
-            fechatxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            fechatxt.HoverState.BorderColor = Color.DarkSlateGray;
             fechatxt.Location = new Point(596, 262);
             fechatxt.Name = "fechatxt";
             fechatxt.PasswordChar = '\0';
             fechatxt.PlaceholderText = "Fecha a cumplir Ej: dd/mm/yyyy";
             fechatxt.SelectedText = "";
             fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            fechatxt.Size = new Size(295, 23);
+            fechatxt.Size = new Size(295, 36);
             fechatxt.TabIndex = 30;
             // 
             // registrarBtn

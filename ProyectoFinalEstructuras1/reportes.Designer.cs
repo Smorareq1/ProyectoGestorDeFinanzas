@@ -71,7 +71,7 @@
             btnGenerarPDF.FillColor = Color.DarkSlateGray;
             btnGenerarPDF.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             btnGenerarPDF.ForeColor = Color.White;
-            btnGenerarPDF.Location = new Point(162, 233);
+            btnGenerarPDF.Location = new Point(168, 367);
             btnGenerarPDF.Name = "btnGenerarPDF";
             btnGenerarPDF.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnGenerarPDF.Size = new Size(180, 45);
@@ -83,7 +83,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(536, 166);
+            label4.Location = new Point(542, 168);
             label4.Name = "label4";
             label4.Size = new Size(16, 19);
             label4.TabIndex = 37;
@@ -91,15 +91,17 @@
             // 
             // desdeFechaTxt
             // 
+            desdeFechaTxt.AutoRoundedCorners = true;
+            desdeFechaTxt.BorderRadius = 13;
             desdeFechaTxt.CustomizableEdges = customizableEdges3;
             desdeFechaTxt.DefaultText = "";
             desdeFechaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             desdeFechaTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             desdeFechaTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             desdeFechaTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            desdeFechaTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            desdeFechaTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             desdeFechaTxt.Font = new Font("Segoe UI", 9F);
-            desdeFechaTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            desdeFechaTxt.HoverState.BorderColor = Color.DarkSlateGray;
             desdeFechaTxt.Location = new Point(292, 166);
             desdeFechaTxt.Margin = new Padding(3, 4, 3, 4);
             desdeFechaTxt.Name = "desdeFechaTxt";
@@ -107,20 +109,22 @@
             desdeFechaTxt.PlaceholderText = "Desde: dd/mm/yyyy";
             desdeFechaTxt.SelectedText = "";
             desdeFechaTxt.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            desdeFechaTxt.Size = new Size(200, 21);
+            desdeFechaTxt.Size = new Size(201, 28);
             desdeFechaTxt.TabIndex = 36;
             // 
             // hastaFechaTxt
             // 
+            hastaFechaTxt.AutoRoundedCorners = true;
+            hastaFechaTxt.BorderRadius = 13;
             hastaFechaTxt.CustomizableEdges = customizableEdges5;
             hastaFechaTxt.DefaultText = "";
             hastaFechaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             hastaFechaTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             hastaFechaTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             hastaFechaTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            hastaFechaTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            hastaFechaTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             hastaFechaTxt.Font = new Font("Segoe UI", 9F);
-            hastaFechaTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            hastaFechaTxt.HoverState.BorderColor = Color.DarkSlateGray;
             hastaFechaTxt.Location = new Point(599, 166);
             hastaFechaTxt.Margin = new Padding(3, 4, 3, 4);
             hastaFechaTxt.Name = "hastaFechaTxt";
@@ -128,7 +132,7 @@
             hastaFechaTxt.PlaceholderText = "Hasta: dd/mm/yyyy";
             hastaFechaTxt.SelectedText = "";
             hastaFechaTxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            hastaFechaTxt.Size = new Size(200, 21);
+            hastaFechaTxt.Size = new Size(196, 28);
             hastaFechaTxt.TabIndex = 35;
             // 
             // definirRango
@@ -148,6 +152,7 @@
             definirRango.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             definirRango.Size = new Size(27, 28);
             definirRango.TabIndex = 34;
+            definirRango.Click += definirRango_Click;
             // 
             // label3
             // 
@@ -174,7 +179,7 @@
             btnGenerarPDFGastos.FillColor = Color.DarkSlateGray;
             btnGenerarPDFGastos.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             btnGenerarPDFGastos.ForeColor = Color.White;
-            btnGenerarPDFGastos.Location = new Point(372, 233);
+            btnGenerarPDFGastos.Location = new Point(378, 367);
             btnGenerarPDFGastos.Name = "btnGenerarPDFGastos";
             btnGenerarPDFGastos.ShadowDecoration.CustomizableEdges = customizableEdges9;
             btnGenerarPDFGastos.Size = new Size(180, 45);
@@ -197,7 +202,7 @@
             btnGenerarPDFIngresos.FillColor = Color.DarkSlateGray;
             btnGenerarPDFIngresos.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             btnGenerarPDFIngresos.ForeColor = Color.White;
-            btnGenerarPDFIngresos.Location = new Point(582, 233);
+            btnGenerarPDFIngresos.Location = new Point(588, 367);
             btnGenerarPDFIngresos.Name = "btnGenerarPDFIngresos";
             btnGenerarPDFIngresos.ShadowDecoration.CustomizableEdges = customizableEdges11;
             btnGenerarPDFIngresos.Size = new Size(180, 45);

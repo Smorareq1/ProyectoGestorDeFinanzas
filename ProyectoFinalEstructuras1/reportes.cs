@@ -44,8 +44,8 @@ namespace ProyectoFinalEstructuras1
             {
                 MessageBox.Show("Error al generar el PDF: " + ex.Message);
             }
-            
-            
+
+
         }
 
         private byte[] GenerarReportePDF(DateTime fechaInicial, DateTime fechaFinal)
@@ -143,7 +143,7 @@ namespace ProyectoFinalEstructuras1
                 doc.Add(new Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
                 doc.Add(new Paragraph($" "));
 
-                PdfPTable table = new PdfPTable(4); 
+                PdfPTable table = new PdfPTable(4);
 
                 float[] comlumnas = { 30, 30, 20, 20 };
                 table.SetWidths(comlumnas);
@@ -204,7 +204,7 @@ namespace ProyectoFinalEstructuras1
                 doc.Add(new Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
                 doc.Add(new Paragraph($" "));
 
-                PdfPTable table = new PdfPTable(4); 
+                PdfPTable table = new PdfPTable(4);
 
                 float[] comlumnas = { 30, 30, 20, 20 };
                 table.SetWidths(comlumnas);
@@ -238,6 +238,11 @@ namespace ProyectoFinalEstructuras1
             }
 
             return stream.ToArray();
+        }
+
+        private void definirRango_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -134,15 +134,18 @@
             // 
             // hastaFechaTxt
             // 
+            hastaFechaTxt.Animated = true;
+            hastaFechaTxt.AutoRoundedCorners = true;
+            hastaFechaTxt.BorderRadius = 9;
             hastaFechaTxt.CustomizableEdges = customizableEdges4;
             hastaFechaTxt.DefaultText = "";
             hastaFechaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             hastaFechaTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             hastaFechaTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             hastaFechaTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            hastaFechaTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            hastaFechaTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             hastaFechaTxt.Font = new Font("Segoe UI", 9F);
-            hastaFechaTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            hastaFechaTxt.HoverState.BorderColor = Color.DarkSlateGray;
             hastaFechaTxt.Location = new Point(578, 120);
             hastaFechaTxt.Margin = new Padding(3, 4, 3, 4);
             hastaFechaTxt.Name = "hastaFechaTxt";
@@ -155,15 +158,18 @@
             // 
             // desdeFechaTxt
             // 
+            desdeFechaTxt.Animated = true;
+            desdeFechaTxt.AutoRoundedCorners = true;
+            desdeFechaTxt.BorderRadius = 9;
             desdeFechaTxt.CustomizableEdges = customizableEdges6;
             desdeFechaTxt.DefaultText = "";
             desdeFechaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             desdeFechaTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             desdeFechaTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             desdeFechaTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            desdeFechaTxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            desdeFechaTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             desdeFechaTxt.Font = new Font("Segoe UI", 9F);
-            desdeFechaTxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            desdeFechaTxt.HoverState.BorderColor = Color.DarkSlateGray;
             desdeFechaTxt.Location = new Point(271, 120);
             desdeFechaTxt.Margin = new Padding(3, 4, 3, 4);
             desdeFechaTxt.Name = "desdeFechaTxt";
@@ -178,7 +184,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(515, 120);
+            label4.Location = new Point(518, 120);
             label4.Name = "label4";
             label4.Size = new Size(16, 19);
             label4.TabIndex = 17;
