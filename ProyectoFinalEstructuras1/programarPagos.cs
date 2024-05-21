@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -220,6 +222,107 @@ namespace ProyectoFinalEstructuras1
 
             // Mostrar el mensaje
             MessageBox.Show(mensaje.ToString(), "Próximos Pagos");
+
+            // Configurar los detalles del correo electrónico
+            string remitente = "finanzaspro00@gmail.com"; // Cambia esto a tu correo de Gmail o Outlook
+            string contrasena = "idcx kbyz fuoc vlnq"; // Cambia esto a tu contraseña o a una contraseña de aplicación
+            string destinatario = Transacciones.correo;
+            string asunto = "Próximos Pagos del Mes";
+            string cuerpo = mensaje.ToString();
+
+            try
+            {
+                // Configurar el cliente SMTP
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587) // Cambia el host y puerto si usas Outlook
+                {
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(remitente, contrasena),
+                    EnableSsl = true
+                };
+
+                // Crear el mensaje de correo
+                MailMessage mailMessage = new MailMessage(remitente, destinatario, asunto, cuerpo)
+                {
+                    IsBodyHtml = false
+                };
+
+                // Enviar el correo
+                smtpClient.Send(mailMessage);
+                MessageBox.Show("Correo enviado exitosamente", "Éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar el correo: {ex.Message}", "Error");
+            }
+        }
+
+        public static void mandarProximos7Dias()
+        {
+            // Obtener el rango de los próximos 7 días
+            DateTime inicioSemana = DateTime.Now;
+            DateTime finSemana = inicioSemana.AddDays(7);
+
+            // Filtrar las transacciones programadas para los próximos 7 días
+            var eventosDeLaSemana = Transacciones.transaccionesProgramadas
+                .Where(evento =>
+                    (evento.Fecha >= inicioSemana && evento.Fecha <= finSemana) ||
+                    (evento.RepetirMensualmente &&
+                     evento.Fecha.Day >= inicioSemana.Day && evento.Fecha.Day <= finSemana.Day))
+                .ToList();
+
+            // Filtrar las transacciones repetidas mensualmente para ajustarlas a los próximos 7 días
+            var eventosRepetidosMensualmente = eventosDeLaSemana
+                .Where(evento => evento.RepetirMensualmente)
+                .Select(evento => new TransaccionProgramada(evento.Nombre, evento.Monto, new DateTime(DateTime.Now.Year, DateTime.Now.Month, evento.Fecha.Day), evento.Categoria, evento.RepetirMensualmente))
+                .ToList();
+
+            // Combinar ambas listas de eventos, excluyendo duplicados
+            var eventosFinalesDeLaSemana = eventosDeLaSemana
+                .Where(evento => !evento.RepetirMensualmente)
+                .Concat(eventosRepetidosMensualmente)
+                .OrderBy(evento => evento.Fecha)
+                .ToList();
+
+            // Crear el mensaje a mostrar
+            StringBuilder mensaje = new StringBuilder();
+            mensaje.AppendLine("Próximos pagos de los próximos 7 días:");
+
+            foreach (var evento in eventosFinalesDeLaSemana)
+            {
+                mensaje.AppendLine($"{evento.Fecha:dd/MM/yyyy} - {evento.Nombre}");
+            }
+
+            // Configurar los detalles del correo electrónico
+            string remitente = "finanzaspro00@gmail.com"; // Cambia esto a tu correo de Gmail o Outlook
+            string contrasena = "idcx kbyz fuoc vlnq"; // Cambia esto a tu contraseña o a una contraseña de aplicación
+            string destinatario = Transacciones.correo;
+            string asunto = "Próximos Pagos de los Próximos 7 Días";
+            string cuerpo = mensaje.ToString();
+
+            try
+            {
+                // Configurar el cliente SMTP
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587) // Cambia el host y puerto si usas Outlook
+                {
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(remitente, contrasena),
+                    EnableSsl = true
+                };
+
+                // Crear el mensaje de correo
+                MailMessage mailMessage = new MailMessage(remitente, destinatario, asunto, cuerpo)
+                {
+                    IsBodyHtml = false
+                };
+
+                // Enviar el correo
+                smtpClient.Send(mailMessage);
+                MessageBox.Show("Correo enviado exitosamente", "Éxito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar el correo: {ex.Message}", "Error");
+            }
         }
 
 

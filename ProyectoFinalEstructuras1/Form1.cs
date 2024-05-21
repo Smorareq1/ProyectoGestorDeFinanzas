@@ -298,6 +298,9 @@ namespace ProyectoFinalEstructuras1
             Transacciones.ordenarTransaccionesProgramadasPorFecha();
             GestorDeArchivos.GuardarTransaccionesProgramadasEncriptadas(Transacciones.transaccionesProgramadas);
 
+            //Mensaje de correo con los pagos 
+            programarPagos.mandarProximos7Dias();
+
             //Salir
             Application.Exit();
         }
