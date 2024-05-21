@@ -48,6 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(programarPagos));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dayContainer = new FlowLayoutPanel();
             btnSiguiente = new Guna.UI2.WinForms.Guna2Button();
             btnAnterior = new Guna.UI2.WinForms.Guna2Button();
@@ -67,6 +69,7 @@
             label8 = new Label();
             guna2CustomGradientPanel8 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             dateLabel = new Label();
+            mandarMensajeBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CustomGradientPanel1.SuspendLayout();
             guna2CustomGradientPanel2.SuspendLayout();
             guna2CustomGradientPanel3.SuspendLayout();
@@ -338,11 +341,31 @@
             dateLabel.Text = "MM/YYYY";
             dateLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // mandarMensajeBtn
+            // 
+            mandarMensajeBtn.Animated = true;
+            mandarMensajeBtn.BackgroundImage = (Image)resources.GetObject("mandarMensajeBtn.BackgroundImage");
+            mandarMensajeBtn.DisabledState.BorderColor = Color.DarkGray;
+            mandarMensajeBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            mandarMensajeBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            mandarMensajeBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            mandarMensajeBtn.FillColor = Color.Transparent;
+            mandarMensajeBtn.Font = new Font("Segoe UI", 9F);
+            mandarMensajeBtn.ForeColor = Color.White;
+            mandarMensajeBtn.Location = new Point(918, 22);
+            mandarMensajeBtn.Name = "mandarMensajeBtn";
+            mandarMensajeBtn.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            mandarMensajeBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            mandarMensajeBtn.Size = new Size(32, 28);
+            mandarMensajeBtn.TabIndex = 13;
+            mandarMensajeBtn.Click += mandarMensajeBtn_Click;
+            // 
             // programarPagos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(965, 672);
+            Controls.Add(mandarMensajeBtn);
             Controls.Add(guna2CustomGradientPanel8);
             Controls.Add(guna2CustomGradientPanel7);
             Controls.Add(guna2CustomGradientPanel6);
@@ -398,5 +421,6 @@
         private Label label8;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel8;
         private Label dateLabel;
+        private Guna.UI2.WinForms.Guna2CircleButton mandarMensajeBtn;
     }
 }

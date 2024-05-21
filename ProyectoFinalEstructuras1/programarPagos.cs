@@ -67,11 +67,12 @@ namespace ProyectoFinalEstructuras1
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.Dias(i);
                 dayContainer.Controls.Add(ucDays);
+                ucDays.mostrarEvento();
             }
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
-        { 
+        {
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace ProyectoFinalEstructuras1
             //Limpiar controles
             dayContainer.Controls.Clear();
 
-            if(mes == 1)
+            if (mes == 1)
             {
                 mes = 12;
                 anio--;
@@ -88,7 +89,7 @@ namespace ProyectoFinalEstructuras1
             {
                 mes--;
             }
-            
+
 
             String mesNombre = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(mes);
             //Hacer mayuscula la primera letra
@@ -121,7 +122,10 @@ namespace ProyectoFinalEstructuras1
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.Dias(i);
                 dayContainer.Controls.Add(ucDays);
+                ucDays.mostrarEvento();
             }
+
+
         }
 
         private void btnSiguiente_Click_1(object sender, EventArgs e)
@@ -130,7 +134,7 @@ namespace ProyectoFinalEstructuras1
             dayContainer.Controls.Clear();
 
 
-            if(mes == 12)
+            if (mes == 12)
             {
                 mes = 1;
                 anio++;
@@ -173,8 +177,52 @@ namespace ProyectoFinalEstructuras1
                 UserControlDays ucDays = new UserControlDays();
                 ucDays.Dias(i);
                 dayContainer.Controls.Add(ucDays);
+                ucDays.mostrarEvento();
+
             }
         }
+
+        private void mandarMensajeBtn_Click(object sender, EventArgs e)
+        {
+            // Obtener el rango del mes actual
+            DateTime inicioMes = new DateTime(anioEstatico, mesEstatico, 1);
+            DateTime finMes = inicioMes.AddMonths(1).AddDays(-1);
+
+            // Filtrar las transacciones programadas para el mes actual
+            var eventosDelMes = Transacciones.transaccionesProgramadas
+                .Where(evento =>
+                    (evento.Fecha >= inicioMes && evento.Fecha <= finMes) ||
+                    (evento.RepetirMensualmente &&
+                     evento.Fecha.Day >= 1 && evento.Fecha.Day <= DateTime.DaysInMonth(anioEstatico, mesEstatico)))
+                .ToList();
+
+            // Filtrar las transacciones repetidas mensualmente para ajustarlas al mes actual
+            var eventosRepetidosMensualmente = eventosDelMes
+                .Where(evento => evento.RepetirMensualmente)
+                .Select(evento => new TransaccionProgramada(evento.Nombre, evento.Monto, new DateTime(anioEstatico, mesEstatico, evento.Fecha.Day), evento.Categoria, evento.RepetirMensualmente))
+                .ToList();
+
+            // Combinar ambas listas de eventos, excluyendo duplicados
+            var eventosFinalesDelMes = eventosDelMes
+                .Where(evento => !evento.RepetirMensualmente)
+                .Concat(eventosRepetidosMensualmente)
+                .OrderBy(evento => evento.Fecha)
+                .ToList();
+
+            // Crear el mensaje a mostrar
+            StringBuilder mensaje = new StringBuilder();
+            mensaje.AppendLine("Próximos pagos del mes:");
+
+            foreach (var evento in eventosFinalesDelMes)
+            {
+                mensaje.AppendLine($"{evento.Fecha:dd/MM/yyyy} - {evento.Nombre}");
+            }
+
+            // Mostrar el mensaje
+            MessageBox.Show(mensaje.ToString(), "Próximos Pagos");
+        }
+
+
     }
 
 }
