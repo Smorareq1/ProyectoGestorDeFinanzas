@@ -13,31 +13,9 @@ namespace ProyectoFinalEstructuras1
         public static double presupuestoActual;
         public static string correo;
         public static List<Transaccion> transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
+        public static List<TransaccionProgramada> transaccionesProgramadas = GestorDeArchivos.LeerTransaccionesProgramadasEncriptadas();
 
-        public static List<Transaccion> gastos = new List<Transaccion>();
-        public static List<Transaccion> ingresos = new List<Transaccion>();
-
-        private void leerGastos()
-        {
-            foreach (var t in transacciones)
-            {
-                if (t.Monto < 0)
-                {
-                    gastos.Add(t);
-                }
-            }
-        }
-
-        private void leerIngresos()
-        {
-            foreach (var t in transacciones)
-            {
-                if (t.Monto > 0)
-                {
-                    ingresos.Add(t);
-                }
-            }
-        }
+        
 
 
         public static void mostrarTransacciones() //Prueba
@@ -53,14 +31,9 @@ namespace ProyectoFinalEstructuras1
             transacciones.Sort((x, y) => DateTime.Compare(x.Fecha, y.Fecha));
         }
 
-        public static void ordenarGastosPorFecha()
+        public static void ordenarTransaccionesProgramadasPorFecha()
         {
-            gastos.Sort((x, y) => DateTime.Compare(x.Fecha, y.Fecha));
-        }
-
-        public static void ordenarIngresosPorFecha()
-        {
-            ingresos.Sort((x, y) => DateTime.Compare(x.Fecha, y.Fecha));
+            transaccionesProgramadas.Sort((x, y) => DateTime.Compare(x.Fecha, y.Fecha));
         }
 
         public static void agregarElemento(Transaccion transaccion)
@@ -70,13 +43,13 @@ namespace ProyectoFinalEstructuras1
             if(transaccion.Monto < 0) //Gasto
             {
                 presupuestoActual += transaccion.Monto;
-                gastos.Add(transaccion);
+               
 
             }
             else
             {
                 presupuestoActual += transaccion.Monto;
-                ingresos.Add(transaccion);
+               
             }
 
             transacciones.Add(transaccion);

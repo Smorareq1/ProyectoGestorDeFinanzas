@@ -189,8 +189,51 @@ namespace ProyectoFinalEstructuras1
             }
         }
 
-        // ================================== METAS ==================================
+        // ================================== TRANSACCIONES PROGRAMADAS ==================================
 
+        public static void GuardarTransaccionesProgramadasEncriptadas(List<TransaccionProgramada> transaccionesProgramadas)
+        {
+            string fileName = "transaccionesProgramadasEncriptadas.json";
+            string filePath = GetJsonFilePath(fileName);
+
+            // Serializa las transacciones a formato JSON usando Newtonsoft.Json
+            string jsonData = JsonConvert.SerializeObject(transaccionesProgramadas, Formatting.Indented);
+            // Encripta el JSON serializado
+            string encryptedData = Encrypt(jsonData);
+
+            // Escribe el JSON encriptado en el archivo
+            File.WriteAllText(filePath, encryptedData);
+        }
+
+        public static List<TransaccionProgramada> LeerTransaccionesProgramadasEncriptadas()
+        {
+            string fileName = "transaccionesProgramadasEncriptadas.json";
+            string filePath = GetJsonFilePath(fileName);
+
+            if (!File.Exists(filePath))
+            {
+                return new List<TransaccionProgramada>(); // Devuelve una lista vacía si el archivo no existe
+            }
+
+            try
+            {
+                // Lee el JSON encriptado desde el archivo
+                string encryptedData = File.ReadAllText(filePath);
+
+                // Desencripta el JSON
+                string jsonData = Decrypt(encryptedData);
+
+                // Deserializa el JSON a una lista de transacciones
+                List<TransaccionProgramada> transaccionesProgramadas = JsonConvert.DeserializeObject<List<TransaccionProgramada>>(jsonData);
+                return transaccionesProgramadas;
+            }
+            catch (Exception ex)
+            {
+                // Manejo básico de excepciones al deserializar el JSON
+                Console.WriteLine("Error al leer transacciones encriptadas: " + ex.Message);
+                return new List<TransaccionProgramada>(); // Devuelve una lista vacía en caso de error
+            }
+        }
 
 
 

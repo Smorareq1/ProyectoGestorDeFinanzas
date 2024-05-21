@@ -27,12 +27,14 @@ namespace ProyectoFinalEstructuras1
         private void Form1_Load(object sender, EventArgs e) //Cargar valores iniciales
         {
             Transacciones.presupuestoActual = GestorDeArchivos.GetPresupuestoInicial();
+
             Transacciones.transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
             Transacciones.ordenarTransaccionesPorFecha();
 
-            Transacciones.correo = GestorDeArchivos.GetCorreoInicial();
-            
-            
+            Transacciones.transaccionesProgramadas = GestorDeArchivos.LeerTransaccionesProgramadasEncriptadas();
+            Transacciones.ordenarTransaccionesProgramadasPorFecha();
+
+            Transacciones.correo = GestorDeArchivos.GetCorreoInicial();       
            
         }
 
@@ -292,6 +294,9 @@ namespace ProyectoFinalEstructuras1
             GestorDeArchivos.GuardarTransaccionesEncriptadas(Transacciones.transacciones);
 
             GestorDeArchivos.SetCorreoInicial(Transacciones.correo);
+
+            Transacciones.ordenarTransaccionesProgramadasPorFecha();
+            GestorDeArchivos.GuardarTransaccionesProgramadasEncriptadas(Transacciones.transaccionesProgramadas);
 
             //Salir
             Application.Exit();
