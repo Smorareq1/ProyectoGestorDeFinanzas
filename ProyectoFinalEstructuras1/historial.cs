@@ -95,6 +95,8 @@ namespace ProyectoFinalEstructuras1
                 serie.Points.Add(punto);
             }
 
+            chart2.Titles.Add("Gastos por categoria");
+
             // Agregar la serie al gráfico
             chart2.Series.Add(serie);
 
@@ -182,6 +184,8 @@ namespace ProyectoFinalEstructuras1
                 serie.Points.Add(punto);
             }
 
+            chart3.Titles.Add("Ingresos por Categoria");
+
             // Agregar la serie al gráfico
             chart3.Series.Add(serie);
 
@@ -254,6 +258,10 @@ namespace ProyectoFinalEstructuras1
             chart1.ChartAreas[0].AxisX.LineColor = Color.Transparent;
             chart1.ChartAreas[0].AxisY.LineColor = Color.Transparent;
 
+            // Configurar títulos de los ejes
+            chart1.ChartAreas[0].AxisX.Title = "Fechas";
+            chart1.ChartAreas[0].AxisY.Title = "Quetzales";
+
             // Filtrar las transacciones dentro del rango de fechas
             var transaccionesEnRango = Transacciones.transacciones
                 .Where(t => t.Fecha >= fechaInicial && t.Fecha <= fechaFinal)
@@ -263,6 +271,7 @@ namespace ProyectoFinalEstructuras1
             Series serie = new Series();
             serie.ChartType = SeriesChartType.Column;
             serie["PointWidth"] = "0.2";
+            serie.IsVisibleInLegend = false; // Ocultar esta serie en la leyenda
 
             // Contador para la posición en el eje X
             int posicionX = 0;
@@ -287,12 +296,28 @@ namespace ProyectoFinalEstructuras1
             // Agregar la serie al gráfico
             chart1.Series.Add(serie);
 
+            // Agregar título al gráfico
+            chart1.Titles.Add("Transacciones Completas");
+
+            // Configurar la leyenda
+            Legend leyenda = new Legend();
+            leyenda.Title = "Leyenda";
+            leyenda.Docking = Docking.Top;
+
+            // Agregar entradas a la leyenda
+            leyenda.CustomItems.Add(new LegendItem("Ingresos", Color.Blue, ""));
+            leyenda.CustomItems.Add(new LegendItem("Gastos", Color.Red, ""));
+
+            chart1.Legends.Add(leyenda);
+
             // Agregar el manejador de evento para el clic en el gráfico
             chart1.MouseClick += Chart1_MouseClick;
 
             // Mostrar el gráfico
             chart1.DataBind(); // Actualiza los datos en el gráfico
         }
+
+
 
         private void LimpiarChartBarras()
         {
