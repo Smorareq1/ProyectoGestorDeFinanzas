@@ -50,10 +50,10 @@
             label2 = new Label();
             presupuestoLabel = new Label();
             nombretxt = new Guna.UI2.WinForms.Guna2TextBox();
-            categoriatxt = new Guna.UI2.WinForms.Guna2TextBox();
             fechatxt = new Guna.UI2.WinForms.Guna2TextBox();
             montotxt = new Guna.UI2.WinForms.Guna2TextBox();
             titlePanel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            categoriatxt = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)gunaGastosIngresosGrid).BeginInit();
             titlePanel.SuspendLayout();
             SuspendLayout();
@@ -210,36 +210,12 @@
             nombretxt.Size = new Size(313, 36);
             nombretxt.TabIndex = 14;
             // 
-            // categoriatxt
-            // 
-            categoriatxt.Animated = true;
-            categoriatxt.AutoRoundedCorners = true;
-            categoriatxt.BorderRadius = 17;
-            categoriatxt.CustomizableEdges = customizableEdges5;
-            categoriatxt.DefaultText = "";
-            categoriatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            categoriatxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            categoriatxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            categoriatxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            categoriatxt.FocusedState.BorderColor = Color.DarkSlateGray;
-            categoriatxt.Font = new Font("Segoe UI", 9F);
-            categoriatxt.HoverState.BorderColor = Color.DarkSlateGray;
-            categoriatxt.Location = new Point(124, 314);
-            categoriatxt.Margin = new Padding(3, 4, 3, 4);
-            categoriatxt.Name = "categoriatxt";
-            categoriatxt.PasswordChar = '\0';
-            categoriatxt.PlaceholderText = "Categoria";
-            categoriatxt.SelectedText = "";
-            categoriatxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            categoriatxt.Size = new Size(313, 36);
-            categoriatxt.TabIndex = 15;
-            // 
             // fechatxt
             // 
             fechatxt.Animated = true;
             fechatxt.AutoRoundedCorners = true;
             fechatxt.BorderRadius = 17;
-            fechatxt.CustomizableEdges = customizableEdges7;
+            fechatxt.CustomizableEdges = customizableEdges5;
             fechatxt.DefaultText = "";
             fechatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fechatxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -254,7 +230,7 @@
             fechatxt.PasswordChar = '\0';
             fechatxt.PlaceholderText = "Fecha Ej: dd/mm/yyyy";
             fechatxt.SelectedText = "";
-            fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
             fechatxt.Size = new Size(315, 36);
             fechatxt.TabIndex = 16;
             // 
@@ -263,7 +239,7 @@
             montotxt.Animated = true;
             montotxt.AutoRoundedCorners = true;
             montotxt.BorderRadius = 17;
-            montotxt.CustomizableEdges = customizableEdges9;
+            montotxt.CustomizableEdges = customizableEdges7;
             montotxt.DefaultText = "";
             montotxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             montotxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -278,7 +254,7 @@
             montotxt.PasswordChar = '\0';
             montotxt.PlaceholderText = "Monto Ej: -10.00";
             montotxt.SelectedText = "";
-            montotxt.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            montotxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
             montotxt.Size = new Size(315, 36);
             montotxt.TabIndex = 17;
             // 
@@ -288,25 +264,42 @@
             titlePanel.Controls.Add(tituloLabel);
             titlePanel.Controls.Add(label2);
             titlePanel.Controls.Add(presupuestoLabel);
-            titlePanel.CustomizableEdges = customizableEdges11;
+            titlePanel.CustomizableEdges = customizableEdges9;
             titlePanel.FillColor = Color.DarkSlateGray;
             titlePanel.FillColor2 = Color.DarkSlateGray;
             titlePanel.FillColor3 = Color.DarkSlateGray;
             titlePanel.FillColor4 = Color.DarkSlateGray;
             titlePanel.Location = new Point(269, 31);
             titlePanel.Name = "titlePanel";
-            titlePanel.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            titlePanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
             titlePanel.Size = new Size(623, 106);
             titlePanel.TabIndex = 18;
+            // 
+            // categoriatxt
+            // 
+            categoriatxt.BackColor = Color.Transparent;
+            categoriatxt.CustomizableEdges = customizableEdges11;
+            categoriatxt.DrawMode = DrawMode.OwnerDrawFixed;
+            categoriatxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            categoriatxt.FocusedColor = Color.FromArgb(94, 148, 255);
+            categoriatxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            categoriatxt.Font = new Font("Segoe UI", 10F);
+            categoriatxt.ForeColor = Color.FromArgb(68, 88, 112);
+            categoriatxt.ItemHeight = 30;
+            categoriatxt.Location = new Point(124, 327);
+            categoriatxt.Name = "categoriatxt";
+            categoriatxt.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            categoriatxt.Size = new Size(313, 36);
+            categoriatxt.TabIndex = 19;
             // 
             // gastosIngresos
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1085, 849);
+            Controls.Add(categoriatxt);
             Controls.Add(titlePanel);
             Controls.Add(montotxt);
             Controls.Add(fechatxt);
-            Controls.Add(categoriatxt);
             Controls.Add(nombretxt);
             Controls.Add(registrarBtn);
             Controls.Add(gunaGastosIngresosGrid);
@@ -326,10 +319,10 @@
         private Guna.UI2.WinForms.Guna2Button registrarBtn;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox nombretxt;
-        private Guna.UI2.WinForms.Guna2TextBox categoriatxt;
         private Guna.UI2.WinForms.Guna2TextBox fechatxt;
         private Guna.UI2.WinForms.Guna2TextBox montotxt;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel titlePanel;
+        private Guna.UI2.WinForms.Guna2ComboBox categoriatxt;
         public static Label presupuestoLabel;
     }
 }

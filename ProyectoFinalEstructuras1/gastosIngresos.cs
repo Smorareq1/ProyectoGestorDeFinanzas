@@ -23,6 +23,13 @@ namespace ProyectoFinalEstructuras1
             presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
             llenarDataGridView();
 
+            categoriatxt.Items.Add("Alimentacion");
+            categoriatxt.Items.Add("Transporte");
+            categoriatxt.Items.Add("Salud");
+            categoriatxt.Items.Add("Educacion");
+            categoriatxt.Items.Add("Entretenimiento");
+            categoriatxt.Items.Add("Otros");
+
             //centrar
             registrarBtn.Location = new Point((this.Width - registrarBtn.Width) / 2, registrarBtn.Location.Y);
 
