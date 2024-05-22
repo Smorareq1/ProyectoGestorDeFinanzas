@@ -64,11 +64,11 @@
             tituloLabel.BackColor = Color.DarkSlateGray;
             tituloLabel.Font = new Font("Rockwell", 15.75F);
             tituloLabel.ForeColor = Color.White;
-            tituloLabel.Location = new Point(140, 11);
+            tituloLabel.Location = new Point(120, 11);
             tituloLabel.Name = "tituloLabel";
-            tituloLabel.Size = new Size(367, 31);
+            tituloLabel.Size = new Size(379, 31);
             tituloLabel.TabIndex = 0;
-            tituloLabel.Text = "Registro de Gatos e Ingresos";
+            tituloLabel.Text = "Registro de Gastos e Ingresos";
             // 
             // gunaGastosIngresosGrid
             // 
@@ -330,6 +330,6 @@
         private Guna.UI2.WinForms.Guna2TextBox fechatxt;
         private Guna.UI2.WinForms.Guna2TextBox montotxt;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel titlePanel;
-        public static Label presupuestoLabel;
+        public Label presupuestoLabel;
     }
 }
