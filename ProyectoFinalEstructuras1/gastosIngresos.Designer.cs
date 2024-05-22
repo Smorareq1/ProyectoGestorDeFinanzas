@@ -330,6 +330,6 @@
         private Guna.UI2.WinForms.Guna2TextBox fechatxt;
         private Guna.UI2.WinForms.Guna2TextBox montotxt;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel titlePanel;
-        public Label presupuestoLabel;
+        public static Label presupuestoLabel;
     }
 }
