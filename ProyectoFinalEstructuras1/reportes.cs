@@ -99,9 +99,13 @@ namespace ProyectoFinalEstructuras1
                 }
 
                 doc.Add(table);
+                doc.Add(new Paragraph(" "));
 
                 // Agregar gráficos al reporte
-                AgregarGraficosAlPDF(doc);
+                doc.Add(new Paragraph("Transacciones Completas"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(AgregarImagenAlPDF(historialForm.GetChart1()));
+                doc.Add(new Paragraph(" "));
             }
             catch (Exception ex)
             {
@@ -115,34 +119,18 @@ namespace ProyectoFinalEstructuras1
             return stream.ToArray();
         }
 
-        private void AgregarGraficosAlPDF(Document doc)
+        private iTextSharp.text.Image AgregarImagenAlPDF(Chart chart)
         {
-            historialForm.GetChart1().Invalidate();
-            historialForm.GetChart1().Update();
-            historialForm.GetChart2().Invalidate();
-            historialForm.GetChart2().Update();
-            historialForm.GetChart3().Invalidate();
-            historialForm.GetChart3().Update();
+            // Renderizar el chart como una imagen y obtener los bytes
+            byte[] chartImageBytes = RenderizarChartComoImagen(chart);
 
-            iTextSharp.text.Image chart1Image = iTextSharp.text.Image.GetInstance(RenderizarChartComoImagen(historialForm.GetChart1()));
-            chart1Image.ScaleToFit(doc.PageSize.Width - doc.LeftMargin - doc.RightMargin, doc.PageSize.Height - doc.TopMargin - doc.BottomMargin);
-            doc.NewPage();
-            doc.Add(new Paragraph("Gráfico de Barras"));
-            doc.Add(chart1Image);
+            // Crear una imagen de iTextSharp a partir de los bytes
+            iTextSharp.text.Image chartImage = iTextSharp.text.Image.GetInstance(chartImageBytes);
 
-            // Agregar chart2
-            iTextSharp.text.Image chart2Image = iTextSharp.text.Image.GetInstance(RenderizarChartComoImagen(historialForm.GetChart2()));
-            chart2Image.ScaleToFit(doc.PageSize.Width - doc.LeftMargin - doc.RightMargin, doc.PageSize.Height - doc.TopMargin - doc.BottomMargin);
-            doc.NewPage();
-            doc.Add(new Paragraph("Gráfico de Pie"));
-            doc.Add(chart2Image);
+            // Ajustar el tamaño de la imagen al tamaño del documento
+            chartImage.ScaleToFit(PageSize.A4.Width - 50, PageSize.A4.Height - 50);
 
-            // Agregar chart3
-            iTextSharp.text.Image chart3Image = iTextSharp.text.Image.GetInstance(RenderizarChartComoImagen(historialForm.GetChart3()));
-            chart3Image.ScaleToFit(doc.PageSize.Width - doc.LeftMargin - doc.RightMargin, doc.PageSize.Height - doc.TopMargin - doc.BottomMargin);
-            doc.NewPage();
-            doc.Add(new Paragraph("Gráfico de Pie"));
-            doc.Add(chart3Image);
+            return chartImage;
         }
         
         private byte[] RenderizarChartComoImagen(Chart chart)
@@ -188,20 +176,16 @@ namespace ProyectoFinalEstructuras1
             try
             {
                 PdfWriter.GetInstance(doc, stream);
-
                 doc.Open();
 
                 doc.Add(new Paragraph("Reporte de Gastos"));
-
                 doc.Add(new Paragraph($"Fecha de inicio: {fechaInicial.ToShortDateString()}"));
                 doc.Add(new Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
                 doc.Add(new Paragraph($" "));
 
                 PdfPTable table = new PdfPTable(4);
-
                 float[] comlumnas = { 30, 30, 20, 20 };
                 table.SetWidths(comlumnas);
-
                 table.AddCell("Nombre");
                 table.AddCell("Categoría");
                 table.AddCell("Monto");
@@ -220,6 +204,13 @@ namespace ProyectoFinalEstructuras1
                 }
 
                 doc.Add(table);
+                doc.Add(new Paragraph(" "));
+
+                // Agregar gráfico de gastos por categoría
+                doc.Add(new Paragraph("Gastos por Categoría"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(AgregarImagenAlPDF(historialForm.GetChart2()));
+                doc.Add(new Paragraph(" "));
             }
             catch (Exception ex)
             {
@@ -253,16 +244,15 @@ namespace ProyectoFinalEstructuras1
             {
                 PdfWriter.GetInstance(doc, stream);
                 doc.Open();
+
                 doc.Add(new Paragraph("Reporte de Ingresos"));
                 doc.Add(new Paragraph($"Fecha de inicio: {fechaInicial.ToShortDateString()}"));
                 doc.Add(new Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
                 doc.Add(new Paragraph($" "));
 
                 PdfPTable table = new PdfPTable(4);
-
                 float[] comlumnas = { 30, 30, 20, 20 };
                 table.SetWidths(comlumnas);
-
                 table.AddCell("Nombre");
                 table.AddCell("Categoría");
                 table.AddCell("Monto");
@@ -281,6 +271,13 @@ namespace ProyectoFinalEstructuras1
                 }
 
                 doc.Add(table);
+                doc.Add(new Paragraph(" "));
+
+                // Agregar gráfico de ingresos por categoría
+                doc.Add(new Paragraph("Ingresos por Categoría"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(AgregarImagenAlPDF(historialForm.GetChart3()));
+                doc.Add(new Paragraph(" "));
             }
             catch (Exception ex)
             {
