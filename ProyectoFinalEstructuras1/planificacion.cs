@@ -97,7 +97,9 @@ namespace ProyectoFinalEstructuras1
             int months = ((goal.TargetDate.Year - DateTime.Now.Year) * 12) + goal.TargetDate.Month - DateTime.Now.Month;
             decimal monthlySavings = goal.TargetAmount / Math.Max(months, 1);
 
+
             recommendations.Add($"Deberás ahorrar una cantidad aproximada de {monthlySavings:C} por mes para alcanzar tu meta en el tiempo previsto.");
+            
             if (months <= 6)
             {
                 recommendations.Add($"Deberás esforzarte para alcanzar tu meta en tan poco tiempo.");

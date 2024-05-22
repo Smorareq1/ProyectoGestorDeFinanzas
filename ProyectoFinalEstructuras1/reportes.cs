@@ -10,14 +10,24 @@ using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
+using ProyectoFinalEstructuras1;
+using System.Drawing.Imaging;
+
+
+
 
 namespace ProyectoFinalEstructuras1
 {
     public partial class reportes : Form
     {
+        historial historialForm;
+
         public reportes()
         {
             InitializeComponent();
+            historialForm = new historial(); // Crear una instancia de historial
+
         }
 
         private void btnGenerarPDF_Click(object sender, EventArgs e)
@@ -36,6 +46,9 @@ namespace ProyectoFinalEstructuras1
                 {
                     DateTime fechaInicialDateTime = DateTime.ParseExact(fechaInicio, "dd/MM/yyyy", null);
                     DateTime fechaFinalDateTime = DateTime.ParseExact(fechaFinal, "dd/MM/yyyy", null);
+
+                    historialForm.ActualizarGraficas(fechaInicialDateTime, fechaFinalDateTime);
+
 
                     GuardarPDF(GenerarReportePDF(fechaInicialDateTime, fechaFinalDateTime));
                 }
@@ -56,20 +69,18 @@ namespace ProyectoFinalEstructuras1
             try
             {
                 PdfWriter.GetInstance(doc, stream);
-
                 doc.Open();
 
-                doc.Add(new Paragraph("Reporte de Transacciones"));
+                // Agregar texto del reporte
+                doc.Add(new iTextSharp.text.Paragraph("Reporte de Transacciones"));
+                doc.Add(new iTextSharp.text.Paragraph($"Fecha de inicio: {fechaInicial.ToShortDateString()}"));
+                doc.Add(new iTextSharp.text.Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
+                doc.Add(new iTextSharp.text.Paragraph(" "));
 
-                doc.Add(new Paragraph($"Fecha de inicio: {fechaInicial.ToShortDateString()}"));
-                doc.Add(new Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
-                doc.Add(new Paragraph($" "));
-
+                // Agregar tabla de transacciones
                 PdfPTable table = new PdfPTable(4);
-
                 float[] comlumnas = { 30, 30, 20, 20 };
                 table.SetWidths(comlumnas);
-
                 table.AddCell("Nombre");
                 table.AddCell("Categoría");
                 table.AddCell("Monto");
@@ -88,6 +99,9 @@ namespace ProyectoFinalEstructuras1
                 }
 
                 doc.Add(table);
+
+                // Agregar gráficos al reporte
+                AgregarGraficosAlPDF(doc);
             }
             catch (Exception ex)
             {
@@ -100,6 +114,46 @@ namespace ProyectoFinalEstructuras1
 
             return stream.ToArray();
         }
+
+        private void AgregarGraficosAlPDF(Document doc)
+        {
+            historialForm.GetChart1().Invalidate();
+            historialForm.GetChart1().Update();
+            historialForm.GetChart2().Invalidate();
+            historialForm.GetChart2().Update();
+            historialForm.GetChart3().Invalidate();
+            historialForm.GetChart3().Update();
+
+            iTextSharp.text.Image chart1Image = iTextSharp.text.Image.GetInstance(RenderizarChartComoImagen(historialForm.GetChart1()));
+            chart1Image.ScaleToFit(doc.PageSize.Width - doc.LeftMargin - doc.RightMargin, doc.PageSize.Height - doc.TopMargin - doc.BottomMargin);
+            doc.NewPage();
+            doc.Add(new Paragraph("Gráfico de Barras"));
+            doc.Add(chart1Image);
+
+            // Agregar chart2
+            iTextSharp.text.Image chart2Image = iTextSharp.text.Image.GetInstance(RenderizarChartComoImagen(historialForm.GetChart2()));
+            chart2Image.ScaleToFit(doc.PageSize.Width - doc.LeftMargin - doc.RightMargin, doc.PageSize.Height - doc.TopMargin - doc.BottomMargin);
+            doc.NewPage();
+            doc.Add(new Paragraph("Gráfico de Pie"));
+            doc.Add(chart2Image);
+
+            // Agregar chart3
+            iTextSharp.text.Image chart3Image = iTextSharp.text.Image.GetInstance(RenderizarChartComoImagen(historialForm.GetChart3()));
+            chart3Image.ScaleToFit(doc.PageSize.Width - doc.LeftMargin - doc.RightMargin, doc.PageSize.Height - doc.TopMargin - doc.BottomMargin);
+            doc.NewPage();
+            doc.Add(new Paragraph("Gráfico de Pie"));
+            doc.Add(chart3Image);
+        }
+        
+        private byte[] RenderizarChartComoImagen(Chart chart)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                chart.SaveImage(ms, ChartImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
 
         private void GuardarPDF(byte[] pdfData)
         {

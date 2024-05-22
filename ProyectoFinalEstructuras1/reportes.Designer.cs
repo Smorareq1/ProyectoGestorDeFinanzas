@@ -34,19 +34,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportes));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnGenerarPDF = new Guna.UI2.WinForms.Guna2Button();
             label4 = new Label();
             desdeFechaTxt = new Guna.UI2.WinForms.Guna2TextBox();
             hastaFechaTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            definirRango = new Guna.UI2.WinForms.Guna2CircleButton();
             label3 = new Label();
             btnGenerarPDFGastos = new Guna.UI2.WinForms.Guna2Button();
             btnGenerarPDFIngresos = new Guna.UI2.WinForms.Guna2Button();
@@ -136,26 +133,6 @@
             hastaFechaTxt.Size = new Size(224, 37);
             hastaFechaTxt.TabIndex = 35;
             // 
-            // definirRango
-            // 
-            definirRango.Animated = true;
-            definirRango.BackgroundImage = (Image)resources.GetObject("definirRango.BackgroundImage");
-            definirRango.DisabledState.BorderColor = Color.DarkGray;
-            definirRango.DisabledState.CustomBorderColor = Color.DarkGray;
-            definirRango.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            definirRango.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            definirRango.FillColor = Color.Transparent;
-            definirRango.Font = new Font("Segoe UI", 9F);
-            definirRango.ForeColor = Color.White;
-            definirRango.Location = new Point(981, 221);
-            definirRango.Margin = new Padding(3, 4, 3, 4);
-            definirRango.Name = "definirRango";
-            definirRango.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            definirRango.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            definirRango.Size = new Size(31, 33);
-            definirRango.TabIndex = 34;
-            definirRango.Click += definirRango_Click;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -173,7 +150,7 @@
             btnGenerarPDFGastos.BorderColor = Color.White;
             btnGenerarPDFGastos.BorderRadius = 29;
             btnGenerarPDFGastos.BorderThickness = 1;
-            btnGenerarPDFGastos.CustomizableEdges = customizableEdges8;
+            btnGenerarPDFGastos.CustomizableEdges = customizableEdges7;
             btnGenerarPDFGastos.DisabledState.BorderColor = Color.DarkGray;
             btnGenerarPDFGastos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGenerarPDFGastos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -184,7 +161,7 @@
             btnGenerarPDFGastos.Location = new Point(432, 489);
             btnGenerarPDFGastos.Margin = new Padding(3, 4, 3, 4);
             btnGenerarPDFGastos.Name = "btnGenerarPDFGastos";
-            btnGenerarPDFGastos.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            btnGenerarPDFGastos.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnGenerarPDFGastos.Size = new Size(206, 60);
             btnGenerarPDFGastos.TabIndex = 38;
             btnGenerarPDFGastos.Text = "Generar registro de gastos";
@@ -197,7 +174,7 @@
             btnGenerarPDFIngresos.BorderColor = Color.White;
             btnGenerarPDFIngresos.BorderRadius = 29;
             btnGenerarPDFIngresos.BorderThickness = 1;
-            btnGenerarPDFIngresos.CustomizableEdges = customizableEdges10;
+            btnGenerarPDFIngresos.CustomizableEdges = customizableEdges9;
             btnGenerarPDFIngresos.DisabledState.BorderColor = Color.DarkGray;
             btnGenerarPDFIngresos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnGenerarPDFIngresos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -208,7 +185,7 @@
             btnGenerarPDFIngresos.Location = new Point(672, 489);
             btnGenerarPDFIngresos.Margin = new Padding(3, 4, 3, 4);
             btnGenerarPDFIngresos.Name = "btnGenerarPDFIngresos";
-            btnGenerarPDFIngresos.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            btnGenerarPDFIngresos.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnGenerarPDFIngresos.Size = new Size(206, 60);
             btnGenerarPDFIngresos.TabIndex = 39;
             btnGenerarPDFIngresos.Text = "Generar registro de ingresos";
@@ -219,7 +196,7 @@
             guna2CustomGradientPanel1.BorderRadius = 20;
             guna2CustomGradientPanel1.Controls.Add(label2);
             guna2CustomGradientPanel1.Controls.Add(label1);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges12;
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges11;
             guna2CustomGradientPanel1.FillColor = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor2 = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor3 = Color.DarkSlateGray;
@@ -227,7 +204,7 @@
             guna2CustomGradientPanel1.Location = new Point(186, 61);
             guna2CustomGradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2CustomGradientPanel1.Size = new Size(722, 107);
             guna2CustomGradientPanel1.TabIndex = 40;
             // 
@@ -266,7 +243,6 @@
             Controls.Add(label4);
             Controls.Add(desdeFechaTxt);
             Controls.Add(hastaFechaTxt);
-            Controls.Add(definirRango);
             Controls.Add(label3);
             Controls.Add(btnGenerarPDF);
             Margin = new Padding(3, 4, 3, 4);
@@ -284,7 +260,6 @@
         private Label label4;
         private Guna.UI2.WinForms.Guna2TextBox desdeFechaTxt;
         private Guna.UI2.WinForms.Guna2TextBox hastaFechaTxt;
-        private Guna.UI2.WinForms.Guna2CircleButton definirRango;
         private Label label3;
         private Guna.UI2.WinForms.Guna2Button btnGenerarPDFGastos;
         private Guna.UI2.WinForms.Guna2Button btnGenerarPDFIngresos;
