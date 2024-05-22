@@ -36,12 +36,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,12 +50,12 @@
             label1 = new Label();
             nombretxt = new Guna.UI2.WinForms.Guna2TextBox();
             montotxt = new Guna.UI2.WinForms.Guna2TextBox();
-            comboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             fechatxt = new Guna.UI2.WinForms.Guna2TextBox();
             registrarBtn = new Guna.UI2.WinForms.Guna2Button();
             dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             titlePanel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             btnCorreo = new Guna.UI2.WinForms.Guna2Button();
+            comboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             titlePanel.SuspendLayout();
             SuspendLayout();
@@ -66,7 +66,7 @@
             label2.BackColor = Color.DarkSlateGray;
             label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(93, 88);
+            label2.Location = new Point(59, 72);
             label2.Name = "label2";
             label2.Size = new Size(535, 21);
             label2.TabIndex = 14;
@@ -78,7 +78,7 @@
             label1.BackColor = Color.DarkSlateGray;
             label1.Font = new Font("Rockwell", 15.75F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(197, 32);
+            label1.Location = new Point(185, 21);
             label1.Name = "label1";
             label1.Size = new Size(306, 31);
             label1.TabIndex = 13;
@@ -130,32 +130,11 @@
             montotxt.Size = new Size(337, 48);
             montotxt.TabIndex = 28;
             // 
-            // comboBox1
-            // 
-            comboBox1.AutoRoundedCorners = true;
-            comboBox1.BackColor = Color.Transparent;
-            comboBox1.BorderRadius = 12;
-            comboBox1.CustomizableEdges = customizableEdges5;
-            comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FocusedColor = Color.DarkSlateGray;
-            comboBox1.FocusedState.BorderColor = Color.DarkSlateGray;
-            comboBox1.Font = new Font("Segoe UI", 10F);
-            comboBox1.ForeColor = Color.FromArgb(68, 88, 112);
-            comboBox1.HoverState.BorderColor = Color.DarkSlateGray;
-            comboBox1.ItemHeight = 20;
-            comboBox1.Location = new Point(681, 267);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            comboBox1.Size = new Size(337, 26);
-            comboBox1.TabIndex = 23;
-            // 
             // fechatxt
             // 
             fechatxt.AutoRoundedCorners = true;
             fechatxt.BorderRadius = 23;
-            fechatxt.CustomizableEdges = customizableEdges7;
+            fechatxt.CustomizableEdges = customizableEdges5;
             fechatxt.DefaultText = "";
             fechatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fechatxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -170,7 +149,7 @@
             fechatxt.PasswordChar = '\0';
             fechatxt.PlaceholderText = "Fecha a cumplir Ej: dd/mm/yyyy";
             fechatxt.SelectedText = "";
-            fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
             fechatxt.Size = new Size(337, 48);
             fechatxt.TabIndex = 30;
             // 
@@ -181,7 +160,7 @@
             registrarBtn.BorderColor = Color.White;
             registrarBtn.BorderRadius = 29;
             registrarBtn.BorderThickness = 1;
-            registrarBtn.CustomizableEdges = customizableEdges9;
+            registrarBtn.CustomizableEdges = customizableEdges7;
             registrarBtn.DisabledState.BorderColor = Color.DarkGray;
             registrarBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             registrarBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -189,10 +168,10 @@
             registrarBtn.FillColor = Color.DarkSlateGray;
             registrarBtn.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             registrarBtn.ForeColor = Color.White;
-            registrarBtn.Location = new Point(290, 447);
+            registrarBtn.Location = new Point(281, 447);
             registrarBtn.Margin = new Padding(3, 4, 3, 4);
             registrarBtn.Name = "registrarBtn";
-            registrarBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            registrarBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
             registrarBtn.Size = new Size(206, 60);
             registrarBtn.TabIndex = 31;
             registrarBtn.Text = "Registrar";
@@ -226,7 +205,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            dataGridView1.Location = new Point(106, 597);
+            dataGridView1.Location = new Point(106, 566);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -242,7 +221,7 @@
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 28;
-            dataGridView1.Size = new Size(912, 200);
+            dataGridView1.Size = new Size(912, 253);
             dataGridView1.TabIndex = 32;
             dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -271,7 +250,7 @@
             titlePanel.BorderRadius = 20;
             titlePanel.Controls.Add(label1);
             titlePanel.Controls.Add(label2);
-            titlePanel.CustomizableEdges = customizableEdges11;
+            titlePanel.CustomizableEdges = customizableEdges9;
             titlePanel.FillColor = Color.DarkSlateGray;
             titlePanel.FillColor2 = Color.DarkSlateGray;
             titlePanel.FillColor3 = Color.DarkSlateGray;
@@ -279,7 +258,7 @@
             titlePanel.Location = new Point(240, 44);
             titlePanel.Margin = new Padding(3, 4, 3, 4);
             titlePanel.Name = "titlePanel";
-            titlePanel.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            titlePanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
             titlePanel.Size = new Size(633, 136);
             titlePanel.TabIndex = 33;
             // 
@@ -290,7 +269,7 @@
             btnCorreo.BorderColor = Color.White;
             btnCorreo.BorderRadius = 29;
             btnCorreo.BorderThickness = 1;
-            btnCorreo.CustomizableEdges = customizableEdges13;
+            btnCorreo.CustomizableEdges = customizableEdges11;
             btnCorreo.DisabledState.BorderColor = Color.DarkGray;
             btnCorreo.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCorreo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -301,23 +280,43 @@
             btnCorreo.Location = new Point(628, 447);
             btnCorreo.Margin = new Padding(3, 4, 3, 4);
             btnCorreo.Name = "btnCorreo";
-            btnCorreo.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnCorreo.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnCorreo.Size = new Size(206, 60);
             btnCorreo.TabIndex = 34;
             btnCorreo.Text = "Enviar por correo planificacion";
             btnCorreo.Click += btnCorreo_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.AutoRoundedCorners = true;
+            comboBox1.BackColor = Color.Transparent;
+            comboBox1.BorderRadius = 23;
+            comboBox1.CustomizableEdges = customizableEdges13;
+            comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
+            comboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            comboBox1.Font = new Font("Segoe UI", 10F);
+            comboBox1.ForeColor = Color.FromArgb(68, 88, 112);
+            comboBox1.IntegralHeight = false;
+            comboBox1.ItemHeight = 42;
+            comboBox1.Location = new Point(681, 271);
+            comboBox1.Name = "comboBox1";
+            comboBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            comboBox1.Size = new Size(337, 48);
+            comboBox1.TabIndex = 35;
+            // 
             // planificacion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1103, 896);
+            ClientSize = new Size(1085, 849);
+            Controls.Add(comboBox1);
             Controls.Add(btnCorreo);
             Controls.Add(titlePanel);
             Controls.Add(dataGridView1);
             Controls.Add(registrarBtn);
             Controls.Add(fechatxt);
-            Controls.Add(comboBox1);
             Controls.Add(montotxt);
             Controls.Add(nombretxt);
             Margin = new Padding(3, 4, 3, 4);
@@ -338,11 +337,11 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2TextBox montotxt;
         private Guna.UI2.WinForms.Guna2TextBox nombretxt;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2TextBox fechatxt;
         private Guna.UI2.WinForms.Guna2Button registrarBtn;
         private Guna.UI2.WinForms.Guna2DataGridView dataGridView1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel titlePanel;
         private Guna.UI2.WinForms.Guna2Button btnCorreo;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox1;
     }
 }

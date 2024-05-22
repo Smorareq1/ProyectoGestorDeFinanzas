@@ -79,7 +79,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1240, 33);
+            panel1.Size = new Size(1359, 33);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -88,7 +88,7 @@
             label1.Font = new Font("Showcard Gothic", 10F);
             label1.Location = new Point(45, 9);
             label1.Name = "label1";
-            label1.Size = new Size(109, 18);
+            label1.Size = new Size(129, 21);
             label1.TabIndex = 1;
             label1.Text = "Finanzas-Pro";
             // 
@@ -117,7 +117,7 @@
             sidebar.Location = new Point(0, 33);
             sidebar.Name = "sidebar";
             sidebar.Padding = new Padding(0, 30, 0, 0);
-            sidebar.Size = new Size(241, 731);
+            sidebar.Size = new Size(241, 905);
             sidebar.TabIndex = 1;
             // 
             // pnPresupuesto
@@ -381,7 +381,7 @@
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(1240, 764);
+            ClientSize = new Size(1359, 938);
             Controls.Add(sidebar);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;

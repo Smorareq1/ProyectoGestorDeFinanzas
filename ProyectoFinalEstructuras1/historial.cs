@@ -343,7 +343,8 @@ namespace ProyectoFinalEstructuras1
 
         private void historial_Load(object sender, EventArgs e)
         {
-
+            //Centrar panel de titulo
+            guna2CustomGradientPanel1.Left = (this.ClientSize.Width - guna2CustomGradientPanel1.Width) / 2;
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -61,7 +61,7 @@
             btnGenerarPDF.Animated = true;
             btnGenerarPDF.AutoRoundedCorners = true;
             btnGenerarPDF.BorderColor = Color.White;
-            btnGenerarPDF.BorderRadius = 21;
+            btnGenerarPDF.BorderRadius = 29;
             btnGenerarPDF.BorderThickness = 1;
             btnGenerarPDF.CustomizableEdges = customizableEdges1;
             btnGenerarPDF.DisabledState.BorderColor = Color.DarkGray;
@@ -71,10 +71,11 @@
             btnGenerarPDF.FillColor = Color.DarkSlateGray;
             btnGenerarPDF.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             btnGenerarPDF.ForeColor = Color.White;
-            btnGenerarPDF.Location = new Point(168, 367);
+            btnGenerarPDF.Location = new Point(192, 489);
+            btnGenerarPDF.Margin = new Padding(3, 4, 3, 4);
             btnGenerarPDF.Name = "btnGenerarPDF";
             btnGenerarPDF.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGenerarPDF.Size = new Size(180, 45);
+            btnGenerarPDF.Size = new Size(206, 60);
             btnGenerarPDF.TabIndex = 32;
             btnGenerarPDF.Text = "Generar registro completo";
             btnGenerarPDF.Click += btnGenerarPDF_Click;
@@ -83,16 +84,16 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(542, 168);
+            label4.Location = new Point(619, 224);
             label4.Name = "label4";
-            label4.Size = new Size(16, 19);
+            label4.Size = new Size(18, 23);
             label4.TabIndex = 37;
             label4.Text = "-";
             // 
             // desdeFechaTxt
             // 
             desdeFechaTxt.AutoRoundedCorners = true;
-            desdeFechaTxt.BorderRadius = 13;
+            desdeFechaTxt.BorderRadius = 17;
             desdeFechaTxt.CustomizableEdges = customizableEdges3;
             desdeFechaTxt.DefaultText = "";
             desdeFechaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -102,20 +103,20 @@
             desdeFechaTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             desdeFechaTxt.Font = new Font("Segoe UI", 9F);
             desdeFechaTxt.HoverState.BorderColor = Color.DarkSlateGray;
-            desdeFechaTxt.Location = new Point(292, 166);
-            desdeFechaTxt.Margin = new Padding(3, 4, 3, 4);
+            desdeFechaTxt.Location = new Point(334, 221);
+            desdeFechaTxt.Margin = new Padding(3, 5, 3, 5);
             desdeFechaTxt.Name = "desdeFechaTxt";
             desdeFechaTxt.PasswordChar = '\0';
             desdeFechaTxt.PlaceholderText = "Desde: dd/mm/yyyy";
             desdeFechaTxt.SelectedText = "";
             desdeFechaTxt.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            desdeFechaTxt.Size = new Size(201, 28);
+            desdeFechaTxt.Size = new Size(230, 37);
             desdeFechaTxt.TabIndex = 36;
             // 
             // hastaFechaTxt
             // 
             hastaFechaTxt.AutoRoundedCorners = true;
-            hastaFechaTxt.BorderRadius = 13;
+            hastaFechaTxt.BorderRadius = 17;
             hastaFechaTxt.CustomizableEdges = customizableEdges5;
             hastaFechaTxt.DefaultText = "";
             hastaFechaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -125,14 +126,14 @@
             hastaFechaTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             hastaFechaTxt.Font = new Font("Segoe UI", 9F);
             hastaFechaTxt.HoverState.BorderColor = Color.DarkSlateGray;
-            hastaFechaTxt.Location = new Point(599, 166);
-            hastaFechaTxt.Margin = new Padding(3, 4, 3, 4);
+            hastaFechaTxt.Location = new Point(685, 221);
+            hastaFechaTxt.Margin = new Padding(3, 5, 3, 5);
             hastaFechaTxt.Name = "hastaFechaTxt";
             hastaFechaTxt.PasswordChar = '\0';
             hastaFechaTxt.PlaceholderText = "Hasta: dd/mm/yyyy";
             hastaFechaTxt.SelectedText = "";
             hastaFechaTxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            hastaFechaTxt.Size = new Size(196, 28);
+            hastaFechaTxt.Size = new Size(224, 37);
             hastaFechaTxt.TabIndex = 35;
             // 
             // definirRango
@@ -146,11 +147,12 @@
             definirRango.FillColor = Color.Transparent;
             definirRango.Font = new Font("Segoe UI", 9F);
             definirRango.ForeColor = Color.White;
-            definirRango.Location = new Point(858, 166);
+            definirRango.Location = new Point(981, 221);
+            definirRango.Margin = new Padding(3, 4, 3, 4);
             definirRango.Name = "definirRango";
             definirRango.ShadowDecoration.CustomizableEdges = customizableEdges7;
             definirRango.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            definirRango.Size = new Size(27, 28);
+            definirRango.Size = new Size(31, 33);
             definirRango.TabIndex = 34;
             definirRango.Click += definirRango_Click;
             // 
@@ -158,9 +160,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(65, 166);
+            label3.Location = new Point(74, 221);
             label3.Name = "label3";
-            label3.Size = new Size(153, 21);
+            label3.Size = new Size(193, 23);
             label3.TabIndex = 33;
             label3.Text = "Seleccione rango: ";
             // 
@@ -169,7 +171,7 @@
             btnGenerarPDFGastos.Animated = true;
             btnGenerarPDFGastos.AutoRoundedCorners = true;
             btnGenerarPDFGastos.BorderColor = Color.White;
-            btnGenerarPDFGastos.BorderRadius = 21;
+            btnGenerarPDFGastos.BorderRadius = 29;
             btnGenerarPDFGastos.BorderThickness = 1;
             btnGenerarPDFGastos.CustomizableEdges = customizableEdges8;
             btnGenerarPDFGastos.DisabledState.BorderColor = Color.DarkGray;
@@ -179,10 +181,11 @@
             btnGenerarPDFGastos.FillColor = Color.DarkSlateGray;
             btnGenerarPDFGastos.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             btnGenerarPDFGastos.ForeColor = Color.White;
-            btnGenerarPDFGastos.Location = new Point(378, 367);
+            btnGenerarPDFGastos.Location = new Point(432, 489);
+            btnGenerarPDFGastos.Margin = new Padding(3, 4, 3, 4);
             btnGenerarPDFGastos.Name = "btnGenerarPDFGastos";
             btnGenerarPDFGastos.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            btnGenerarPDFGastos.Size = new Size(180, 45);
+            btnGenerarPDFGastos.Size = new Size(206, 60);
             btnGenerarPDFGastos.TabIndex = 38;
             btnGenerarPDFGastos.Text = "Generar registro de gastos";
             btnGenerarPDFGastos.Click += btnGenerarPDFGastos_Click;
@@ -192,7 +195,7 @@
             btnGenerarPDFIngresos.Animated = true;
             btnGenerarPDFIngresos.AutoRoundedCorners = true;
             btnGenerarPDFIngresos.BorderColor = Color.White;
-            btnGenerarPDFIngresos.BorderRadius = 21;
+            btnGenerarPDFIngresos.BorderRadius = 29;
             btnGenerarPDFIngresos.BorderThickness = 1;
             btnGenerarPDFIngresos.CustomizableEdges = customizableEdges10;
             btnGenerarPDFIngresos.DisabledState.BorderColor = Color.DarkGray;
@@ -202,10 +205,11 @@
             btnGenerarPDFIngresos.FillColor = Color.DarkSlateGray;
             btnGenerarPDFIngresos.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             btnGenerarPDFIngresos.ForeColor = Color.White;
-            btnGenerarPDFIngresos.Location = new Point(588, 367);
+            btnGenerarPDFIngresos.Location = new Point(672, 489);
+            btnGenerarPDFIngresos.Margin = new Padding(3, 4, 3, 4);
             btnGenerarPDFIngresos.Name = "btnGenerarPDFIngresos";
             btnGenerarPDFIngresos.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            btnGenerarPDFIngresos.Size = new Size(180, 45);
+            btnGenerarPDFIngresos.Size = new Size(206, 60);
             btnGenerarPDFIngresos.TabIndex = 39;
             btnGenerarPDFIngresos.Text = "Generar registro de ingresos";
             btnGenerarPDFIngresos.Click += btnGenerarPDFIngresos_Click;
@@ -220,10 +224,11 @@
             guna2CustomGradientPanel1.FillColor2 = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor3 = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor4 = Color.DarkSlateGray;
-            guna2CustomGradientPanel1.Location = new Point(163, 46);
+            guna2CustomGradientPanel1.Location = new Point(186, 61);
+            guna2CustomGradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            guna2CustomGradientPanel1.Size = new Size(632, 80);
+            guna2CustomGradientPanel1.Size = new Size(722, 107);
             guna2CustomGradientPanel1.TabIndex = 40;
             // 
             // label2
@@ -232,9 +237,9 @@
             label2.BackColor = Color.DarkSlateGray;
             label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(21, 46);
+            label2.Location = new Point(24, 61);
             label2.Name = "label2";
-            label2.Size = new Size(535, 17);
+            label2.Size = new Size(689, 21);
             label2.TabIndex = 1;
             label2.Text = "Se genera un reporte financiero detallado segun el rango y el tipo de transaccion";
             // 
@@ -244,17 +249,17 @@
             label1.BackColor = Color.DarkSlateGray;
             label1.Font = new Font("Rockwell", 15.75F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(168, 11);
+            label1.Location = new Point(192, 15);
             label1.Name = "label1";
-            label1.Size = new Size(246, 23);
+            label1.Size = new Size(313, 31);
             label1.TabIndex = 0;
             label1.Text = "Generacion de Reportes";
             // 
             // reportes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(965, 672);
+            ClientSize = new Size(1085, 849);
             Controls.Add(guna2CustomGradientPanel1);
             Controls.Add(btnGenerarPDFIngresos);
             Controls.Add(btnGenerarPDFGastos);
@@ -264,6 +269,7 @@
             Controls.Add(definirRango);
             Controls.Add(label3);
             Controls.Add(btnGenerarPDF);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "reportes";
             Text = "reportes";
             guna2CustomGradientPanel1.ResumeLayout(false);

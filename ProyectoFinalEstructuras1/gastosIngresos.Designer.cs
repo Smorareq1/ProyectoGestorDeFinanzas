@@ -64,9 +64,9 @@
             tituloLabel.BackColor = Color.DarkSlateGray;
             tituloLabel.Font = new Font("Rockwell", 15.75F);
             tituloLabel.ForeColor = Color.White;
-            tituloLabel.Location = new Point(167, 12);
+            tituloLabel.Location = new Point(140, 11);
             tituloLabel.Name = "tituloLabel";
-            tituloLabel.Size = new Size(289, 23);
+            tituloLabel.Size = new Size(367, 31);
             tituloLabel.TabIndex = 0;
             tituloLabel.Text = "Registro de Gatos e Ingresos";
             // 
@@ -101,7 +101,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             gunaGastosIngresosGrid.DefaultCellStyle = dataGridViewCellStyle3;
             gunaGastosIngresosGrid.GridColor = Color.FromArgb(231, 229, 255);
-            gunaGastosIngresosGrid.Location = new Point(55, 412);
+            gunaGastosIngresosGrid.Location = new Point(55, 503);
             gunaGastosIngresosGrid.Name = "gunaGastosIngresosGrid";
             gunaGastosIngresosGrid.ReadOnly = true;
             gunaGastosIngresosGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -114,8 +114,9 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
             gunaGastosIngresosGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             gunaGastosIngresosGrid.RowHeadersVisible = false;
+            gunaGastosIngresosGrid.RowHeadersWidth = 51;
             gunaGastosIngresosGrid.RowTemplate.Height = 28;
-            gunaGastosIngresosGrid.Size = new Size(863, 237);
+            gunaGastosIngresosGrid.Size = new Size(987, 296);
             gunaGastosIngresosGrid.TabIndex = 12;
             gunaGastosIngresosGrid.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             gunaGastosIngresosGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -153,7 +154,7 @@
             registrarBtn.FillColor = Color.DarkSlateGray;
             registrarBtn.Font = new Font("Segoe UI", 9F);
             registrarBtn.ForeColor = Color.White;
-            registrarBtn.Location = new Point(402, 334);
+            registrarBtn.Location = new Point(472, 422);
             registrarBtn.Name = "registrarBtn";
             registrarBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             registrarBtn.Size = new Size(180, 50);
@@ -169,7 +170,7 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(29, 60);
             label2.Name = "label2";
-            label2.Size = new Size(162, 19);
+            label2.Size = new Size(207, 23);
             label2.TabIndex = 1;
             label2.Text = "Presupuesto actual: ";
             // 
@@ -181,7 +182,7 @@
             presupuestoLabel.ForeColor = Color.White;
             presupuestoLabel.Location = new Point(493, 59);
             presupuestoLabel.Name = "presupuestoLabel";
-            presupuestoLabel.Size = new Size(46, 21);
+            presupuestoLabel.Size = new Size(52, 23);
             presupuestoLabel.TabIndex = 2;
             presupuestoLabel.Text = "###";
             // 
@@ -199,7 +200,8 @@
             nombretxt.FocusedState.BorderColor = Color.DarkSlateGray;
             nombretxt.Font = new Font("Segoe UI", 9F);
             nombretxt.HoverState.BorderColor = Color.DarkSlateGray;
-            nombretxt.Location = new Point(55, 161);
+            nombretxt.Location = new Point(124, 230);
+            nombretxt.Margin = new Padding(3, 4, 3, 4);
             nombretxt.Name = "nombretxt";
             nombretxt.PasswordChar = '\0';
             nombretxt.PlaceholderText = "Nombre";
@@ -222,7 +224,8 @@
             categoriatxt.FocusedState.BorderColor = Color.DarkSlateGray;
             categoriatxt.Font = new Font("Segoe UI", 9F);
             categoriatxt.HoverState.BorderColor = Color.DarkSlateGray;
-            categoriatxt.Location = new Point(55, 245);
+            categoriatxt.Location = new Point(124, 314);
+            categoriatxt.Margin = new Padding(3, 4, 3, 4);
             categoriatxt.Name = "categoriatxt";
             categoriatxt.PasswordChar = '\0';
             categoriatxt.PlaceholderText = "Categoria";
@@ -245,7 +248,8 @@
             fechatxt.FocusedState.BorderColor = Color.DarkSlateGray;
             fechatxt.Font = new Font("Segoe UI", 9F);
             fechatxt.HoverState.BorderColor = Color.DarkSlateGray;
-            fechatxt.Location = new Point(603, 245);
+            fechatxt.Location = new Point(672, 314);
+            fechatxt.Margin = new Padding(3, 4, 3, 4);
             fechatxt.Name = "fechatxt";
             fechatxt.PasswordChar = '\0';
             fechatxt.PlaceholderText = "Fecha Ej: dd/mm/yyyy";
@@ -268,7 +272,8 @@
             montotxt.FocusedState.BorderColor = Color.DarkSlateGray;
             montotxt.Font = new Font("Segoe UI", 9F);
             montotxt.HoverState.BorderColor = Color.DarkSlateGray;
-            montotxt.Location = new Point(603, 161);
+            montotxt.Location = new Point(672, 230);
+            montotxt.Margin = new Padding(3, 4, 3, 4);
             montotxt.Name = "montotxt";
             montotxt.PasswordChar = '\0';
             montotxt.PlaceholderText = "Monto Ej: -10.00";
@@ -288,7 +293,7 @@
             titlePanel.FillColor2 = Color.DarkSlateGray;
             titlePanel.FillColor3 = Color.DarkSlateGray;
             titlePanel.FillColor4 = Color.DarkSlateGray;
-            titlePanel.Location = new Point(179, 12);
+            titlePanel.Location = new Point(269, 31);
             titlePanel.Name = "titlePanel";
             titlePanel.ShadowDecoration.CustomizableEdges = customizableEdges12;
             titlePanel.Size = new Size(623, 106);
@@ -297,7 +302,7 @@
             // gastosIngresos
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(965, 672);
+            ClientSize = new Size(1085, 849);
             Controls.Add(titlePanel);
             Controls.Add(montotxt);
             Controls.Add(fechatxt);

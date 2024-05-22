@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace ProyectoFinalEstructuras1
 {
@@ -132,10 +133,8 @@ namespace ProyectoFinalEstructuras1
             comboBox1.Items.Add("Ahorro");
             comboBox1.Items.Add("Gasto Planeado");
 
-            titlePanel.Location = new Point((this.Width - titlePanel.Width) / 2, titlePanel.Location.Y);
-            registrarBtn.Location = new Point((this.Width - registrarBtn.Width) / 2, registrarBtn.Location.Y);
-            dataGridView1.Location = new Point((this.Width - dataGridView1.Width) / 2, dataGridView1.Location.Y);
 
+            titlePanel.Left = (this.ClientSize.Width - titlePanel.Width) / 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
