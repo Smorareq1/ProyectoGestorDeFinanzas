@@ -27,6 +27,20 @@ namespace ProyectoFinalEstructuras1
 
         }
 
+        public Chart GetChart1()
+        {
+            return chart1;
+        }
+
+        public Chart GetChart2()
+        {
+            return chart2;
+        }
+        public Chart GetChart3()
+        {
+            return chart3;
+        }
+
         private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -61,6 +75,14 @@ namespace ProyectoFinalEstructuras1
 
             
         }
+
+        public void ActualizarGraficas(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            cargarGraficoBarras(fechaInicial, fechaFinal);
+            cargarPieGastos(fechaInicial, fechaFinal);
+            cargarPieIngresos(fechaInicial, fechaFinal);
+        }
+
 
         private void cargarPieGastos(DateTime fechaInicial, DateTime fechaFinal)
         {
