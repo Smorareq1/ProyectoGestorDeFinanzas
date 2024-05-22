@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +22,8 @@ namespace ProyectoFinalEstructuras1
             public decimal TargetAmount { get; set; }
             public string GoalType { get; set; }
             public DateTime TargetDate { get; set; }
+            public List<string> Recommendations { get; set; } = new List<string>();
+
         }
 
         public planificacion()
@@ -106,7 +110,8 @@ namespace ProyectoFinalEstructuras1
                 recommendations.Add($"Tienes suficiente tiempo para alcanzar tu meta, pero sigue siendo importante ahorrar de manera constante.");
             }
 
-            return recommendations;
+            return recommendations.Distinct().ToList(); // Eliminar recomendaciones duplicadas
+
         }
 
 
@@ -189,6 +194,9 @@ namespace ProyectoFinalEstructuras1
                 TargetDate = targetDate
             };
 
+            // Genera recomendaciones y las asigna a la meta financiera
+            newGoal.Recommendations = GenerarRec(newGoal);
+
             int index = dataGridView1.Rows.Add();
             dataGridView1.Rows[index].Cells["Name"].Value = newGoal.Name;
             dataGridView1.Rows[index].Cells["Amount"].Value = newGoal.TargetAmount;
@@ -205,5 +213,69 @@ namespace ProyectoFinalEstructuras1
 
             MessageBox.Show(message.ToString(), "Recomendaciones", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnCorreo_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                StringBuilder cuerpo = new StringBuilder();
+                cuerpo.AppendLine("Recomendaciones para alcanzar tus metas financieras:");
+
+                foreach (DataGridViewRow fila in dataGridView1.Rows)
+                {
+                    string nombreMeta = fila.Cells["Name"].Value != null ? fila.Cells["Name"].Value.ToString() : string.Empty;
+
+                    // Verificar si el nombre de la meta es válido
+                    if (!string.IsNullOrWhiteSpace(nombreMeta))
+                    {
+                        string tipoMeta = fila.Cells["Type"].Value != null ? fila.Cells["Type"].Value.ToString() : string.Empty;
+
+                        // Obtener las recomendaciones asociadas a esta meta
+                        FinancialGoal meta = new FinancialGoal() { Name = nombreMeta, GoalType = tipoMeta };
+                        meta.Recommendations = GenerarRec(meta);
+
+                        // Agregar el nombre de la meta y sus recomendaciones al cuerpo del correo
+                        cuerpo.AppendLine($"- Meta: {meta.Name}");
+                        foreach (string recommendation in meta.Recommendations)
+                        {
+                            cuerpo.AppendLine($"  Recomendación: {recommendation}");
+                        }
+                    }
+                }
+
+                // Configurar los detalles del correo electrónico
+                string remitente = "finanzaspro00@gmail.com";
+                string contrasena = "idcx kbyz fuoc vlnq";
+                string destinatario = Transacciones.correo;
+                string asunto = "Recomendaciones para alcanzar tus metas financieras";
+
+                try
+                {
+                    SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587)
+                    {
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(remitente, contrasena),
+                        EnableSsl = true
+                    };
+
+                    MailMessage mailMessage = new MailMessage(remitente, destinatario, asunto, cuerpo.ToString())
+                    {
+                        IsBodyHtml = false
+                    };
+
+                    smtpClient.Send(mailMessage);
+                    MessageBox.Show("Correo enviado exitosamente", "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al enviar el correo: {ex.Message}", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay metas registradas para enviar recomendaciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
+ 

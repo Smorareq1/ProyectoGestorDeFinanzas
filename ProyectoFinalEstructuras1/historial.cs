@@ -19,6 +19,7 @@ namespace ProyectoFinalEstructuras1
 {
     public partial class historial : Form
     {
+
         public historial()
         {
             InitializeComponent();
@@ -337,7 +338,6 @@ namespace ProyectoFinalEstructuras1
                 MessageBox.Show(nombreCategoria, "Nombre y Categoría de la Transacción");
             }
         }
-
 
 
 
