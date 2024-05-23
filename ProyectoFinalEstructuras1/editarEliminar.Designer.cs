@@ -303,7 +303,6 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(213, 255, 213);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
             gunaGastosIngresosGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            gunaGastosIngresosGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 64, 64);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -410,7 +409,7 @@
             refreshDataGrid.FillColor = Color.Transparent;
             refreshDataGrid.Font = new Font("Segoe UI", 9F);
             refreshDataGrid.ForeColor = Color.White;
-            refreshDataGrid.Location = new Point(1005, 462);
+            refreshDataGrid.Location = new Point(1005, 515);
             refreshDataGrid.Name = "refreshDataGrid";
             refreshDataGrid.ShadowDecoration.CustomizableEdges = customizableEdges21;
             refreshDataGrid.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;

@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inversiones));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label2 = new Label();
             label1 = new Label();
@@ -57,6 +59,7 @@
             PlazoComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             label3 = new Label();
             gunaGastosIngresosGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            refreshDataGrid = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gunaGastosIngresosGrid).BeginInit();
             SuspendLayout();
@@ -66,7 +69,7 @@
             guna2CustomGradientPanel1.BorderRadius = 20;
             guna2CustomGradientPanel1.Controls.Add(label2);
             guna2CustomGradientPanel1.Controls.Add(label1);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges15;
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges1;
             guna2CustomGradientPanel1.FillColor = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor2 = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor3 = Color.DarkSlateGray;
@@ -74,7 +77,7 @@
             guna2CustomGradientPanel1.Location = new Point(203, 27);
             guna2CustomGradientPanel1.Margin = new Padding(3, 4, 3, 4);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2CustomGradientPanel1.Size = new Size(722, 107);
             guna2CustomGradientPanel1.TabIndex = 1;
             // 
@@ -107,7 +110,7 @@
             montoTxt.Animated = true;
             montoTxt.AutoRoundedCorners = true;
             montoTxt.BorderRadius = 17;
-            montoTxt.CustomizableEdges = customizableEdges17;
+            montoTxt.CustomizableEdges = customizableEdges3;
             montoTxt.DefaultText = "";
             montoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             montoTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -120,9 +123,9 @@
             montoTxt.Margin = new Padding(3, 4, 3, 4);
             montoTxt.Name = "montoTxt";
             montoTxt.PasswordChar = '\0';
-            montoTxt.PlaceholderText = "Monto Ej: -10.00";
+            montoTxt.PlaceholderText = "Monto Ej: 1000.00";
             montoTxt.SelectedText = "";
-            montoTxt.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            montoTxt.ShadowDecoration.CustomizableEdges = customizableEdges4;
             montoTxt.Size = new Size(315, 36);
             montoTxt.TabIndex = 23;
             // 
@@ -131,7 +134,7 @@
             fechatxt.Animated = true;
             fechatxt.AutoRoundedCorners = true;
             fechatxt.BorderRadius = 17;
-            fechatxt.CustomizableEdges = customizableEdges19;
+            fechatxt.CustomizableEdges = customizableEdges5;
             fechatxt.DefaultText = "";
             fechatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fechatxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -146,7 +149,7 @@
             fechatxt.PasswordChar = '\0';
             fechatxt.PlaceholderText = "Fecha Ej: dd/mm/yyyy";
             fechatxt.SelectedText = "";
-            fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
             fechatxt.Size = new Size(315, 36);
             fechatxt.TabIndex = 22;
             // 
@@ -155,7 +158,7 @@
             nombretxt.Animated = true;
             nombretxt.AutoRoundedCorners = true;
             nombretxt.BorderRadius = 17;
-            nombretxt.CustomizableEdges = customizableEdges21;
+            nombretxt.CustomizableEdges = customizableEdges7;
             nombretxt.DefaultText = "";
             nombretxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             nombretxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -170,7 +173,7 @@
             nombretxt.PasswordChar = '\0';
             nombretxt.PlaceholderText = "Nombre";
             nombretxt.SelectedText = "";
-            nombretxt.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            nombretxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
             nombretxt.Size = new Size(313, 36);
             nombretxt.TabIndex = 21;
             // 
@@ -180,7 +183,7 @@
             registrarBtn.AutoRoundedCorners = true;
             registrarBtn.BorderColor = Color.White;
             registrarBtn.BorderRadius = 24;
-            registrarBtn.CustomizableEdges = customizableEdges23;
+            registrarBtn.CustomizableEdges = customizableEdges9;
             registrarBtn.DisabledState.BorderColor = Color.DarkGray;
             registrarBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             registrarBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -190,7 +193,7 @@
             registrarBtn.ForeColor = Color.White;
             registrarBtn.Location = new Point(449, 460);
             registrarBtn.Name = "registrarBtn";
-            registrarBtn.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            registrarBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             registrarBtn.Size = new Size(180, 50);
             registrarBtn.TabIndex = 20;
             registrarBtn.Text = "Registrar";
@@ -201,7 +204,7 @@
             tasaInteresTxt.Animated = true;
             tasaInteresTxt.AutoRoundedCorners = true;
             tasaInteresTxt.BorderRadius = 17;
-            tasaInteresTxt.CustomizableEdges = customizableEdges25;
+            tasaInteresTxt.CustomizableEdges = customizableEdges11;
             tasaInteresTxt.DefaultText = "";
             tasaInteresTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             tasaInteresTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -214,9 +217,9 @@
             tasaInteresTxt.Margin = new Padding(3, 4, 3, 4);
             tasaInteresTxt.Name = "tasaInteresTxt";
             tasaInteresTxt.PasswordChar = '\0';
-            tasaInteresTxt.PlaceholderText = "Tasa de Interes";
+            tasaInteresTxt.PlaceholderText = "Tasa de Interes %  Ej: 5";
             tasaInteresTxt.SelectedText = "";
-            tasaInteresTxt.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            tasaInteresTxt.ShadowDecoration.CustomizableEdges = customizableEdges12;
             tasaInteresTxt.Size = new Size(180, 36);
             tasaInteresTxt.TabIndex = 24;
             // 
@@ -225,7 +228,7 @@
             PlazoComboBox.AutoRoundedCorners = true;
             PlazoComboBox.BackColor = Color.Transparent;
             PlazoComboBox.BorderRadius = 17;
-            PlazoComboBox.CustomizableEdges = customizableEdges27;
+            PlazoComboBox.CustomizableEdges = customizableEdges13;
             PlazoComboBox.DrawMode = DrawMode.OwnerDrawFixed;
             PlazoComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             PlazoComboBox.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -235,7 +238,7 @@
             PlazoComboBox.ItemHeight = 30;
             PlazoComboBox.Location = new Point(106, 322);
             PlazoComboBox.Name = "PlazoComboBox";
-            PlazoComboBox.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            PlazoComboBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
             PlazoComboBox.Size = new Size(313, 36);
             PlazoComboBox.TabIndex = 25;
             // 
@@ -252,42 +255,42 @@
             // gunaGastosIngresosGrid
             // 
             gunaGastosIngresosGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(202, 255, 202);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            gunaGastosIngresosGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 64, 64);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(0, 64, 64);
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            gunaGastosIngresosGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(202, 255, 202);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            gunaGastosIngresosGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 64, 64);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 64, 64);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            gunaGastosIngresosGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             gunaGastosIngresosGrid.ColumnHeadersHeight = 25;
             gunaGastosIngresosGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(202, 255, 202);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            gunaGastosIngresosGrid.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(202, 255, 202);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            gunaGastosIngresosGrid.DefaultCellStyle = dataGridViewCellStyle3;
             gunaGastosIngresosGrid.GridColor = Color.FromArgb(231, 229, 255);
             gunaGastosIngresosGrid.Location = new Point(106, 560);
             gunaGastosIngresosGrid.Name = "gunaGastosIngresosGrid";
             gunaGastosIngresosGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            gunaGastosIngresosGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            gunaGastosIngresosGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             gunaGastosIngresosGrid.RowHeadersVisible = false;
             gunaGastosIngresosGrid.RowHeadersWidth = 51;
             gunaGastosIngresosGrid.Size = new Size(863, 240);
@@ -314,11 +317,31 @@
             gunaGastosIngresosGrid.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(202, 255, 202);
             gunaGastosIngresosGrid.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // refreshDataGrid
+            // 
+            refreshDataGrid.Animated = true;
+            refreshDataGrid.BackgroundImage = (Image)resources.GetObject("refreshDataGrid.BackgroundImage");
+            refreshDataGrid.DisabledState.BorderColor = Color.DarkGray;
+            refreshDataGrid.DisabledState.CustomBorderColor = Color.DarkGray;
+            refreshDataGrid.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            refreshDataGrid.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            refreshDataGrid.FillColor = Color.Transparent;
+            refreshDataGrid.Font = new Font("Segoe UI", 9F);
+            refreshDataGrid.ForeColor = Color.White;
+            refreshDataGrid.Location = new Point(975, 560);
+            refreshDataGrid.Name = "refreshDataGrid";
+            refreshDataGrid.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            refreshDataGrid.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            refreshDataGrid.Size = new Size(30, 31);
+            refreshDataGrid.TabIndex = 28;
+            refreshDataGrid.Click += refreshDataGrid_Click;
+            // 
             // Inversiones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 849);
+            Controls.Add(refreshDataGrid);
             Controls.Add(gunaGastosIngresosGrid);
             Controls.Add(label3);
             Controls.Add(PlazoComboBox);
@@ -351,5 +374,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox PlazoComboBox;
         private Label label3;
         private Guna.UI2.WinForms.Guna2DataGridView gunaGastosIngresosGrid;
+        private Guna.UI2.WinForms.Guna2CircleButton refreshDataGrid;
     }
 }

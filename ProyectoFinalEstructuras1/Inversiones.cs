@@ -20,6 +20,8 @@ namespace ProyectoFinalEstructuras1
         private void Inversiones_Load(object sender, EventArgs e)
         {
 
+            llenarDataGrid();
+
             //Llenar con meses
             for (int i = 1; i <= 12; i++)
             {
@@ -53,6 +55,8 @@ namespace ProyectoFinalEstructuras1
                 //Vaciar campos de inversiones
                 vaciarCampos();
 
+                //Actualizar el DataGridView
+                llenarDataGrid();
 
 
             }
@@ -83,9 +87,30 @@ namespace ProyectoFinalEstructuras1
             // Agregar las columnas al Guna2DataGridView
             gunaGastosIngresosGrid.Columns.Add("NombreColumn", "Nombre");
             gunaGastosIngresosGrid.Columns.Add("MontoColumn", "Monto");
-            gunaGastosIngresosGrid.Columns.Add("tasaInteres", "Monto");
+            gunaGastosIngresosGrid.Columns.Add("TasaInteresColumn", "Tasa de interes %");
+            gunaGastosIngresosGrid.Columns.Add("PlazoColumn", "Plazo (meses)");
             gunaGastosIngresosGrid.Columns.Add("FechaColumn", "Fecha");
+            gunaGastosIngresosGrid.Columns.Add("ValorFinalColumn", "Valor Final");
+            gunaGastosIngresosGrid.Columns.Add("RentabilidadColumn", "Rentabilidad");
 
+            // Establecer el modo de ajuste de columna
+            gunaGastosIngresosGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Recorrer la lista de inversiones
+            foreach (var inversion in Transacciones.inversiones)
+            {
+                if (inversion != null)
+                {
+                    // Agregar una fila al Guna2DataGridView con los datos de la transacción
+                    gunaGastosIngresosGrid.Rows.Add(inversion.Nombre, inversion.MontoInvertido, inversion.TasaInteres, inversion.Plazo, inversion.Fecha.ToString("dd/MM/yyyy"), inversion.ValorFinal, inversion.TasaRentabilidad);
+                }
+            }
+
+        }
+
+        private void refreshDataGrid_Click(object sender, EventArgs e)
+        {
+            llenarDataGrid();
         }
     }
 }

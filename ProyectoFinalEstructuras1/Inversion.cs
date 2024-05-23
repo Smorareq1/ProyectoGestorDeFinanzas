@@ -32,13 +32,17 @@ namespace ProyectoFinalEstructuras1
         public double CalcularValorFinal()
         {
             // Ejemplo sencillo de cálculo de interés compuesto
-            return MontoInvertido * Math.Pow(1 + TasaInteres / 100, Plazo);
+            double valorFinal = MontoInvertido * Math.Pow(1 + TasaInteres / 100, Plazo);
+            return Math.Round(valorFinal, 2); // Redondea a 2 decimales
         }
 
         public double CalcularTasaRentabilidad()
         {
-            return ((ValorFinal - MontoInvertido) / MontoInvertido) * 100;
+            double valorFinal = CalcularValorFinal(); // Asumiendo que CalcularValorFinal() ya redondea
+            double tasaRentabilidad = ((valorFinal - MontoInvertido) / MontoInvertido) * 100;
+            return Math.Round(tasaRentabilidad, 2); // Redondea a 2 decimales
         }
+
 
 
 
