@@ -49,7 +49,7 @@
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label2 = new Label();
             label1 = new Label();
-            montotxt = new Guna.UI2.WinForms.Guna2TextBox();
+            montoTxt = new Guna.UI2.WinForms.Guna2TextBox();
             fechatxt = new Guna.UI2.WinForms.Guna2TextBox();
             nombretxt = new Guna.UI2.WinForms.Guna2TextBox();
             registrarBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -102,29 +102,29 @@
             label1.TabIndex = 0;
             label1.Text = "Manejo de inversiones";
             // 
-            // montotxt
+            // montoTxt
             // 
-            montotxt.Animated = true;
-            montotxt.AutoRoundedCorners = true;
-            montotxt.BorderRadius = 17;
-            montotxt.CustomizableEdges = customizableEdges17;
-            montotxt.DefaultText = "";
-            montotxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            montotxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            montotxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            montotxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            montotxt.FocusedState.BorderColor = Color.DarkSlateGray;
-            montotxt.Font = new Font("Segoe UI", 9F);
-            montotxt.HoverState.BorderColor = Color.DarkSlateGray;
-            montotxt.Location = new Point(654, 222);
-            montotxt.Margin = new Padding(3, 4, 3, 4);
-            montotxt.Name = "montotxt";
-            montotxt.PasswordChar = '\0';
-            montotxt.PlaceholderText = "Monto Ej: -10.00";
-            montotxt.SelectedText = "";
-            montotxt.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            montotxt.Size = new Size(315, 36);
-            montotxt.TabIndex = 23;
+            montoTxt.Animated = true;
+            montoTxt.AutoRoundedCorners = true;
+            montoTxt.BorderRadius = 17;
+            montoTxt.CustomizableEdges = customizableEdges17;
+            montoTxt.DefaultText = "";
+            montoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            montoTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            montoTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            montoTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            montoTxt.FocusedState.BorderColor = Color.DarkSlateGray;
+            montoTxt.Font = new Font("Segoe UI", 9F);
+            montoTxt.HoverState.BorderColor = Color.DarkSlateGray;
+            montoTxt.Location = new Point(654, 222);
+            montoTxt.Margin = new Padding(3, 4, 3, 4);
+            montoTxt.Name = "montoTxt";
+            montoTxt.PasswordChar = '\0';
+            montoTxt.PlaceholderText = "Monto Ej: -10.00";
+            montoTxt.SelectedText = "";
+            montoTxt.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            montoTxt.Size = new Size(315, 36);
+            montoTxt.TabIndex = 23;
             // 
             // fechatxt
             // 
@@ -194,6 +194,7 @@
             registrarBtn.Size = new Size(180, 50);
             registrarBtn.TabIndex = 20;
             registrarBtn.Text = "Registrar";
+            registrarBtn.Click += registrarBtn_Click;
             // 
             // tasaInteresTxt
             // 
@@ -257,7 +258,6 @@
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(202, 255, 202);
             dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
             gunaGastosIngresosGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            gunaGastosIngresosGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.FromArgb(0, 64, 64);
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
@@ -323,7 +323,7 @@
             Controls.Add(label3);
             Controls.Add(PlazoComboBox);
             Controls.Add(tasaInteresTxt);
-            Controls.Add(montotxt);
+            Controls.Add(montoTxt);
             Controls.Add(fechatxt);
             Controls.Add(nombretxt);
             Controls.Add(registrarBtn);
@@ -343,7 +343,7 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Label label2;
         private Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox montotxt;
+        private Guna.UI2.WinForms.Guna2TextBox montoTxt;
         private Guna.UI2.WinForms.Guna2TextBox fechatxt;
         private Guna.UI2.WinForms.Guna2TextBox nombretxt;
         private Guna.UI2.WinForms.Guna2Button registrarBtn;

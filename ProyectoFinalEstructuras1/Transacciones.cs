@@ -29,6 +29,11 @@ namespace ProyectoFinalEstructuras1
             transacciones.Sort((x, y) => DateTime.Compare(x.Fecha, y.Fecha));
         }
 
+        public static void ordenarInversionesPorFecha()
+        {
+            inversiones.Sort((x, y) => DateTime.Compare(x.Fecha, y.Fecha));
+        }   
+
         public static void ordenarTransaccionesProgramadasPorFecha()
         {
             transaccionesProgramadas.Sort((x, y) => DateTime.Compare(x.Fecha, y.Fecha));
