@@ -230,13 +230,15 @@ namespace ProyectoFinalEstructuras1
                     if (!string.IsNullOrWhiteSpace(nombreMeta))
                     {
                         string tipoMeta = fila.Cells["Type"].Value != null ? fila.Cells["Type"].Value.ToString() : string.Empty;
+                        string montoMeta = fila.Cells["Amount"].Value != null ? fila.Cells["Amount"].Value.ToString() : string.Empty;
+                        decimal montoMetaDecimal = Convert.ToDecimal(montoMeta);
 
                         // Obtener las recomendaciones asociadas a esta meta
-                        FinancialGoal meta = new FinancialGoal() { Name = nombreMeta, GoalType = tipoMeta };
+                        FinancialGoal meta = new FinancialGoal() { Name = nombreMeta, GoalType = tipoMeta , TargetAmount = montoMetaDecimal };
                         meta.Recommendations = GenerarRec(meta);
 
                         // Agregar el nombre de la meta y sus recomendaciones al cuerpo del correo
-                        cuerpo.AppendLine($"- Meta: {meta.Name}");
+                        cuerpo.AppendLine($"- Meta: {meta.Name} -Monto: {meta.TargetAmount}");
                         foreach (string recommendation in meta.Recommendations)
                         {
                             cuerpo.AppendLine($"  Recomendación: {recommendation}");
