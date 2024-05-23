@@ -85,7 +85,7 @@
             label2.BackColor = Color.DarkSlateGray;
             label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(24, 61);
+            label2.Location = new Point(17, 59);
             label2.Name = "label2";
             label2.Size = new Size(693, 21);
             label2.TabIndex = 1;

@@ -14,9 +14,7 @@ namespace ProyectoFinalEstructuras1
         public static string correo;
         public static List<Transaccion> transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
         public static List<TransaccionProgramada> transaccionesProgramadas = GestorDeArchivos.LeerTransaccionesProgramadasEncriptadas();
-
-        
-
+        public static List<Inversion> inversiones = GestorDeArchivos.LeerInversionesEncriptadas();
 
         public static void mostrarTransacciones() //Prueba
         {

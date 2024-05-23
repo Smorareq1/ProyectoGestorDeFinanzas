@@ -10,6 +10,7 @@ namespace ProyectoFinalEstructuras1
         programarPagos formprogramarPagos;
         planificacion formplanificacion;
         editarEliminar formeditarElimnar;
+        Inversiones formInversiones;
 
 
 
@@ -34,8 +35,10 @@ namespace ProyectoFinalEstructuras1
             Transacciones.transaccionesProgramadas = GestorDeArchivos.LeerTransaccionesProgramadasEncriptadas();
             Transacciones.ordenarTransaccionesProgramadasPorFecha();
 
-            Transacciones.correo = GestorDeArchivos.GetCorreoInicial();       
-           
+            Transacciones.correo = GestorDeArchivos.GetCorreoInicial();
+
+            Transacciones.inversiones = GestorDeArchivos.LeerInversionesEncriptadas();
+
         }
 
         //=========================================== MENU ==================================================
@@ -192,7 +195,7 @@ namespace ProyectoFinalEstructuras1
                 formgastosIngresos.Text = "";
 
 
-                
+
                 formgastosIngresos.Show();
 
             }
@@ -261,7 +264,7 @@ namespace ProyectoFinalEstructuras1
 
         private void button1_Click_1(object sender, EventArgs e) //Editar y eliminar
         {
-            if(formeditarElimnar == null)
+            if (formeditarElimnar == null)
             {
                 formeditarElimnar = new editarEliminar();
                 formeditarElimnar.FormClosed += editarEliminar_FormClosed;
@@ -285,6 +288,32 @@ namespace ProyectoFinalEstructuras1
             formeditarElimnar = null;
         }
 
+        private void button6_Click(object sender, EventArgs e) //Inversiones
+        {
+            if (formInversiones == null)
+            {
+                formInversiones = new Inversiones();
+                formInversiones.FormClosed += formInversiones_FormClosed;
+                formInversiones.MdiParent = this;
+                formInversiones.Dock = DockStyle.Fill;
+
+                formInversiones.ControlBox = false;
+                formInversiones.AllowDrop = false;
+                formInversiones.Text = "";
+
+                formInversiones.Show();
+            }
+            else
+            {
+                formInversiones.Activate();
+            }
+        }
+
+        private void formInversiones_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formInversiones = null;
+        }
+
         private void button7_Click(object sender, EventArgs e)
         {
             //Guardar todos los datos que se hayan trabajado en la aplicacion
@@ -298,6 +327,8 @@ namespace ProyectoFinalEstructuras1
             Transacciones.ordenarTransaccionesProgramadasPorFecha();
             GestorDeArchivos.GuardarTransaccionesProgramadasEncriptadas(Transacciones.transaccionesProgramadas);
 
+            GestorDeArchivos.GuardarInversionesEncriptadas(Transacciones.inversiones);
+
             //Mensaje de correo con los pagos 
             programarPagos.mandarProximos7Dias();
 
@@ -306,6 +337,8 @@ namespace ProyectoFinalEstructuras1
         }
 
         
+
+
 
         //=======================================================================================================
     }

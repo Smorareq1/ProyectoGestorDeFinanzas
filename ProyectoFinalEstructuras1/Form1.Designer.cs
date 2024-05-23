@@ -56,6 +56,8 @@
             button7 = new Button();
             menuTransition = new System.Windows.Forms.Timer(components);
             sidebarTransition = new System.Windows.Forms.Timer(components);
+            panel4 = new Panel();
+            button6 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnHam).BeginInit();
             sidebar.SuspendLayout();
@@ -69,6 +71,7 @@
             pnPlanificacion.SuspendLayout();
             panel3.SuspendLayout();
             pnSalir.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -111,6 +114,7 @@
             sidebar.Controls.Add(pnGastosIngresos);
             sidebar.Controls.Add(pnProgramarPagos);
             sidebar.Controls.Add(pnPlanificacion);
+            sidebar.Controls.Add(panel4);
             sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(pnSalir);
             sidebar.Dock = DockStyle.Left;
@@ -134,7 +138,7 @@
             button2.ForeColor = Color.White;
             button2.Image = (Image)resources.GetObject("button2.Image");
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-10, -11);
+            button2.Location = new Point(-10, -10);
             button2.Name = "button2";
             button2.Padding = new Padding(25, 0, 0, 0);
             button2.Size = new Size(356, 86);
@@ -323,7 +327,7 @@
             // panel3
             // 
             panel3.Controls.Add(button1);
-            panel3.Location = new Point(3, 387);
+            panel3.Location = new Point(3, 459);
             panel3.Name = "panel3";
             panel3.Size = new Size(321, 66);
             panel3.TabIndex = 12;
@@ -347,7 +351,7 @@
             // pnSalir
             // 
             pnSalir.Controls.Add(button7);
-            pnSalir.Location = new Point(3, 459);
+            pnSalir.Location = new Point(3, 531);
             pnSalir.Name = "pnSalir";
             pnSalir.Size = new Size(321, 66);
             pnSalir.TabIndex = 9;
@@ -378,6 +382,30 @@
             sidebarTransition.Interval = 10;
             sidebarTransition.Tick += sidebarTransition_Tick;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(button6);
+            panel4.Location = new Point(3, 387);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(321, 66);
+            panel4.TabIndex = 13;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.DarkSlateGray;
+            button6.ForeColor = Color.White;
+            button6.Image = (Image)resources.GetObject("button6.Image");
+            button6.ImageAlign = ContentAlignment.MiddleLeft;
+            button6.Location = new Point(-10, -9);
+            button6.Name = "button6";
+            button6.Padding = new Padding(25, 0, 0, 0);
+            button6.Size = new Size(356, 86);
+            button6.TabIndex = 2;
+            button6.Text = "                 Inversiones";
+            button6.TextAlign = ContentAlignment.MiddleLeft;
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
             // Form1
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -404,6 +432,7 @@
             pnPlanificacion.ResumeLayout(false);
             panel3.ResumeLayout(false);
             pnSalir.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -435,5 +464,7 @@
         private System.Windows.Forms.Timer sidebarTransition;
         private Panel panel3;
         private Button button1;
+        private Panel panel4;
+        private Button button6;
     }
 }
