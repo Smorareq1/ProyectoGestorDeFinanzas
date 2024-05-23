@@ -48,6 +48,10 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inversiones));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             label2 = new Label();
             label1 = new Label();
@@ -60,6 +64,8 @@
             label3 = new Label();
             gunaGastosIngresosGrid = new Guna.UI2.WinForms.Guna2DataGridView();
             refreshDataGrid = new Guna.UI2.WinForms.Guna2CircleButton();
+            editarBtn = new Guna.UI2.WinForms.Guna2Button();
+            eliminarBtn = new Guna.UI2.WinForms.Guna2Button();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gunaGastosIngresosGrid).BeginInit();
             SuspendLayout();
@@ -336,11 +342,57 @@
             refreshDataGrid.TabIndex = 28;
             refreshDataGrid.Click += refreshDataGrid_Click;
             // 
+            // editarBtn
+            // 
+            editarBtn.Animated = true;
+            editarBtn.AutoRoundedCorners = true;
+            editarBtn.BorderColor = Color.White;
+            editarBtn.BorderRadius = 24;
+            editarBtn.CustomizableEdges = customizableEdges16;
+            editarBtn.DisabledState.BorderColor = Color.DarkGray;
+            editarBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            editarBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            editarBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            editarBtn.FillColor = Color.DarkSlateGray;
+            editarBtn.Font = new Font("Segoe UI", 9F);
+            editarBtn.ForeColor = Color.White;
+            editarBtn.Location = new Point(745, 460);
+            editarBtn.Name = "editarBtn";
+            editarBtn.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            editarBtn.Size = new Size(180, 50);
+            editarBtn.TabIndex = 29;
+            editarBtn.Text = "Editar";
+            editarBtn.Click += editarBtn_Click;
+            // 
+            // eliminarBtn
+            // 
+            eliminarBtn.Animated = true;
+            eliminarBtn.AutoRoundedCorners = true;
+            eliminarBtn.BorderColor = Color.White;
+            eliminarBtn.BorderRadius = 24;
+            eliminarBtn.CustomizableEdges = customizableEdges18;
+            eliminarBtn.DisabledState.BorderColor = Color.DarkGray;
+            eliminarBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            eliminarBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            eliminarBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            eliminarBtn.FillColor = Color.DarkSlateGray;
+            eliminarBtn.Font = new Font("Segoe UI", 9F);
+            eliminarBtn.ForeColor = Color.White;
+            eliminarBtn.Location = new Point(203, 460);
+            eliminarBtn.Name = "eliminarBtn";
+            eliminarBtn.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            eliminarBtn.Size = new Size(180, 50);
+            eliminarBtn.TabIndex = 30;
+            eliminarBtn.Text = "Eliminar";
+            eliminarBtn.Click += eliminarBtn_Click;
+            // 
             // Inversiones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 849);
+            Controls.Add(eliminarBtn);
+            Controls.Add(editarBtn);
             Controls.Add(refreshDataGrid);
             Controls.Add(gunaGastosIngresosGrid);
             Controls.Add(label3);
@@ -375,5 +427,7 @@
         private Label label3;
         private Guna.UI2.WinForms.Guna2DataGridView gunaGastosIngresosGrid;
         private Guna.UI2.WinForms.Guna2CircleButton refreshDataGrid;
+        private Guna.UI2.WinForms.Guna2Button editarBtn;
+        private Guna.UI2.WinForms.Guna2Button eliminarBtn;
     }
 }

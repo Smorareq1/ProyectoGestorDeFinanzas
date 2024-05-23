@@ -12,9 +12,12 @@ namespace ProyectoFinalEstructuras1
 {
     public partial class Inversiones : Form
     {
+
+        private int indiceFilaSeleccionada = -1;
         public Inversiones()
         {
             InitializeComponent();
+            gunaGastosIngresosGrid.CellClick += gunaGastosIngresosGrid_CellClick;
         }
 
         private void Inversiones_Load(object sender, EventArgs e)
@@ -44,21 +47,25 @@ namespace ProyectoFinalEstructuras1
                 int plazo = Convert.ToInt32(PlazoComboBox.SelectedItem);
                 string fecha = fechatxt.Text;
 
+                if(monto < 0 && tasaInteres < 0)
+                {
+                    //Convertir fecha a DateTime
+                    DateTime fechaDT = DateTime.ParseExact(fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                    Inversion nuevaInversion = new Inversion(nombre, monto, fechaDT, tasaInteres, plazo);
 
-                //Convertir fecha a DateTime
-                DateTime fechaDT = DateTime.ParseExact(fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                Inversion nuevaInversion = new Inversion(nombre, monto, fechaDT, tasaInteres, plazo);
+                    //Agregar a la lista de inversiones
+                    Transacciones.inversiones.Add(nuevaInversion);
 
-                //Agregar a la lista de inversiones
-                Transacciones.inversiones.Add(nuevaInversion);
+                    //Vaciar campos de inversiones
+                    vaciarCampos();
 
-                //Vaciar campos de inversiones
-                vaciarCampos();
-
-                //Actualizar el DataGridView
-                llenarDataGrid();
-
-
+                    //Actualizar el DataGridView
+                    llenarDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un valor numérico válido.");
+                }
             }
             catch (Exception ex)
             {
@@ -111,6 +118,107 @@ namespace ProyectoFinalEstructuras1
         private void refreshDataGrid_Click(object sender, EventArgs e)
         {
             llenarDataGrid();
+        }
+
+        private void gunaGastosIngresosGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Verificar si se ha seleccionado una fila válida
+                if (e.RowIndex >= 0)
+                {
+                    // Obtener el índice de la fila seleccionada
+                    indiceFilaSeleccionada = e.RowIndex;
+
+                    // Obtener la transacción seleccionada
+                    var inversionSeleccionada = Transacciones.inversiones[indiceFilaSeleccionada];
+
+                    // Colocar los valores de la transacción en los TextBox
+                    nombretxt.Text = inversionSeleccionada.Nombre;
+                    montoTxt.Text = inversionSeleccionada.MontoInvertido.ToString();
+                    tasaInteresTxt.Text = inversionSeleccionada.TasaInteres.ToString();
+                    PlazoComboBox.SelectedItem = inversionSeleccionada.Plazo;
+                    fechatxt.Text = inversionSeleccionada.Fecha.ToString("dd/MM/yyyy");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            
+        }
+
+        private void editarBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (indiceFilaSeleccionada != -1)
+                {
+                    // Crear una nueva transacción con los datos editados
+                    string nombre = nombretxt.Text;
+                    double monto = Convert.ToDouble(montoTxt.Text);
+                    double tasaInteres = Convert.ToDouble(tasaInteresTxt.Text);
+                    int plazo = Convert.ToInt32(PlazoComboBox.SelectedItem);
+                    string fecha = fechatxt.Text;
+
+
+                    //Convertir fecha a DateTime
+                    DateTime fechaDT = DateTime.ParseExact(fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                    Inversion nuevaInversion = new Inversion(nombre, monto, fechaDT, tasaInteres, plazo);
+
+                    // Reemplazar la transacción anterior con la editada
+                    Transacciones.inversiones[indiceFilaSeleccionada] = nuevaInversion;
+
+                    // Limpiar el índice seleccionado
+                    indiceFilaSeleccionada = -1;
+
+                    // Limpiar los TextBox
+                    vaciarCampos();
+
+                    // Actualizar el DataGridView
+                    llenarDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una transacción para editar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            
+            
+        }
+
+        private void eliminarBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (indiceFilaSeleccionada != -1)
+                {
+
+                    Transacciones.inversiones.RemoveAt(indiceFilaSeleccionada);
+
+                    // Limpiar el índice seleccionado
+                    indiceFilaSeleccionada = -1;
+
+
+                    vaciarCampos();
+
+                    // Actualizar el DataGridView
+                    llenarDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una transacción para editar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            
         }
     }
 }
