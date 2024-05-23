@@ -76,7 +76,29 @@ namespace ProyectoFinalEstructuras1
                 }
             }
 
-            
+            // Suscribirse al evento CellFormatting para cambiar el color del texto
+            gunaGastosIngresosGrid.CellFormatting += gunaGastosIngresosGrid_CellFormatting;
+        }
+
+        private void gunaGastosIngresosGrid_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Verificar si la columna actual es la columna de monto
+            if (gunaGastosIngresosGrid.Columns[e.ColumnIndex].Name == "MontoColumn")
+            {
+                // Obtener el valor del monto
+                if (e.Value != null && double.TryParse(e.Value.ToString(), out double monto))
+                {
+                    // Cambiar el color del texto basado en el valor del monto
+                    if (monto < 0)
+                    {
+                        e.CellStyle.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        e.CellStyle.ForeColor = Color.Blue;
+                    }
+                }
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e) //Registrar gasto

@@ -15,8 +15,9 @@ namespace ProyectoFinalEstructuras1
         public int Plazo { get; set; } //Plazo en meses
 
         public double ValorFinal { get; set; }
+        public double TasaRentabilidad { get; set; }
 
-        
+
         public Inversion(string nombre, double montoInvertido, DateTime fecha, double tasaInteres, int plazo)
         {
             Nombre = nombre;
@@ -25,12 +26,18 @@ namespace ProyectoFinalEstructuras1
             TasaInteres = tasaInteres;
             Plazo = plazo;
             ValorFinal = CalcularValorFinal();
+            TasaRentabilidad = CalcularTasaRentabilidad();
         }
 
         public double CalcularValorFinal()
         {
             // Ejemplo sencillo de cálculo de interés compuesto
             return MontoInvertido * Math.Pow(1 + TasaInteres / 100, Plazo);
+        }
+
+        public double CalcularTasaRentabilidad()
+        {
+            return ((ValorFinal - MontoInvertido) / MontoInvertido) * 100;
         }
 
 

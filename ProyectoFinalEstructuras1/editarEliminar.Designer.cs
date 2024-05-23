@@ -300,9 +300,10 @@
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(210, 255, 255);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(213, 255, 213);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
             gunaGastosIngresosGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gunaGastosIngresosGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 64, 64);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -317,7 +318,7 @@
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
             dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(210, 255, 255);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(213, 255, 213);
             dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             gunaGastosIngresosGrid.DefaultCellStyle = dataGridViewCellStyle3;
