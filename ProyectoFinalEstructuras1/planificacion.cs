@@ -187,7 +187,7 @@ namespace ProyectoFinalEstructuras1
 
             // Agregar la nueva meta a la lista de recomendaciones
             Transacciones.recomendaciones.Add(newGoal);
-            
+
 
             // Llenar el DataGridView con la lista actualizada
             LlenarDataGridView();
@@ -284,6 +284,46 @@ namespace ProyectoFinalEstructuras1
         private void fechatxt_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int selectedIndex = dataGridView1.SelectedRows[0].Index;
+                if (selectedIndex != -1)
+                {
+                    // Obtener el nombre de la meta de la fila seleccionada
+                    string goalName = dataGridView1.Rows[selectedIndex].Cells["Name"].Value.ToString();
+
+                    // Encontrar y remover la meta de la lista de recomendaciones
+                    var goalToRemove = Transacciones.recomendaciones.FirstOrDefault(g => g.Name == goalName);
+                    if (goalToRemove != null)
+                    {
+                        Transacciones.recomendaciones.Remove(goalToRemove);
+
+                        // Actualizar el DataGridView
+                        dataGridView1.Rows.RemoveAt(selectedIndex);
+
+                        MessageBox.Show("Meta eliminada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se encontró la meta seleccionada.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione una fila antes de intentar eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

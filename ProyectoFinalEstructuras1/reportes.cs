@@ -72,40 +72,49 @@ namespace ProyectoFinalEstructuras1
                 doc.Open();
 
                 // Agregar texto del reporte
-                doc.Add(new iTextSharp.text.Paragraph("Reporte de Transacciones"));
-                doc.Add(new iTextSharp.text.Paragraph($"Fecha de inicio: {fechaInicial.ToShortDateString()}"));
-                doc.Add(new iTextSharp.text.Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
-                doc.Add(new iTextSharp.text.Paragraph(" "));
-
-                // Agregar tabla de transacciones
-                PdfPTable table = new PdfPTable(4);
-                float[] comlumnas = { 30, 30, 20, 20 };
-                table.SetWidths(comlumnas);
-                table.AddCell("Nombre");
-                table.AddCell("Categoría");
-                table.AddCell("Monto");
-                table.AddCell("Fecha");
-
-                var transaccionesEnRango = Transacciones.transacciones
-                    .Where(t => t.Fecha >= fechaInicial && t.Fecha <= fechaFinal)
-                    .ToList();
-
-                foreach (var transaccion in transaccionesEnRango)
-                {
-                    table.AddCell(transaccion.Nombre);
-                    table.AddCell(transaccion.Categoria);
-                    table.AddCell(transaccion.Monto.ToString());
-                    table.AddCell(transaccion.Fecha.ToShortDateString());
-                }
-
-                doc.Add(table);
+                doc.Add(new Paragraph("Reporte Completo"));
+                doc.Add(new Paragraph($"Fecha de inicio: {fechaInicial.ToShortDateString()}"));
+                doc.Add(new Paragraph($"Fecha final: {fechaFinal.ToShortDateString()}"));
                 doc.Add(new Paragraph(" "));
 
-                // Agregar gráficos al reporte
+                doc.Add(new Paragraph("Inversiones:"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(GenerarTablaInversiones(fechaInicial, fechaFinal));
+                doc.Add(new Paragraph(" "));
+
+                // Agregar tabla de metas
+                doc.Add(new Paragraph("Metas Financieras:"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(GenerarTablaMetas());
+                doc.Add(new Paragraph(" "));
+
+
+                // Agregar tabla de transacciones
                 doc.Add(new Paragraph("Transacciones Completas"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(GenerarTablaTransacciones(fechaInicial, fechaFinal));
+                doc.Add(new Paragraph(" "));
+
+                // Agregar gráficos
+                doc.Add(new Paragraph("Gráficos de Transacciones"));
                 doc.Add(new Paragraph(" "));
                 doc.Add(AgregarImagenAlPDF(historialForm.GetChart1()));
                 doc.Add(new Paragraph(" "));
+
+                // Agregar desglose de categorías más altas
+                doc.Add(new Paragraph("Desglose de Categorías Más Altas:"));
+                doc.Add(new Paragraph(" "));
+
+                // Categoría de Gasto Más Alta
+                doc.Add(new Paragraph("Categoría de Gasto Más Alta:"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(GenerarTablaCategoriaMasAlta(fechaInicial, fechaFinal, esGasto: true));
+                doc.Add(new Paragraph(" "));
+
+                // Categoría de Ingreso Más Alta
+                doc.Add(new Paragraph("Categoría de Ingreso Más Alta:"));
+                doc.Add(new Paragraph(" "));
+                doc.Add(GenerarTablaCategoriaMasAlta(fechaInicial, fechaFinal, esGasto: false));
             }
             catch (Exception ex)
             {
@@ -118,6 +127,167 @@ namespace ProyectoFinalEstructuras1
 
             return stream.ToArray();
         }
+        private PdfPTable GenerarTablaCategoriaMasAlta(DateTime fechaInicial, DateTime fechaFinal, bool esGasto)
+        {
+            PdfPTable table = new PdfPTable(2);
+            table.AddCell("Categoría");
+            table.AddCell("Total");
+
+            // Obtener la categoría más alta (ya sea de gasto o ingreso)
+            var transaccionesEnRango = Transacciones.transacciones
+                .Where(t => t.Fecha >= fechaInicial && t.Fecha <= fechaFinal && (esGasto ? t.Monto < 0 : t.Monto > 0))
+                .GroupBy(t => t.Categoria)
+                .Select(g => new { Categoria = g.Key, Total = g.Sum(t => Math.Abs(t.Monto)) })
+                .OrderByDescending(g => g.Total)
+                .FirstOrDefault();
+
+            if (transaccionesEnRango != null)
+            {
+                table.AddCell(transaccionesEnRango.Categoria);
+                table.AddCell(transaccionesEnRango.Total.ToString());
+            }
+            else
+            {
+                table.AddCell("No hay datos disponibles");
+                table.AddCell("");
+            }
+
+            return table;
+        }
+
+        private PdfPTable GenerarTablaInversiones(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            PdfPTable table = new PdfPTable(7);
+            float[] columnWidths = { 20, 15, 15, 15, 15, 15, 15 };
+            table.SetWidths(columnWidths);
+            table.WidthPercentage = 100;
+
+            table.AddCell("Nombre");
+            table.AddCell("Monto");
+            table.AddCell("Tasa de Interés");
+            table.AddCell("Plazo (meses)");
+            table.AddCell("Fecha");
+            table.AddCell("Valor Final");
+            table.AddCell("Rentabilidad");
+
+            var inversionesEnRango = Transacciones.inversiones
+                .Where(i => i.Fecha >= fechaInicial && i.Fecha <= fechaFinal)
+                .ToList();
+
+            foreach (var inversion in inversionesEnRango)
+            {
+                table.AddCell(inversion.Nombre);
+                table.AddCell(inversion.MontoInvertido.ToString());
+                table.AddCell($"{inversion.TasaInteres}%");
+                table.AddCell(inversion.Plazo.ToString());
+                table.AddCell(inversion.Fecha.ToShortDateString());
+                table.AddCell(inversion.ValorFinal.ToString());
+                table.AddCell($"{inversion.TasaRentabilidad}%");
+            }
+
+            return table;
+        }
+
+        private PdfPTable GenerarTablaMetas()
+        {
+            PdfPTable table = new PdfPTable(4);
+            table.AddCell("Nombre de la Meta");
+            table.AddCell("Monto Objetivo");
+            table.AddCell("Tipo de Meta");
+            table.AddCell("Fecha Objetivo");
+
+            // Llenar la tabla con datos de las metas de planificación
+            foreach (var meta in Transacciones.recomendaciones)
+            {
+                table.AddCell(meta.Name);
+                table.AddCell(meta.TargetAmount.ToString());
+                table.AddCell(meta.GoalType);
+                table.AddCell(meta.TargetDate.ToShortDateString());
+            }
+
+            return table;
+        }
+
+        private PdfPTable GenerarTablaTransacciones(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            PdfPTable table = new PdfPTable(4);
+            float[] comlumnas = { 30, 30, 20, 20 };
+            table.SetWidths(comlumnas);
+            table.AddCell("Nombre");
+            table.AddCell("Categoría");
+            table.AddCell("Monto");
+            table.AddCell("Fecha");
+
+            var transaccionesEnRango = Transacciones.transacciones
+                .Where(t => t.Fecha >= fechaInicial && t.Fecha <= fechaFinal)
+                .ToList();
+
+            foreach (var transaccion in transaccionesEnRango)
+            {
+                table.AddCell(transaccion.Nombre);
+                table.AddCell(transaccion.Categoria);
+                table.AddCell(transaccion.Monto.ToString());
+                table.AddCell(transaccion.Fecha.ToShortDateString());
+            }
+
+            return table;
+        }
+
+
+        private Paragraph GenerarSeccionInversiones(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            var inversionesEnRango = Transacciones.inversiones
+                .Where(i => i.Fecha >= fechaInicial && i.Fecha <= fechaFinal)
+                .ToList();
+
+            var paragraph = new Paragraph();
+
+            foreach (var inversion in inversionesEnRango)
+            {
+                paragraph.Add(new Paragraph($"{inversion.Nombre}: {inversion.MontoInvertido:C} - {inversion.Fecha.ToShortDateString()} - Tasa de Interés: {inversion.TasaInteres}% - Plazo: {inversion.Plazo} meses - Valor Final: {inversion.ValorFinal:C} - Rentabilidad: {inversion.TasaRentabilidad}%"));
+            }
+
+            return paragraph;
+        }
+
+        private Paragraph GenerarCategoriaGastoMasAlta(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            var transaccionesGastosEnRango = Transacciones.transacciones
+                .Where(t => t.Fecha >= fechaInicial && t.Fecha <= fechaFinal && t.Monto < 0)
+                .GroupBy(t => t.Categoria)
+                .Select(g => new { Categoria = g.Key, MontoTotal = g.Sum(t => Math.Abs(t.Monto)) })
+                .OrderByDescending(g => g.MontoTotal)
+                .FirstOrDefault();
+
+            if (transaccionesGastosEnRango != null)
+            {
+                return new Paragraph($"{transaccionesGastosEnRango.Categoria}: {transaccionesGastosEnRango.MontoTotal:C}");
+            }
+            else
+            {
+                return new Paragraph("No hay gastos en el rango de fechas seleccionado.");
+            }
+        }
+
+        private Paragraph GenerarCategoriaIngresoMasAlta(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            var transaccionesIngresosEnRango = Transacciones.transacciones
+                .Where(t => t.Fecha >= fechaInicial && t.Fecha <= fechaFinal && t.Monto > 0)
+                .GroupBy(t => t.Categoria)
+                .Select(g => new { Categoria = g.Key, MontoTotal = g.Sum(t => t.Monto) })
+                .OrderByDescending(g => g.MontoTotal)
+                .FirstOrDefault();
+
+            if (transaccionesIngresosEnRango != null)
+            {
+                return new Paragraph($"{transaccionesIngresosEnRango.Categoria}: {transaccionesIngresosEnRango.MontoTotal:C}");
+            }
+            else
+            {
+                return new Paragraph("No hay ingresos en el rango de fechas seleccionado.");
+            }
+        }
+
 
         private iTextSharp.text.Image AgregarImagenAlPDF(Chart chart)
         {

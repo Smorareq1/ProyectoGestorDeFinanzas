@@ -47,7 +47,7 @@ namespace ProyectoFinalEstructuras1
                 int plazo = Convert.ToInt32(PlazoComboBox.SelectedItem);
                 string fecha = fechatxt.Text;
 
-                if(monto < 0 && tasaInteres < 0)
+                if (monto >= 0 && tasaInteres >= 0)
                 {
                     //Convertir fecha a DateTime
                     DateTime fechaDT = DateTime.ParseExact(fecha, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);

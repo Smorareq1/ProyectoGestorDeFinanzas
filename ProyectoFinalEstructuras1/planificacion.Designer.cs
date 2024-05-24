@@ -48,6 +48,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(planificacion));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             label1 = new Label();
             nombretxt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,6 +61,8 @@
             btnCorreo = new Guna.UI2.WinForms.Guna2Button();
             comboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             refreshDataGrid = new Guna.UI2.WinForms.Guna2CircleButton();
+            btnEliminar = new Guna.UI2.WinForms.Guna2Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             titlePanel.SuspendLayout();
             SuspendLayout();
@@ -90,7 +94,7 @@
             // nombretxt
             // 
             nombretxt.AutoRoundedCorners = true;
-            nombretxt.BorderRadius = 22;
+            nombretxt.BorderRadius = 17;
             nombretxt.CustomizableEdges = customizableEdges1;
             nombretxt.DefaultText = "";
             nombretxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -107,13 +111,13 @@
             nombretxt.PlaceholderText = "Nombre de la meta financiera";
             nombretxt.SelectedText = "";
             nombretxt.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            nombretxt.Size = new Size(337, 47);
+            nombretxt.Size = new Size(313, 36);
             nombretxt.TabIndex = 27;
             // 
             // montotxt
             // 
             montotxt.AutoRoundedCorners = true;
-            montotxt.BorderRadius = 23;
+            montotxt.BorderRadius = 17;
             montotxt.CustomizableEdges = customizableEdges3;
             montotxt.DefaultText = "";
             montotxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -130,13 +134,13 @@
             montotxt.PlaceholderText = "Monto objetivo";
             montotxt.SelectedText = "";
             montotxt.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            montotxt.Size = new Size(337, 48);
+            montotxt.Size = new Size(313, 36);
             montotxt.TabIndex = 28;
             // 
             // fechatxt
             // 
             fechatxt.AutoRoundedCorners = true;
-            fechatxt.BorderRadius = 23;
+            fechatxt.BorderRadius = 17;
             fechatxt.CustomizableEdges = customizableEdges5;
             fechatxt.DefaultText = "";
             fechatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -153,7 +157,7 @@
             fechatxt.PlaceholderText = "Fecha a cumplir Ej: dd/mm/yyyy";
             fechatxt.SelectedText = "";
             fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            fechatxt.Size = new Size(337, 48);
+            fechatxt.Size = new Size(313, 36);
             fechatxt.TabIndex = 30;
             fechatxt.TextChanged += fechatxt_TextChanged_1;
             // 
@@ -162,7 +166,7 @@
             registrarBtn.Animated = true;
             registrarBtn.AutoRoundedCorners = true;
             registrarBtn.BorderColor = Color.White;
-            registrarBtn.BorderRadius = 29;
+            registrarBtn.BorderRadius = 24;
             registrarBtn.BorderThickness = 1;
             registrarBtn.CustomizableEdges = customizableEdges7;
             registrarBtn.DisabledState.BorderColor = Color.DarkGray;
@@ -170,14 +174,14 @@
             registrarBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             registrarBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             registrarBtn.FillColor = Color.DarkSlateGray;
-            registrarBtn.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
+            registrarBtn.Font = new Font("Segoe UI", 9F);
             registrarBtn.ForeColor = Color.White;
-            registrarBtn.Location = new Point(281, 447);
+            registrarBtn.Location = new Point(471, 447);
             registrarBtn.Margin = new Padding(3, 4, 3, 4);
             registrarBtn.Name = "registrarBtn";
             registrarBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            registrarBtn.Size = new Size(206, 60);
-            registrarBtn.TabIndex = 31;
+            registrarBtn.Size = new Size(181, 51);
+            registrarBtn.TabIndex = 30;
             registrarBtn.Text = "Registrar";
             registrarBtn.Click += guna2Button1_Click;
             // 
@@ -271,7 +275,7 @@
             btnCorreo.Animated = true;
             btnCorreo.AutoRoundedCorners = true;
             btnCorreo.BorderColor = Color.White;
-            btnCorreo.BorderRadius = 29;
+            btnCorreo.BorderRadius = 24;
             btnCorreo.BorderThickness = 1;
             btnCorreo.CustomizableEdges = customizableEdges11;
             btnCorreo.DisabledState.BorderColor = Color.DarkGray;
@@ -279,14 +283,14 @@
             btnCorreo.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCorreo.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCorreo.FillColor = Color.DarkSlateGray;
-            btnCorreo.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
+            btnCorreo.Font = new Font("Segoe UI", 9F);
             btnCorreo.ForeColor = Color.White;
-            btnCorreo.Location = new Point(629, 447);
+            btnCorreo.Location = new Point(681, 447);
             btnCorreo.Margin = new Padding(3, 4, 3, 4);
             btnCorreo.Name = "btnCorreo";
             btnCorreo.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnCorreo.Size = new Size(206, 60);
-            btnCorreo.TabIndex = 34;
+            btnCorreo.Size = new Size(181, 51);
+            btnCorreo.TabIndex = 30;
             btnCorreo.Text = "Enviar por correo planificacion";
             btnCorreo.Click += btnCorreo_Click;
             // 
@@ -294,7 +298,7 @@
             // 
             comboBox1.AutoRoundedCorners = true;
             comboBox1.BackColor = Color.Transparent;
-            comboBox1.BorderRadius = 23;
+            comboBox1.BorderRadius = 17;
             comboBox1.CustomizableEdges = customizableEdges13;
             comboBox1.DrawMode = DrawMode.OwnerDrawFixed;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -302,13 +306,13 @@
             comboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             comboBox1.Font = new Font("Segoe UI", 10F);
             comboBox1.ForeColor = Color.FromArgb(68, 88, 112);
-            comboBox1.IntegralHeight = false;
-            comboBox1.ItemHeight = 42;
+            comboBox1.ItemHeight = 30;
             comboBox1.Location = new Point(681, 271);
             comboBox1.Name = "comboBox1";
             comboBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            comboBox1.Size = new Size(337, 48);
-            comboBox1.TabIndex = 35;
+            comboBox1.Size = new Size(313, 36);
+            comboBox1.TabIndex = 25;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged_1;
             // 
             // refreshDataGrid
             // 
@@ -329,11 +333,47 @@
             refreshDataGrid.TabIndex = 36;
             refreshDataGrid.Click += refreshDataGrid_Click;
             // 
+            // btnEliminar
+            // 
+            btnEliminar.Animated = true;
+            btnEliminar.AutoRoundedCorners = true;
+            btnEliminar.BorderColor = Color.White;
+            btnEliminar.BorderRadius = 24;
+            btnEliminar.BorderThickness = 1;
+            btnEliminar.CustomizableEdges = customizableEdges16;
+            btnEliminar.DisabledState.BorderColor = Color.DarkGray;
+            btnEliminar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEliminar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEliminar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEliminar.FillColor = Color.DarkSlateGray;
+            btnEliminar.Font = new Font("Segoe UI", 9F);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(262, 447);
+            btnEliminar.Margin = new Padding(3, 4, 3, 4);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            btnEliminar.Size = new Size(181, 51);
+            btnEliminar.TabIndex = 30;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.Click += guna2Button1_Click_1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 8F);
+            label3.Location = new Point(686, 240);
+            label3.Name = "label3";
+            label3.Size = new Size(100, 19);
+            label3.TabIndex = 38;
+            label3.Text = "Tipo de meta";
+            // 
             // planificacion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 849);
+            Controls.Add(label3);
+            Controls.Add(btnEliminar);
             Controls.Add(refreshDataGrid);
             Controls.Add(comboBox1);
             Controls.Add(btnCorreo);
@@ -351,6 +391,7 @@
             titlePanel.ResumeLayout(false);
             titlePanel.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -368,5 +409,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCorreo;
         private Guna.UI2.WinForms.Guna2ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2CircleButton refreshDataGrid;
+        private Guna.UI2.WinForms.Guna2Button btnEliminar;
+        private Label label3;
     }
 }
