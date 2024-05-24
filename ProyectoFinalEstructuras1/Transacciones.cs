@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ProyectoFinalEstructuras1.planificacion;
 
 namespace ProyectoFinalEstructuras1
 {
@@ -15,6 +16,7 @@ namespace ProyectoFinalEstructuras1
         public static List<Transaccion> transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
         public static List<TransaccionProgramada> transaccionesProgramadas = GestorDeArchivos.LeerTransaccionesProgramadasEncriptadas();
         public static List<Inversion> inversiones = GestorDeArchivos.LeerInversionesEncriptadas();
+        public static List<FinancialGoal> recomendaciones = GestorDeArchivos.LeerRecomendacionesEncriptadas();
 
         public static void mostrarTransacciones() //Prueba
         {

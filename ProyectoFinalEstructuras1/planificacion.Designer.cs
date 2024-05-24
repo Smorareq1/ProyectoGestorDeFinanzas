@@ -46,6 +46,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(planificacion));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             label1 = new Label();
             nombretxt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -56,6 +58,7 @@
             titlePanel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             btnCorreo = new Guna.UI2.WinForms.Guna2Button();
             comboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            refreshDataGrid = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             titlePanel.SuspendLayout();
             SuspendLayout();
@@ -152,6 +155,7 @@
             fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
             fechatxt.Size = new Size(337, 48);
             fechatxt.TabIndex = 30;
+            fechatxt.TextChanged += fechatxt_TextChanged_1;
             // 
             // registrarBtn
             // 
@@ -205,7 +209,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            dataGridView1.Location = new Point(106, 566);
+            dataGridView1.Location = new Point(106, 565);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -277,7 +281,7 @@
             btnCorreo.FillColor = Color.DarkSlateGray;
             btnCorreo.Font = new Font("Century Gothic", 10.25F, FontStyle.Bold | FontStyle.Italic);
             btnCorreo.ForeColor = Color.White;
-            btnCorreo.Location = new Point(628, 447);
+            btnCorreo.Location = new Point(629, 447);
             btnCorreo.Margin = new Padding(3, 4, 3, 4);
             btnCorreo.Name = "btnCorreo";
             btnCorreo.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -306,11 +310,31 @@
             comboBox1.Size = new Size(337, 48);
             comboBox1.TabIndex = 35;
             // 
+            // refreshDataGrid
+            // 
+            refreshDataGrid.Animated = true;
+            refreshDataGrid.BackgroundImage = (Image)resources.GetObject("refreshDataGrid.BackgroundImage");
+            refreshDataGrid.DisabledState.BorderColor = Color.DarkGray;
+            refreshDataGrid.DisabledState.CustomBorderColor = Color.DarkGray;
+            refreshDataGrid.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            refreshDataGrid.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            refreshDataGrid.FillColor = Color.Transparent;
+            refreshDataGrid.Font = new Font("Segoe UI", 9F);
+            refreshDataGrid.ForeColor = Color.White;
+            refreshDataGrid.Location = new Point(1037, 565);
+            refreshDataGrid.Name = "refreshDataGrid";
+            refreshDataGrid.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            refreshDataGrid.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            refreshDataGrid.Size = new Size(26, 33);
+            refreshDataGrid.TabIndex = 36;
+            refreshDataGrid.Click += refreshDataGrid_Click;
+            // 
             // planificacion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1085, 849);
+            Controls.Add(refreshDataGrid);
             Controls.Add(comboBox1);
             Controls.Add(btnCorreo);
             Controls.Add(titlePanel);
@@ -343,5 +367,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel titlePanel;
         private Guna.UI2.WinForms.Guna2Button btnCorreo;
         private Guna.UI2.WinForms.Guna2ComboBox comboBox1;
+        private Guna.UI2.WinForms.Guna2CircleButton refreshDataGrid;
     }
 }

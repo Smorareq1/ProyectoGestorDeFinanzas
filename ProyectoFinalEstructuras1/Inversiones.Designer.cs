@@ -80,11 +80,10 @@
             guna2CustomGradientPanel1.FillColor2 = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor3 = Color.DarkSlateGray;
             guna2CustomGradientPanel1.FillColor4 = Color.DarkSlateGray;
-            guna2CustomGradientPanel1.Location = new Point(203, 27);
-            guna2CustomGradientPanel1.Margin = new Padding(3, 4, 3, 4);
+            guna2CustomGradientPanel1.Location = new Point(178, 20);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2CustomGradientPanel1.Size = new Size(722, 107);
+            guna2CustomGradientPanel1.Size = new Size(632, 80);
             guna2CustomGradientPanel1.TabIndex = 1;
             // 
             // label2
@@ -93,9 +92,9 @@
             label2.BackColor = Color.DarkSlateGray;
             label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(163, 58);
+            label2.Location = new Point(143, 44);
             label2.Name = "label2";
-            label2.Size = new Size(409, 21);
+            label2.Size = new Size(315, 17);
             label2.TabIndex = 1;
             label2.Text = "Se puede calcular la efectividad de la inversion";
             // 
@@ -105,9 +104,9 @@
             label1.BackColor = Color.DarkSlateGray;
             label1.Font = new Font("Rockwell", 15.75F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(217, 13);
+            label1.Location = new Point(190, 10);
             label1.Name = "label1";
-            label1.Size = new Size(292, 31);
+            label1.Size = new Size(228, 23);
             label1.TabIndex = 0;
             label1.Text = "Manejo de inversiones";
             // 
@@ -115,7 +114,7 @@
             // 
             montoTxt.Animated = true;
             montoTxt.AutoRoundedCorners = true;
-            montoTxt.BorderRadius = 17;
+            montoTxt.BorderRadius = 12;
             montoTxt.CustomizableEdges = customizableEdges3;
             montoTxt.DefaultText = "";
             montoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -125,21 +124,20 @@
             montoTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             montoTxt.Font = new Font("Segoe UI", 9F);
             montoTxt.HoverState.BorderColor = Color.DarkSlateGray;
-            montoTxt.Location = new Point(654, 222);
-            montoTxt.Margin = new Padding(3, 4, 3, 4);
+            montoTxt.Location = new Point(572, 166);
             montoTxt.Name = "montoTxt";
             montoTxt.PasswordChar = '\0';
             montoTxt.PlaceholderText = "Monto Ej: 1000.00";
             montoTxt.SelectedText = "";
             montoTxt.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            montoTxt.Size = new Size(315, 36);
+            montoTxt.Size = new Size(276, 27);
             montoTxt.TabIndex = 23;
             // 
             // fechatxt
             // 
             fechatxt.Animated = true;
             fechatxt.AutoRoundedCorners = true;
-            fechatxt.BorderRadius = 17;
+            fechatxt.BorderRadius = 12;
             fechatxt.CustomizableEdges = customizableEdges5;
             fechatxt.DefaultText = "";
             fechatxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -149,21 +147,20 @@
             fechatxt.FocusedState.BorderColor = Color.DarkSlateGray;
             fechatxt.Font = new Font("Segoe UI", 9F);
             fechatxt.HoverState.BorderColor = Color.DarkSlateGray;
-            fechatxt.Location = new Point(654, 306);
-            fechatxt.Margin = new Padding(3, 4, 3, 4);
+            fechatxt.Location = new Point(572, 230);
             fechatxt.Name = "fechatxt";
             fechatxt.PasswordChar = '\0';
             fechatxt.PlaceholderText = "Fecha Ej: dd/mm/yyyy";
             fechatxt.SelectedText = "";
             fechatxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            fechatxt.Size = new Size(315, 36);
+            fechatxt.Size = new Size(276, 27);
             fechatxt.TabIndex = 22;
             // 
             // nombretxt
             // 
             nombretxt.Animated = true;
             nombretxt.AutoRoundedCorners = true;
-            nombretxt.BorderRadius = 17;
+            nombretxt.BorderRadius = 12;
             nombretxt.CustomizableEdges = customizableEdges7;
             nombretxt.DefaultText = "";
             nombretxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -173,14 +170,13 @@
             nombretxt.FocusedState.BorderColor = Color.DarkSlateGray;
             nombretxt.Font = new Font("Segoe UI", 9F);
             nombretxt.HoverState.BorderColor = Color.DarkSlateGray;
-            nombretxt.Location = new Point(106, 222);
-            nombretxt.Margin = new Padding(3, 4, 3, 4);
+            nombretxt.Location = new Point(93, 166);
             nombretxt.Name = "nombretxt";
             nombretxt.PasswordChar = '\0';
             nombretxt.PlaceholderText = "Nombre";
             nombretxt.SelectedText = "";
             nombretxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            nombretxt.Size = new Size(313, 36);
+            nombretxt.Size = new Size(274, 27);
             nombretxt.TabIndex = 21;
             // 
             // registrarBtn
@@ -188,7 +184,7 @@
             registrarBtn.Animated = true;
             registrarBtn.AutoRoundedCorners = true;
             registrarBtn.BorderColor = Color.White;
-            registrarBtn.BorderRadius = 24;
+            registrarBtn.BorderRadius = 18;
             registrarBtn.CustomizableEdges = customizableEdges9;
             registrarBtn.DisabledState.BorderColor = Color.DarkGray;
             registrarBtn.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -197,10 +193,11 @@
             registrarBtn.FillColor = Color.DarkSlateGray;
             registrarBtn.Font = new Font("Segoe UI", 9F);
             registrarBtn.ForeColor = Color.White;
-            registrarBtn.Location = new Point(449, 460);
+            registrarBtn.Location = new Point(393, 345);
+            registrarBtn.Margin = new Padding(3, 2, 3, 2);
             registrarBtn.Name = "registrarBtn";
             registrarBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            registrarBtn.Size = new Size(180, 50);
+            registrarBtn.Size = new Size(158, 38);
             registrarBtn.TabIndex = 20;
             registrarBtn.Text = "Registrar";
             registrarBtn.Click += registrarBtn_Click;
@@ -209,7 +206,7 @@
             // 
             tasaInteresTxt.Animated = true;
             tasaInteresTxt.AutoRoundedCorners = true;
-            tasaInteresTxt.BorderRadius = 17;
+            tasaInteresTxt.BorderRadius = 12;
             tasaInteresTxt.CustomizableEdges = customizableEdges11;
             tasaInteresTxt.DefaultText = "";
             tasaInteresTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -219,14 +216,13 @@
             tasaInteresTxt.FocusedState.BorderColor = Color.DarkSlateGray;
             tasaInteresTxt.Font = new Font("Segoe UI", 9F);
             tasaInteresTxt.HoverState.BorderColor = Color.DarkSlateGray;
-            tasaInteresTxt.Location = new Point(449, 390);
-            tasaInteresTxt.Margin = new Padding(3, 4, 3, 4);
+            tasaInteresTxt.Location = new Point(393, 292);
             tasaInteresTxt.Name = "tasaInteresTxt";
             tasaInteresTxt.PasswordChar = '\0';
             tasaInteresTxt.PlaceholderText = "Tasa de Interes %  Ej: 5";
             tasaInteresTxt.SelectedText = "";
             tasaInteresTxt.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            tasaInteresTxt.Size = new Size(180, 36);
+            tasaInteresTxt.Size = new Size(158, 27);
             tasaInteresTxt.TabIndex = 24;
             // 
             // PlazoComboBox
@@ -242,19 +238,20 @@
             PlazoComboBox.Font = new Font("Segoe UI", 10F);
             PlazoComboBox.ForeColor = Color.FromArgb(68, 88, 112);
             PlazoComboBox.ItemHeight = 30;
-            PlazoComboBox.Location = new Point(106, 322);
+            PlazoComboBox.Location = new Point(93, 242);
+            PlazoComboBox.Margin = new Padding(3, 2, 3, 2);
             PlazoComboBox.Name = "PlazoComboBox";
             PlazoComboBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            PlazoComboBox.Size = new Size(313, 36);
+            PlazoComboBox.Size = new Size(274, 36);
             PlazoComboBox.TabIndex = 25;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 8F);
-            label3.Location = new Point(106, 300);
+            label3.Location = new Point(93, 225);
             label3.Name = "label3";
-            label3.Size = new Size(45, 19);
+            label3.Size = new Size(36, 16);
             label3.TabIndex = 26;
             label3.Text = "Plazo";
             // 
@@ -286,7 +283,8 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             gunaGastosIngresosGrid.DefaultCellStyle = dataGridViewCellStyle3;
             gunaGastosIngresosGrid.GridColor = Color.FromArgb(231, 229, 255);
-            gunaGastosIngresosGrid.Location = new Point(106, 560);
+            gunaGastosIngresosGrid.Location = new Point(93, 420);
+            gunaGastosIngresosGrid.Margin = new Padding(3, 2, 3, 2);
             gunaGastosIngresosGrid.Name = "gunaGastosIngresosGrid";
             gunaGastosIngresosGrid.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -299,7 +297,8 @@
             gunaGastosIngresosGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             gunaGastosIngresosGrid.RowHeadersVisible = false;
             gunaGastosIngresosGrid.RowHeadersWidth = 51;
-            gunaGastosIngresosGrid.Size = new Size(863, 240);
+            gunaGastosIngresosGrid.RowTemplate.Height = 29;
+            gunaGastosIngresosGrid.Size = new Size(755, 180);
             gunaGastosIngresosGrid.TabIndex = 27;
             gunaGastosIngresosGrid.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             gunaGastosIngresosGrid.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
@@ -334,11 +333,12 @@
             refreshDataGrid.FillColor = Color.Transparent;
             refreshDataGrid.Font = new Font("Segoe UI", 9F);
             refreshDataGrid.ForeColor = Color.White;
-            refreshDataGrid.Location = new Point(975, 560);
+            refreshDataGrid.Location = new Point(853, 420);
+            refreshDataGrid.Margin = new Padding(3, 2, 3, 2);
             refreshDataGrid.Name = "refreshDataGrid";
             refreshDataGrid.ShadowDecoration.CustomizableEdges = customizableEdges15;
             refreshDataGrid.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            refreshDataGrid.Size = new Size(30, 31);
+            refreshDataGrid.Size = new Size(30, 28);
             refreshDataGrid.TabIndex = 28;
             refreshDataGrid.Click += refreshDataGrid_Click;
             // 
@@ -347,7 +347,7 @@
             editarBtn.Animated = true;
             editarBtn.AutoRoundedCorners = true;
             editarBtn.BorderColor = Color.White;
-            editarBtn.BorderRadius = 24;
+            editarBtn.BorderRadius = 18;
             editarBtn.CustomizableEdges = customizableEdges16;
             editarBtn.DisabledState.BorderColor = Color.DarkGray;
             editarBtn.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -356,10 +356,11 @@
             editarBtn.FillColor = Color.DarkSlateGray;
             editarBtn.Font = new Font("Segoe UI", 9F);
             editarBtn.ForeColor = Color.White;
-            editarBtn.Location = new Point(745, 460);
+            editarBtn.Location = new Point(652, 345);
+            editarBtn.Margin = new Padding(3, 2, 3, 2);
             editarBtn.Name = "editarBtn";
             editarBtn.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            editarBtn.Size = new Size(180, 50);
+            editarBtn.Size = new Size(158, 38);
             editarBtn.TabIndex = 29;
             editarBtn.Text = "Editar";
             editarBtn.Click += editarBtn_Click;
@@ -369,7 +370,7 @@
             eliminarBtn.Animated = true;
             eliminarBtn.AutoRoundedCorners = true;
             eliminarBtn.BorderColor = Color.White;
-            eliminarBtn.BorderRadius = 24;
+            eliminarBtn.BorderRadius = 18;
             eliminarBtn.CustomizableEdges = customizableEdges18;
             eliminarBtn.DisabledState.BorderColor = Color.DarkGray;
             eliminarBtn.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -378,19 +379,20 @@
             eliminarBtn.FillColor = Color.DarkSlateGray;
             eliminarBtn.Font = new Font("Segoe UI", 9F);
             eliminarBtn.ForeColor = Color.White;
-            eliminarBtn.Location = new Point(203, 460);
+            eliminarBtn.Location = new Point(178, 345);
+            eliminarBtn.Margin = new Padding(3, 2, 3, 2);
             eliminarBtn.Name = "eliminarBtn";
             eliminarBtn.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            eliminarBtn.Size = new Size(180, 50);
+            eliminarBtn.Size = new Size(158, 38);
             eliminarBtn.TabIndex = 30;
             eliminarBtn.Text = "Eliminar";
             eliminarBtn.Click += eliminarBtn_Click;
             // 
             // Inversiones
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1085, 849);
+            ClientSize = new Size(949, 637);
             Controls.Add(eliminarBtn);
             Controls.Add(editarBtn);
             Controls.Add(refreshDataGrid);
@@ -403,6 +405,7 @@
             Controls.Add(nombretxt);
             Controls.Add(registrarBtn);
             Controls.Add(guna2CustomGradientPanel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Inversiones";
             Text = "Inversiones";
             Load += Inversiones_Load;

@@ -39,6 +39,8 @@ namespace ProyectoFinalEstructuras1
 
             Transacciones.inversiones = GestorDeArchivos.LeerInversionesEncriptadas();
 
+            Transacciones.recomendaciones = GestorDeArchivos.LeerRecomendacionesEncriptadas();
+
         }
 
         //=========================================== MENU ==================================================
@@ -328,6 +330,8 @@ namespace ProyectoFinalEstructuras1
             GestorDeArchivos.GuardarTransaccionesProgramadasEncriptadas(Transacciones.transaccionesProgramadas);
 
             GestorDeArchivos.GuardarInversionesEncriptadas(Transacciones.inversiones);
+
+            GestorDeArchivos.GuardarRecomendacionesEncriptadas(Transacciones.recomendaciones);
 
             //Mensaje de correo con los pagos 
             programarPagos.mandarProximos7Dias();
