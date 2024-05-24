@@ -321,11 +321,11 @@
             refreshDataGrid.FillColor = Color.Transparent;
             refreshDataGrid.Font = new Font("Segoe UI", 9F);
             refreshDataGrid.ForeColor = Color.White;
-            refreshDataGrid.Location = new Point(1037, 565);
+            refreshDataGrid.Location = new Point(1024, 565);
             refreshDataGrid.Name = "refreshDataGrid";
             refreshDataGrid.ShadowDecoration.CustomizableEdges = customizableEdges15;
             refreshDataGrid.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            refreshDataGrid.Size = new Size(26, 33);
+            refreshDataGrid.Size = new Size(29, 33);
             refreshDataGrid.TabIndex = 36;
             refreshDataGrid.Click += refreshDataGrid_Click;
             // 

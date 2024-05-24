@@ -23,16 +23,21 @@ namespace ProyectoFinalEstructuras1
             presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
             llenarDataGridView();
 
+            llenarComoboBox();
+
+            //centrar
+            registrarBtn.Location = new Point((this.Width - registrarBtn.Width) / 2, registrarBtn.Location.Y);
+
+        }
+
+        private void llenarComoboBox()
+        {
             categoriatxt.Items.Add("Alimentacion");
             categoriatxt.Items.Add("Transporte");
             categoriatxt.Items.Add("Salud");
             categoriatxt.Items.Add("Educacion");
             categoriatxt.Items.Add("Entretenimiento");
             categoriatxt.Items.Add("Otros");
-
-            //centrar
-            registrarBtn.Location = new Point((this.Width - registrarBtn.Width) / 2, registrarBtn.Location.Y);
-
         }
 
         private void button1_Click(object sender, EventArgs e) 
@@ -45,7 +50,7 @@ namespace ProyectoFinalEstructuras1
             nombretxt.Text = "";
             montotxt.Text = "";
             fechatxt.Text = "";
-            categoriatxt.Text = "";
+            categoriatxt.SelectedIndex = -1;
         }
 
         private void llenarDataGridView()

@@ -24,6 +24,20 @@ namespace ProyectoFinalEstructuras1
         {
             llenarDataGridView();
             llenarComboBoxCategorias();
+            llenarComoboBox();
+
+
+            
+        }
+
+        private void llenarComoboBox()
+        {
+            categoriatxt.Items.Add("Alimentacion");
+            categoriatxt.Items.Add("Transporte");
+            categoriatxt.Items.Add("Salud");
+            categoriatxt.Items.Add("Educacion");
+            categoriatxt.Items.Add("Entretenimiento");
+            categoriatxt.Items.Add("Otros");
         }
 
         private void llenarDataGridView()
@@ -113,39 +127,107 @@ namespace ProyectoFinalEstructuras1
 
                 // Colocar los valores de la transacción en los TextBox
                 nombreTxt.Text = transaccionSeleccionada.Nombre;
-                categoriaTxt.Text = transaccionSeleccionada.Categoria;
+                categoriatxt.Text = transaccionSeleccionada.Categoria;
                 montoTxt.Text = transaccionSeleccionada.Monto.ToString();
                 fechaTxt.Text = transaccionSeleccionada.Fecha.ToString("dd/MM/yyyy");
             }
         }
 
-        private void editarTransaccionBtn_Click(object sender, EventArgs e) //editar la transaccion seleccionada en el datagrid
+        private void editarTransaccionBtn_Click(object sender, EventArgs e)
         {
             // Verificar si hay una fila seleccionada
             if (indiceFilaSeleccionada != -1)
             {
-                // Crear una nueva transacción con los datos editados
-                Transaccion transaccionEditada = new Transaccion(nombreTxt.Text, Convert.ToDouble(montoTxt.Text), DateTime.ParseExact(fechaTxt.Text, "dd/MM/yyyy", null), categoriaTxt.Text);
+                try
+                {
+                    // Crear una nueva transacción con los datos editados
+                    Transaccion transaccionEditada = new Transaccion(
+                        nombreTxt.Text,
+                        Convert.ToDouble(montoTxt.Text),
+                        DateTime.ParseExact(fechaTxt.Text, "dd/MM/yyyy", null),
+                        categoriatxt.Text
+                    );
 
-                // Reemplazar la transacción anterior con la editada
-                Transacciones.transacciones[indiceFilaSeleccionada] = transaccionEditada;
+                    // Obtener el monto original y el nuevo monto
+                    double montoOriginal = Transacciones.transacciones[indiceFilaSeleccionada].Monto;
+                    double nuevoMonto = transaccionEditada.Monto;
 
-                // Limpiar el índice seleccionado
-                indiceFilaSeleccionada = -1;
+                    // Calcular la diferencia y ajustar el presupuesto
+                    double diferencia = CalcularDiferencia(montoOriginal, nuevoMonto);
+                    AjustarPresupuesto(montoOriginal, nuevoMonto);
 
-                // Limpiar los TextBox
-                nombreTxt.Clear();
-                categoriaTxt.Clear();
-                montoTxt.Clear();
-                fechaTxt.Clear();
+                    // Reemplazar la transacción anterior con la editada
+                    Transacciones.transacciones[indiceFilaSeleccionada] = transaccionEditada;
 
-                // Actualizar el DataGridView
-                llenarDataGridView();
+                    // Limpiar el índice seleccionado
+                    indiceFilaSeleccionada = -1;
+
+                    // Limpiar los TextBox
+                    nombreTxt.Clear();
+                    categoriatxt.SelectedIndex = -1;
+                    montoTxt.Clear();
+                    fechaTxt.Clear();
+
+                    // Actualizar el DataGridView
+                    llenarDataGridView();
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Por favor, ingrese datos válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione una transacción para editar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private double CalcularDiferencia(double montoOriginal, double nuevoMonto)
+        {
+            // Si ambos montos son negativos o ambos son positivos, simplemente resta
+            if ((montoOriginal < 0 && nuevoMonto < 0) || (montoOriginal > 0 && nuevoMonto > 0))
+            {
+                return nuevoMonto - montoOriginal;
+            }
+            else
+            {
+                // Si uno es positivo y el otro negativo, suma los valores absolutos
+                return nuevoMonto + montoOriginal;
+            }
+        }
+
+        private void AjustarPresupuesto(double montoOriginal, double nuevoMonto)
+        {
+            double diferencia = CalcularDiferencia(montoOriginal, nuevoMonto);
+
+            // Ajustar el presupuesto considerando el signo del monto
+            if (montoOriginal < 0 && nuevoMonto >= 0) // Cambio de gasto a ingreso
+            {
+                Transacciones.presupuestoActual += Math.Abs(montoOriginal) + nuevoMonto;
+            }
+            else if (montoOriginal >= 0 && nuevoMonto < 0) // Cambio de ingreso a gasto
+            {
+                Transacciones.presupuestoActual -= montoOriginal + Math.Abs(nuevoMonto);
+            }
+            else if (montoOriginal < 0 && nuevoMonto < 0) // Ambos son gastos
+            {
+                Transacciones.presupuestoActual += diferencia;
+            }
+            else if (montoOriginal >= 0 && nuevoMonto >= 0) // Ambos son ingresos
+            {
+                Transacciones.presupuestoActual += diferencia;
+            }
+
+            if (gastosIngresos.presupuestoLabel != null)
+            { //Arregle modificando el designer
+                gastosIngresos.presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
+
+            }
+            if(presupuesto.presupuestoLabel != null)
+            {
+                presupuesto.presupuestoLabel.Text = Transacciones.presupuestoActual.ToString();
+            }
+            
         }
 
         private void eliminarTransaccionBtn_Click(object sender, EventArgs e) //Elimnar la transaccion selccionada
@@ -161,7 +243,7 @@ namespace ProyectoFinalEstructuras1
 
 
                 nombreTxt.Clear();
-                categoriaTxt.Clear();
+                categoriatxt.SelectedIndex = -1;
                 montoTxt.Clear();
                 fechaTxt.Clear();
 

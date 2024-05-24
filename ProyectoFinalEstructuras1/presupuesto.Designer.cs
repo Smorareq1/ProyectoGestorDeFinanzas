@@ -187,7 +187,7 @@
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button2.Size = new Size(252, 72);
             guna2Button2.TabIndex = 11;
-            guna2Button2.Text = "Gaurdar Correo";
+            guna2Button2.Text = "Guardar Correo";
             guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2CustomGradientPanel1
@@ -229,7 +229,7 @@
 
         private Label label1;
         private Label label4;
-        private Label presupuestoLabel;
+        public static Label presupuestoLabel;
         private Label label6;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox presupuestoTxt;

@@ -212,14 +212,14 @@
             chart2.ChartAreas.Add(chartArea2);
             legend1.Name = "Legend1";
             chart2.Legends.Add(legend1);
-            chart2.Location = new Point(86, 567);
+            chart2.Location = new Point(99, 556);
             chart2.Margin = new Padding(3, 4, 3, 4);
             chart2.Name = "chart2";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             chart2.Series.Add(series2);
-            chart2.Size = new Size(388, 228);
+            chart2.Size = new Size(440, 269);
             chart2.TabIndex = 19;
             chart2.Text = "chart2";
             // 
@@ -229,14 +229,14 @@
             chart3.ChartAreas.Add(chartArea3);
             legend2.Name = "Legend1";
             chart3.Legends.Add(legend2);
-            chart3.Location = new Point(585, 567);
+            chart3.Location = new Point(611, 556);
             chart3.Margin = new Padding(3, 4, 3, 4);
             chart3.Name = "chart3";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             chart3.Series.Add(series3);
-            chart3.Size = new Size(366, 228);
+            chart3.Size = new Size(405, 269);
             chart3.TabIndex = 20;
             chart3.Text = "chart3";
             // 

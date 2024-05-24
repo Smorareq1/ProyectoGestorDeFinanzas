@@ -114,6 +114,7 @@ namespace ProyectoFinalEstructuras1
                 punto.SetValueXY(gasto.Categoria, gasto.MontoTotal); // Establecer el valor X como la categoría y el valor Y como el monto total
                 punto.Tag = gasto.Categoria + ": " + gasto.MontoTotal.ToString("C"); // Almacenar la categoría y el monto total como Tag del punto
                 punto.Label =gasto.MontoTotal.ToString("C");
+                punto.LegendText = gasto.Categoria;
                 serie.Points.Add(punto);
             }
 
@@ -121,6 +122,9 @@ namespace ProyectoFinalEstructuras1
 
             // Agregar la serie al gráfico
             chart2.Series.Add(serie);
+
+            Legend leyenda = new Legend();
+            chart2.Legends.Add(leyenda);
 
             // Agregar el manejador de evento para el clic en el gráfico
             chart2.MouseClick += Chart2_MouseClick;
@@ -203,6 +207,7 @@ namespace ProyectoFinalEstructuras1
                 punto.SetValueXY(ingreso.Categoria, ingreso.MontoTotal); // Establecer el valor X como la categoría y el valor Y como el monto total
                 punto.Tag = ingreso.Categoria + ": " + ingreso.MontoTotal.ToString("C"); // Almacenar la categoría y el monto total como Tag del punto
                 punto.Label = ingreso.MontoTotal.ToString("C");
+                punto.LegendText = ingreso.Categoria;
                 serie.Points.Add(punto);
             }
 
@@ -210,6 +215,10 @@ namespace ProyectoFinalEstructuras1
 
             // Agregar la serie al gráfico
             chart3.Series.Add(serie);
+
+            Legend leyenda = new Legend();
+            chart3.Legends.Add(leyenda);
+
 
             // Agregar el manejador de evento para el clic en el gráfico
             chart3.MouseClick += Chart3_MouseClick;
@@ -322,9 +331,9 @@ namespace ProyectoFinalEstructuras1
             chart1.Titles.Add("Transacciones Completas");
 
             // Configurar la leyenda
-            Legend leyenda = new Legend();
-            leyenda.Title = "Leyenda";
-            leyenda.Docking = Docking.Top;
+            Legend leyenda = new Legend();  
+            leyenda.Docking = Docking.Right;
+            
 
             // Agregar entradas a la leyenda
             leyenda.CustomItems.Add(new LegendItem("Ingresos", Color.Blue, ""));

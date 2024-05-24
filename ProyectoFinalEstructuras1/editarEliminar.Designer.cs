@@ -44,13 +44,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editarEliminar));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -58,7 +58,6 @@
             label2 = new Label();
             label1 = new Label();
             nombreTxt = new Guna.UI2.WinForms.Guna2TextBox();
-            categoriaTxt = new Guna.UI2.WinForms.Guna2TextBox();
             montoTxt = new Guna.UI2.WinForms.Guna2TextBox();
             fechaTxt = new Guna.UI2.WinForms.Guna2TextBox();
             busquedaNombreTxt = new Guna.UI2.WinForms.Guna2TextBox();
@@ -69,6 +68,7 @@
             buscarNombre = new Guna.UI2.WinForms.Guna2CircleButton();
             buscarCategoria = new Guna.UI2.WinForms.Guna2CircleButton();
             refreshDataGrid = new Guna.UI2.WinForms.Guna2CircleButton();
+            categoriatxt = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gunaGastosIngresosGrid).BeginInit();
             SuspendLayout();
@@ -137,36 +137,12 @@
             nombreTxt.Size = new Size(254, 36);
             nombreTxt.TabIndex = 1;
             // 
-            // categoriaTxt
-            // 
-            categoriaTxt.Animated = true;
-            categoriaTxt.AutoRoundedCorners = true;
-            categoriaTxt.BorderRadius = 17;
-            categoriaTxt.CustomizableEdges = customizableEdges5;
-            categoriaTxt.DefaultText = "";
-            categoriaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            categoriaTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            categoriaTxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            categoriaTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            categoriaTxt.FocusedState.BorderColor = Color.DarkSlateGray;
-            categoriaTxt.Font = new Font("Segoe UI", 9F);
-            categoriaTxt.HoverState.BorderColor = Color.DarkSlateGray;
-            categoriaTxt.Location = new Point(183, 347);
-            categoriaTxt.Margin = new Padding(3, 4, 3, 4);
-            categoriaTxt.Name = "categoriaTxt";
-            categoriaTxt.PasswordChar = '\0';
-            categoriaTxt.PlaceholderText = "Categoria";
-            categoriaTxt.SelectedText = "";
-            categoriaTxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            categoriaTxt.Size = new Size(254, 36);
-            categoriaTxt.TabIndex = 2;
-            // 
             // montoTxt
             // 
             montoTxt.Animated = true;
             montoTxt.AutoRoundedCorners = true;
             montoTxt.BorderRadius = 17;
-            montoTxt.CustomizableEdges = customizableEdges7;
+            montoTxt.CustomizableEdges = customizableEdges5;
             montoTxt.DefaultText = "";
             montoTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             montoTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -181,7 +157,7 @@
             montoTxt.PasswordChar = '\0';
             montoTxt.PlaceholderText = "Monto";
             montoTxt.SelectedText = "";
-            montoTxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            montoTxt.ShadowDecoration.CustomizableEdges = customizableEdges6;
             montoTxt.Size = new Size(200, 36);
             montoTxt.TabIndex = 3;
             // 
@@ -190,7 +166,7 @@
             fechaTxt.Animated = true;
             fechaTxt.AutoRoundedCorners = true;
             fechaTxt.BorderRadius = 17;
-            fechaTxt.CustomizableEdges = customizableEdges9;
+            fechaTxt.CustomizableEdges = customizableEdges7;
             fechaTxt.DefaultText = "";
             fechaTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fechaTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -205,7 +181,7 @@
             fechaTxt.PasswordChar = '\0';
             fechaTxt.PlaceholderText = "dd/mm/yyyy";
             fechaTxt.SelectedText = "";
-            fechaTxt.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            fechaTxt.ShadowDecoration.CustomizableEdges = customizableEdges8;
             fechaTxt.Size = new Size(200, 36);
             fechaTxt.TabIndex = 4;
             // 
@@ -213,7 +189,7 @@
             // 
             busquedaNombreTxt.AutoRoundedCorners = true;
             busquedaNombreTxt.BorderRadius = 17;
-            busquedaNombreTxt.CustomizableEdges = customizableEdges11;
+            busquedaNombreTxt.CustomizableEdges = customizableEdges9;
             busquedaNombreTxt.DefaultText = "";
             busquedaNombreTxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             busquedaNombreTxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -228,7 +204,7 @@
             busquedaNombreTxt.PasswordChar = '\0';
             busquedaNombreTxt.PlaceholderText = "Buscar transaccion por nombre...";
             busquedaNombreTxt.SelectedText = "";
-            busquedaNombreTxt.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            busquedaNombreTxt.ShadowDecoration.CustomizableEdges = customizableEdges10;
             busquedaNombreTxt.Size = new Size(254, 36);
             busquedaNombreTxt.TabIndex = 5;
             // 
@@ -237,7 +213,7 @@
             categoriaComboBox.AutoRoundedCorners = true;
             categoriaComboBox.BackColor = Color.Transparent;
             categoriaComboBox.BorderRadius = 17;
-            categoriaComboBox.CustomizableEdges = customizableEdges13;
+            categoriaComboBox.CustomizableEdges = customizableEdges11;
             categoriaComboBox.DrawMode = DrawMode.OwnerDrawFixed;
             categoriaComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             categoriaComboBox.FocusedColor = Color.DarkSlateGray;
@@ -248,7 +224,7 @@
             categoriaComboBox.ItemHeight = 30;
             categoriaComboBox.Location = new Point(699, 180);
             categoriaComboBox.Name = "categoriaComboBox";
-            categoriaComboBox.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            categoriaComboBox.ShadowDecoration.CustomizableEdges = customizableEdges12;
             categoriaComboBox.Size = new Size(200, 36);
             categoriaComboBox.TabIndex = 6;
             // 
@@ -257,7 +233,7 @@
             editarTransaccionBtn.Animated = true;
             editarTransaccionBtn.AutoRoundedCorners = true;
             editarTransaccionBtn.BorderRadius = 21;
-            editarTransaccionBtn.CustomizableEdges = customizableEdges15;
+            editarTransaccionBtn.CustomizableEdges = customizableEdges13;
             editarTransaccionBtn.DisabledState.BorderColor = Color.DarkGray;
             editarTransaccionBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             editarTransaccionBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -267,7 +243,7 @@
             editarTransaccionBtn.ForeColor = Color.White;
             editarTransaccionBtn.Location = new Point(257, 428);
             editarTransaccionBtn.Name = "editarTransaccionBtn";
-            editarTransaccionBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            editarTransaccionBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
             editarTransaccionBtn.Size = new Size(180, 45);
             editarTransaccionBtn.TabIndex = 7;
             editarTransaccionBtn.Text = "Editar";
@@ -278,7 +254,7 @@
             eliminarTransaccionBtn.Animated = true;
             eliminarTransaccionBtn.AutoRoundedCorners = true;
             eliminarTransaccionBtn.BorderRadius = 21;
-            eliminarTransaccionBtn.CustomizableEdges = customizableEdges17;
+            eliminarTransaccionBtn.CustomizableEdges = customizableEdges15;
             eliminarTransaccionBtn.DisabledState.BorderColor = Color.DarkGray;
             eliminarTransaccionBtn.DisabledState.CustomBorderColor = Color.DarkGray;
             eliminarTransaccionBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -288,7 +264,7 @@
             eliminarTransaccionBtn.ForeColor = Color.White;
             eliminarTransaccionBtn.Location = new Point(699, 428);
             eliminarTransaccionBtn.Name = "eliminarTransaccionBtn";
-            eliminarTransaccionBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            eliminarTransaccionBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
             eliminarTransaccionBtn.Size = new Size(180, 45);
             eliminarTransaccionBtn.TabIndex = 8;
             eliminarTransaccionBtn.Text = "Eliminar";
@@ -373,7 +349,7 @@
             buscarNombre.ForeColor = Color.White;
             buscarNombre.Location = new Point(443, 180);
             buscarNombre.Name = "buscarNombre";
-            buscarNombre.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            buscarNombre.ShadowDecoration.CustomizableEdges = customizableEdges17;
             buscarNombre.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             buscarNombre.Size = new Size(27, 29);
             buscarNombre.TabIndex = 10;
@@ -392,7 +368,7 @@
             buscarCategoria.ForeColor = Color.White;
             buscarCategoria.Location = new Point(905, 180);
             buscarCategoria.Name = "buscarCategoria";
-            buscarCategoria.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            buscarCategoria.ShadowDecoration.CustomizableEdges = customizableEdges18;
             buscarCategoria.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             buscarCategoria.Size = new Size(27, 29);
             buscarCategoria.TabIndex = 11;
@@ -411,16 +387,36 @@
             refreshDataGrid.ForeColor = Color.White;
             refreshDataGrid.Location = new Point(1005, 515);
             refreshDataGrid.Name = "refreshDataGrid";
-            refreshDataGrid.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            refreshDataGrid.ShadowDecoration.CustomizableEdges = customizableEdges19;
             refreshDataGrid.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             refreshDataGrid.Size = new Size(30, 31);
             refreshDataGrid.TabIndex = 12;
             refreshDataGrid.Click += refreshDataGrid_Click;
             // 
+            // categoriatxt
+            // 
+            categoriatxt.AutoRoundedCorners = true;
+            categoriatxt.BackColor = Color.Transparent;
+            categoriatxt.BorderRadius = 17;
+            categoriatxt.CustomizableEdges = customizableEdges20;
+            categoriatxt.DrawMode = DrawMode.OwnerDrawFixed;
+            categoriatxt.DropDownStyle = ComboBoxStyle.DropDownList;
+            categoriatxt.FocusedColor = Color.FromArgb(94, 148, 255);
+            categoriatxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            categoriatxt.Font = new Font("Segoe UI", 10F);
+            categoriatxt.ForeColor = Color.FromArgb(68, 88, 112);
+            categoriatxt.ItemHeight = 30;
+            categoriatxt.Location = new Point(183, 347);
+            categoriatxt.Name = "categoriatxt";
+            categoriatxt.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            categoriatxt.Size = new Size(254, 36);
+            categoriatxt.TabIndex = 20;
+            // 
             // editarEliminar
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1085, 849);
+            Controls.Add(categoriatxt);
             Controls.Add(refreshDataGrid);
             Controls.Add(buscarCategoria);
             Controls.Add(buscarNombre);
@@ -431,7 +427,6 @@
             Controls.Add(busquedaNombreTxt);
             Controls.Add(fechaTxt);
             Controls.Add(montoTxt);
-            Controls.Add(categoriaTxt);
             Controls.Add(nombreTxt);
             Controls.Add(guna2CustomGradientPanel1);
             Name = "editarEliminar";
@@ -449,7 +444,6 @@
         private Label label1;
         private Label label2;
         private Guna.UI2.WinForms.Guna2TextBox nombreTxt;
-        private Guna.UI2.WinForms.Guna2TextBox categoriaTxt;
         private Guna.UI2.WinForms.Guna2TextBox montoTxt;
         private Guna.UI2.WinForms.Guna2TextBox fechaTxt;
         private Guna.UI2.WinForms.Guna2TextBox busquedaNombreTxt;
@@ -460,5 +454,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton buscarNombre;
         private Guna.UI2.WinForms.Guna2CircleButton buscarCategoria;
         private Guna.UI2.WinForms.Guna2CircleButton refreshDataGrid;
+        private Guna.UI2.WinForms.Guna2ComboBox categoriatxt;
     }
 }

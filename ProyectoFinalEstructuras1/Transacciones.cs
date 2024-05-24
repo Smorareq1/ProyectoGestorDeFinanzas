@@ -12,6 +12,9 @@ namespace ProyectoFinalEstructuras1
 
         //Variables
         public static double presupuestoActual;
+        
+
+
         public static string correo;
         public static List<Transaccion> transacciones = GestorDeArchivos.LeerTransaccionesEncriptadas();
         public static List<TransaccionProgramada> transaccionesProgramadas = GestorDeArchivos.LeerTransaccionesProgramadasEncriptadas();
@@ -25,6 +28,9 @@ namespace ProyectoFinalEstructuras1
                 MessageBox.Show(t.Nombre + " " + t.Monto + " " + t.Fecha.ToString("dd/MM/yyyy") + " " + t.Categoria);
             }
         }
+
+        
+
 
         public static void ordenarTransaccionesPorFecha()
         {
